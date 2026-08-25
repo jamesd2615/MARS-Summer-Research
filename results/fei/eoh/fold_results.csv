@@ -1,0 +1,57 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,program
+FEI,eoh,1,42,70,70,8,0.016437900019809604,0.01014299993403256,0.9428571428571428,0.9428571428571428,0.9415384615384615,0.9415384615384617,0.8142857142857143,0.8142857142857143,0.7984052222287517,0.7984052222287517,"import numpy as np
+
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    """"""
+    Simple 8-feature test program for the modular EOH pipeline.
+
+    This is only a smoke-test program.
+    It is not an EOH-discovered research result.
+    """"""
+    image = np.asarray(image, dtype=float)
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.min(image),
+            np.max(image),
+            np.median(image),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(image > np.mean(image)),
+        ],
+        dtype=float,
+    )"
+FEI,eoh,2,43,70,70,8,0.0516666000476107,0.005921900039538741,0.9285714285714286,0.9285714285714286,0.926923076923077,0.926923076923077,0.8714285714285714,0.8714285714285716,0.8729939668174962,0.8729939668174961,"import numpy as np
+
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    """"""
+    Simple 8-feature test program for the modular EOH pipeline.
+
+    This is only a smoke-test program.
+    It is not an EOH-discovered research result.
+    """"""
+    image = np.asarray(image, dtype=float)
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.min(image),
+            np.max(image),
+            np.median(image),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(image > np.mean(image)),
+        ],
+        dtype=float,
+    )"

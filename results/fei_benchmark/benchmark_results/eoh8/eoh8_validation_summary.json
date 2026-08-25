@@ -1,0 +1,17 @@
+{
+    "method": "EOH-8",
+    "comparison_group": "dimension_controlled",
+    "dataset_name": "FEI_part1_first_10_subjects",
+    "feature_dimension": 8,
+    "validation_accuracy": 0.9285714285714286,
+    "test_accuracy": null,
+    "test_evaluated": false,
+    "total_feature_extraction_time_seconds": 0.026232299976982176,
+    "classifier_training_time_seconds": 0.003812999988440424,
+    "evaluation_pipeline": "common_benchmark_pipeline",
+    "selection_source": "successful_diagnostics",
+    "selected_program_file": "C:\\Users\\james\\OneDrive - Lancaster University\\Documents\\Projects\\MARS-Summer-Research\\results\\fei_benchmark\\selected_programs\\selected_eoh8_program.py",
+    "selection_diagnostic_file": "C:\\Users\\james\\OneDrive - Lancaster University\\Documents\\Projects\\MARS-Summer-Research\\results\\fei_eoh_8\\candidate_diagnostics\\20260801_000718_839151_27880_success.txt",
+    "recorded_eoh_fitness": 0.071429,
+    "recorded_eoh_validation_accuracy": 0.928571
+}

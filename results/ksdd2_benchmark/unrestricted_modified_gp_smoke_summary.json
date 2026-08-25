@@ -1,0 +1,14 @@
+{
+  "method": "Modified GP \u2014 Unrestricted",
+  "run_type": "smoke_test",
+  "feature_dimension": 266,
+  "training_fitness": 94.37,
+  "gp_training_time_seconds": 319.1420178413391,
+  "validation_accuracy": 0.8822269807280514,
+  "validation_balanced_accuracy": 0.8080997949419002,
+  "validation_macro_f1": 0.7460074165636589,
+  "validation_defect_precision": 0.4605263157894737,
+  "validation_defect_recall": 0.7142857142857143,
+  "program": "FC4(DIF_R(Max_R(Max_R(Min_R(SobelY_R(Mean_R(SobelX_R(SobelY_R(LoG2_R(Mean_R(Sobel_R(Lap_R(Med_R(Med_R(Mean_R(Max_R(Max_R(LoG2_R(Sobel_R(Med_R(LoG2_R(Max_R(SobelY_R(SobelX_R(SobelY_R(LoG2_R(Lap_R(Max_R(LoG1_R(Sobel_R(Gau_R(RegionR(Med(Image), 21, 9, 61, 6), 2))))))))))))))))))))))))))))))), SIFT_R(GauD_R(RegionS(Image, 51, 46, 34), 2, 2, 2)), Hist(Image), Hist(Image))",
+  "test_evaluated": false
+}

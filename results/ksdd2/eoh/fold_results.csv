@@ -1,0 +1,57 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,train_precision,train_recall,validation_precision,validation_recall,program
+KSDD2,eoh,1,42,1668,1669,8,0.34829800005536526,0.04994619998615235,0.9406474820143885,0.734277203830782,0.7984777093149692,0.931615997524561,0.9316956261234272,0.7094590011982004,0.7671595982142857,0.9211409272554139,0.9438202247191011,0.47191011235955055,0.8636363636363636,0.42696629213483145,"import numpy as np
+
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    """"""
+    Simple 8-feature test program for the modular EOH pipeline.
+
+    This is only a smoke-test program.
+    It is not an EOH-discovered research result.
+    """"""
+    image = np.asarray(image, dtype=float)
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.min(image),
+            np.max(image),
+            np.median(image),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(image > np.mean(image)),
+        ],
+        dtype=float,
+    )"
+KSDD2,eoh,2,43,1669,1668,8,0.36320440005511045,0.2650132999988273,0.9286998202516477,0.6978877007362527,0.7544146650591981,0.9171717125468839,0.935251798561151,0.7238368147198553,0.7823874755381605,0.9258481277600229,0.8470588235294118,0.4044943820224719,0.8804347826086957,0.4550561797752809,"import numpy as np
+
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    """"""
+    Simple 8-feature test program for the modular EOH pipeline.
+
+    This is only a smoke-test program.
+    It is not an EOH-discovered research result.
+    """"""
+    image = np.asarray(image, dtype=float)
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.min(image),
+            np.max(image),
+            np.median(image),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(image > np.mean(image)),
+        ],
+        dtype=float,
+    )"

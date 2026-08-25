@@ -1,0 +1,42 @@
+[
+  {
+    "index": 0,
+    "name": "global_mean",
+    "description": "Mean grayscale intensity across the full image."
+  },
+  {
+    "index": 1,
+    "name": "global_standard_deviation",
+    "description": "Standard deviation of full-image intensity."
+  },
+  {
+    "index": 2,
+    "name": "horizontal_gradient_mean",
+    "description": "Mean absolute horizontal pixel difference."
+  },
+  {
+    "index": 3,
+    "name": "vertical_gradient_mean",
+    "description": "Mean absolute vertical pixel difference."
+  },
+  {
+    "index": 4,
+    "name": "local_difference_variability",
+    "description": "Standard deviation of neighbouring horizontal and vertical differences."
+  },
+  {
+    "index": 5,
+    "name": "dark_pixel_proportion",
+    "description": "Proportion of pixels below the image mean minus one standard deviation."
+  },
+  {
+    "index": 6,
+    "name": "bright_pixel_proportion",
+    "description": "Proportion of pixels above the image mean plus one standard deviation."
+  },
+  {
+    "index": 7,
+    "name": "laplacian_variance",
+    "description": "Variance of the Laplacian response, representing high-frequency edge and texture variation."
+  }
+]

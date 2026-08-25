@@ -1,0 +1,11 @@
+{
+    "method": "Handcrafted-8",
+    "comparison_group": "dimension_controlled",
+    "dataset_name": "FEI_part1_first_10_subjects",
+    "feature_dimension": 8,
+    "validation_accuracy": 0.7142857142857143,
+    "test_accuracy": null,
+    "test_evaluated": false,
+    "total_feature_extraction_time_seconds": 0.011915000039152801,
+    "classifier_training_time_seconds": 0.0017933000344783068
+}

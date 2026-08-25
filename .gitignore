@@ -1,0 +1,57 @@
+# Raw datasets
+data/raw/*
+
+# Keep the raw data directory in Git
+!data/raw/.gitkeep
+
+# Processed/generated data
+data/processed/*
+
+# Keep the processed data directory in Git
+!data/processed/.gitkeep
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# VS Code local settings
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+# Bundled EOH example generated outputs
+src/legacy/eoh/EoH-main/examples/**/results/
+
+# Ignore bundled EoH historical experiment outputs
+src/legacy/eoh/EoH-main/docs/Results/
+src/legacy/eoh/EoH-main/examples/**/results*/
+
+# -------------------------------------------------------
+# Bundled EoH material not required by MARS
+# -------------------------------------------------------
+
+# Upstream EoH examples and their bundled datasets/results
+src/legacy/eoh/EoH-main/examples/
+
+# Upstream documentation assets
+src/legacy/eoh/EoH-main/docs/
+
+# Generated outputs from development notebooks
+notebooks/development/results/
+
+# Generated EOH candidate diagnostic logs
+candidate_diagnostics/
