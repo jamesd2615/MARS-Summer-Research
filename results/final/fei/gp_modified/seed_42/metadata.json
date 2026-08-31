@@ -1,0 +1,17 @@
+{
+  "batch_size": null,
+  "dataset": "fei",
+  "epochs": null,
+  "folds": 5,
+  "generations": 2,
+  "learning_rate": null,
+  "method": "gp_modified",
+  "n_classes": 10,
+  "n_samples": 140,
+  "numpy_version": "2.2.2",
+  "population": 10,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-29T21:30:32.157831+00:00"
+}

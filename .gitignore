@@ -55,3 +55,13 @@ notebooks/development/results/
 
 # Generated EOH candidate diagnostic logs
 candidate_diagnostics/
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# Local Python/runtime artefacts
+.python-version
+pytest_cache/
+.mypy_cache/

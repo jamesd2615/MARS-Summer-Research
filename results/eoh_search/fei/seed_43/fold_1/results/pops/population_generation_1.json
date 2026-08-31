@@ -1,0 +1,14 @@
+[
+    {
+        "algorithm": "The new algorithm computes multi-scale pyramid intensity statistics, directional gradient anisotropy, quadrant-based variance ratios, and intensity-range normalized contrast features.",
+        "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n    \n    # Multi-scale pyramid: downscale by factor 2 twice\n    img2 = image[::2, ::2]\n    img4 = img2[::2, ::2]\n    \n    # Quadrant splits (top-left, top-right, bottom-left, bottom-right)\n    hmid, wmid = h // 2, w // 2\n    tl = image[:hmid, :wmid]\n    tr = image[:hmid, wmid:]\n    bl = image[hmid:, :wmid]\n    br = image[hmid:, wmid:]\n    \n    # Directional gradients\n    gx = np.diff(image, axis=1)\n    gy = np.diff(image, axis=0)\n    gx_mag = np.mean(np.abs(gx))\n    gy_mag = np.mean(np.abs(gy))\n    \n    # Variance ratios between quadrants\n    var_tl = np.var(tl)\n    var_tr = np.var(tr)\n    var_bl = np.var(bl)\n    var_br = np.var(br)\n    \n    # Intensity range normalized by std\n    int_range = np.ptp(image)\n    std = np.std(image)\n    range_std_ratio = int_range / (std + 1e-8)\n    \n    return np.array([\n        np.mean(img2),          # coarse-scale mean\n        np.mean(img4),          # coarser-scale mean\n        np.std(img2),           # coarse-scale std\n        np.std(img4),           # coarser-scale std\n        gx_mag / (gy_mag + 1e-8),  # gradient anisotropy\n        np.var([var_tl, var_tr, var_bl, var_br]) / (np.mean([var_tl, var_tr, var_bl, var_br]) + 1e-8),  # quadrant variance dispersion\n        np.mean(tl > np.mean(br)),  # cross-quadrant threshold proportion\n        range_std_ratio,        # contrast ratio\n    ], dtype=float)",
+        "objective": 0.21739,
+        "other_inf": null
+    },
+    {
+        "algorithm": "The algorithm computes regional intensity statistics, gradients, bilateral symmetry, and threshold-based proportion features from a cropped central region and full image.",
+        "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n\n    centre = image[\n        int(0.20 * h):int(0.85 * h),\n        int(0.20 * w):int(0.80 * w)\n    ]\n\n    dx = np.diff(image, axis=1)\n    dy = np.diff(image, axis=0)\n\n    half = w // 2\n    left = image[:, :half]\n    right = np.fliplr(image[:, w-half:])\n\n    threshold = np.mean(image) + np.std(image)\n\n    return np.array(\n        [\n            np.mean(image),\n            np.std(image),\n            np.mean(centre),\n            np.std(centre),\n            np.mean(np.abs(dx)),\n            np.mean(np.abs(dy)),\n            np.mean(np.abs(left - right)),\n            np.mean(image > threshold),\n        ],\n        dtype=float,\n    )",
+        "objective": 0.26087,
+        "other_inf": null
+    }
+]

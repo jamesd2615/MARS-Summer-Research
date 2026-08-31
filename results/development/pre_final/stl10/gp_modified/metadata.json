@@ -1,0 +1,14 @@
+{
+  "dataset": "stl10",
+  "folds": 2,
+  "generations": 1,
+  "method": "gp_modified",
+  "n_classes": 10,
+  "n_samples": 13000,
+  "numpy_version": "2.2.2",
+  "population": 2,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-28T01:07:10.874908+00:00"
+}

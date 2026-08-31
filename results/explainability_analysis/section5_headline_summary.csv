@@ -1,0 +1,5 @@
+dataset,n_programs,unique_programs,duplicate_selections,most_common_program_recurrence,most_common_program_proportion,method,gp_function_calls_mean,gp_parenthesis_depth_mean,gp_unique_operators_mean
+FEI,10,10,0,1,0.1,eoh,15.25,9.75,11.149999999999999
+KSDD2,10,10,0,1,0.1,eoh,14.65,9.05,9.2
+MVTEC,10,8,2,3,0.3,eoh,14.5,10.350000000000001,10.6
+STL10,10,6,4,5,0.5,eoh,9.05,5.5,7.25

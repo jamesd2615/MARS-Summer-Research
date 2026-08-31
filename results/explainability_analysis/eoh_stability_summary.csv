@@ -1,0 +1,5 @@
+dataset,n_programs,unique_programs,duplicate_selections,most_common_program_recurrence,most_common_program_proportion
+FEI,10,10,0,1,0.1
+KSDD2,10,10,0,1,0.1
+MVTEC,10,8,2,3,0.3
+STL10,10,6,4,5,0.5

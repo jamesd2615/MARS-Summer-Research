@@ -1,0 +1,5 @@
+dataset,best_method_macro_f1,best_validation_macro_f1,n_significant_primary_pairwise
+FEI,gp_original,0.9925714285714285,0
+KSDD2,cnn,0.8487967896789812,4
+MVTEC,gp_modified,0.6659921357955415,3
+STL10,cnn,0.6286516979418659,8

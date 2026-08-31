@@ -1,0 +1,17 @@
+{
+  "batch_size": null,
+  "dataset": "mvtec",
+  "epochs": null,
+  "folds": 5,
+  "generations": 2,
+  "learning_rate": null,
+  "method": "gp_original",
+  "n_classes": 2,
+  "n_samples": 1725,
+  "numpy_version": "2.2.2",
+  "population": 10,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-29T22:07:12.622721+00:00"
+}

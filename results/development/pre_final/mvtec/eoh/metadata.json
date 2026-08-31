@@ -1,0 +1,14 @@
+{
+  "dataset": "mvtec",
+  "folds": 2,
+  "generations": null,
+  "method": "eoh",
+  "n_classes": 2,
+  "n_samples": 1725,
+  "numpy_version": "2.2.2",
+  "population": null,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-27T21:39:01.964638+00:00"
+}

@@ -11,6 +11,8 @@ from eoh import EoH, LLMConfig
 
 from src.datasets.fei import load_fei_dataset
 from src.datasets.ksdd2 import load_ksdd2_dataset
+from src.datasets.mvtec import load_mvtec_dataset
+from src.datasets.stl10 import load_stl10_dataset
 from src.features.eoh_problem import EOHFeatureExtractionProblem
 
 
@@ -25,6 +27,12 @@ def load_dataset(dataset_name: str):
 
     if dataset_name == "ksdd2":
         return load_ksdd2_dataset()
+
+    if dataset_name == "mvtec":
+        return load_mvtec_dataset()
+
+    if dataset_name == "stl10":
+        return load_stl10_dataset()
 
     raise ValueError(
         f"Unknown dataset: {dataset_name}"
@@ -311,6 +319,8 @@ def build_parser():
         choices=[
             "fei",
             "ksdd2",
+            "mvtec",
+            "stl10",
         ],
         help="Dataset used for EOH feature search.",
     )

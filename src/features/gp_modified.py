@@ -3,6 +3,9 @@ import time
 
 import numpy as np
 from deap import base, creator, gp, tools
+from sklearn import preprocessing
+from sklearn.model_selection import StratifiedKFold
+from sklearn.svm import LinearSVC
 
 from src.features.base import BaseFeatureExtractor
 
@@ -20,6 +23,81 @@ from src.legacy.gp_modified.gp_fr.gp_fr_main import (
     INIT_MAX_DEPTH,
     TOURNAMENT_SIZE,
 )
+
+
+def _eval_individual_rgb(
+    individual,
+    toolbox,
+    x_train,
+    y_train,
+):
+    """
+    Evaluate one GP individual on RGB images.
+
+    One evolved GP program is applied independently to the
+    R, G, and B channels. The resulting feature vectors are
+    concatenated before the standard LinearSVC fitness evaluation.
+    """
+    try:
+        func = toolbox.compile(expr=individual)
+        features = []
+
+        for image in x_train:
+            channel_features = []
+
+            for channel_index in range(3):
+                channel_feature = np.asarray(
+                    func(image[..., channel_index]),
+                    dtype=float,
+                ).ravel()
+
+                channel_features.append(channel_feature)
+
+            features.append(
+                np.concatenate(channel_features)
+            )
+
+        features = np.asarray(features, dtype=float)
+
+        if features.ndim == 1:
+            features = features.reshape(-1, 1)
+
+        if np.any(np.isnan(features)) or np.any(np.isinf(features)):
+            return (0.0,)
+
+        scaler = preprocessing.MinMaxScaler()
+        features = scaler.fit_transform(features)
+
+        skf = StratifiedKFold(
+            n_splits=5,
+            shuffle=True,
+            random_state=42,
+        )
+
+        accuracies = []
+
+        for train_idx, val_idx in skf.split(features, y_train):
+            classifier = LinearSVC(max_iter=5000)
+            classifier.fit(
+                features[train_idx],
+                y_train[train_idx],
+            )
+            accuracies.append(
+                classifier.score(
+                    features[val_idx],
+                    y_train[val_idx],
+                )
+            )
+
+        accuracy = round(
+            100 * np.mean(accuracies),
+            2,
+        )
+
+    except Exception:
+        accuracy = 0.0
+
+    return (accuracy,)
 
 
 class ModifiedGPExtractor(BaseFeatureExtractor):
@@ -50,6 +128,7 @@ class ModifiedGPExtractor(BaseFeatureExtractor):
         self.program_ = None
         self.train_time_ = None
         self.train_fitness_ = None
+        self.input_mode_ = None
 
     def fit(
         self,
@@ -62,10 +141,17 @@ class ModifiedGPExtractor(BaseFeatureExtractor):
         X = np.asarray(X)
         y = np.asarray(y)
 
-        if X.ndim != 3:
+        if X.ndim == 3:
+            self.input_mode_ = "grayscale"
+
+        elif X.ndim == 4 and X.shape[-1] == 3:
+            self.input_mode_ = "rgb"
+
+        else:
             raise ValueError(
-                "ModifiedGPExtractor expects image data with shape "
-                "(n_samples, height, width). "
+                "ModifiedGPExtractor expects grayscale image data with "
+                "shape (n_samples, height, width) or RGB image data with "
+                "shape (n_samples, height, width, 3). "
                 f"Received {X.shape}."
             )
 
@@ -139,13 +225,22 @@ class ModifiedGPExtractor(BaseFeatureExtractor):
             pset=pset,
         )
 
-        toolbox.register(
-            "evaluate",
-            eval_individual,
-            toolbox=toolbox,
-            x_train=X,
-            y_train=y,
-        )
+        if self.input_mode_ == "rgb":
+            toolbox.register(
+                "evaluate",
+                _eval_individual_rgb,
+                toolbox=toolbox,
+                x_train=X,
+                y_train=y,
+            )
+        else:
+            toolbox.register(
+                "evaluate",
+                eval_individual,
+                toolbox=toolbox,
+                x_train=X,
+                y_train=y,
+            )
 
         toolbox.register(
             "select",
@@ -250,11 +345,28 @@ class ModifiedGPExtractor(BaseFeatureExtractor):
 
         X = np.asarray(X)
 
-        if X.ndim != 3:
-            raise ValueError(
-                "Expected image data with shape "
-                "(n_samples, height, width). "
-                f"Received {X.shape}."
+        if self.input_mode_ == "grayscale":
+            if X.ndim != 3:
+                raise ValueError(
+                    "This ModifiedGPExtractor was fitted on grayscale "
+                    "images and expects shape "
+                    "(n_samples, height, width). "
+                    f"Received {X.shape}."
+                )
+
+        elif self.input_mode_ == "rgb":
+            if X.ndim != 4 or X.shape[-1] != 3:
+                raise ValueError(
+                    "This ModifiedGPExtractor was fitted on RGB images "
+                    "and expects shape "
+                    "(n_samples, height, width, 3). "
+                    f"Received {X.shape}."
+                )
+
+        else:
+            raise RuntimeError(
+                "ModifiedGPExtractor input mode is unavailable. "
+                "Fit the extractor before calling transform()."
             )
 
         function = self.toolbox_.compile(
@@ -264,10 +376,30 @@ class ModifiedGPExtractor(BaseFeatureExtractor):
         features = []
 
         for image in X:
-            feature_vector = np.asarray(
-                function(image),
-                dtype=float,
-            ).ravel()
+            if self.input_mode_ == "rgb":
+                channel_features = []
+
+                for channel_index in range(3):
+                    channel_feature = np.asarray(
+                        function(
+                            image[..., channel_index]
+                        ),
+                        dtype=float,
+                    ).ravel()
+
+                    channel_features.append(
+                        channel_feature
+                    )
+
+                feature_vector = np.concatenate(
+                    channel_features
+                )
+
+            else:
+                feature_vector = np.asarray(
+                    function(image),
+                    dtype=float,
+                ).ravel()
 
             features.append(
                 feature_vector

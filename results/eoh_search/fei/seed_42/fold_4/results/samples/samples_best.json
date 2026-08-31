@@ -1,0 +1,7 @@
+{
+    "sample_order": 17,
+    "operator": "m2",
+    "algorithm": "The new algorithm changes regional crop bounds, threshold formula, symmetry comparison, and adds vertical asymmetry and moment features while keeping eight deterministic scalars.",
+    "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n\n    # central region with different bounds\n    centre = image[\n        int(0.10 * h):int(0.90 * h),\n        int(0.30 * w):int(0.70 * w)\n    ]\n\n    # gradients\n    dx = np.diff(image, axis=1)\n    dy = np.diff(image, axis=0)\n\n    # symmetry: compare top-bottom instead of left-right\n    half_h = h // 2\n    top = image[:half_h, :]\n    bottom = np.flipud(image[h - half_h:, :])\n\n    # threshold using median and 0.5*std\n    threshold = np.median(image) + 0.5 * np.std(image)\n\n    # central moments (second order)\n    cy, cx = np.meshgrid(np.arange(h), np.arange(w), indexing='ij')\n    cx = cx - np.mean(cx)\n    cy = cy - np.mean(cy)\n    mu20 = np.mean(image * (cx ** 2)) / (w**2)\n    mu02 = np.mean(image * (cy ** 2)) / (h**2)\n\n    return np.array([\n        np.mean(image),\n        np.median(image),\n        np.mean(centre),\n        np.std(centre),\n        np.mean(np.abs(dx)),\n        np.mean(np.abs(dy)),\n        np.mean(np.abs(top - bottom)),\n        np.mean(image > threshold) + (mu20 + mu02)\n    ], dtype=float)",
+    "objective": 0.08696
+}

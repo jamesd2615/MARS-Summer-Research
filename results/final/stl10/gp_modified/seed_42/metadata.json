@@ -1,0 +1,17 @@
+{
+  "batch_size": null,
+  "dataset": "stl10",
+  "epochs": null,
+  "folds": 5,
+  "generations": 2,
+  "learning_rate": null,
+  "method": "gp_modified",
+  "n_classes": 10,
+  "n_samples": 13000,
+  "numpy_version": "2.2.2",
+  "population": 10,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-30T12:37:49.923943+00:00"
+}

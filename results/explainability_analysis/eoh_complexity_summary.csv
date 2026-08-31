@@ -1,0 +1,5 @@
+dataset,n_programs,source_length_chars_mean,source_length_chars_std,source_line_count_mean,function_call_count_mean,returned_feature_count_mean,returned_feature_count_min,returned_feature_count_max,method
+FEI,10,2126.9,646.7648464988389,59.0,37.3,8.0,8.0,8.0,eoh
+KSDD2,10,2008.9,480.3490513273771,57.2,37.1,8.0,8.0,8.0,eoh
+MVTEC,10,1747.5,803.9573302662827,50.1,33.2,8.0,8.0,8.0,eoh
+STL10,10,1397.6,491.0761877980057,46.3,30.4,8.0,8.0,8.0,eoh

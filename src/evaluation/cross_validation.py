@@ -150,6 +150,14 @@ def run_stratified_cross_validation(
                 fold_seed
             )
 
+        # Nested-search extractors (currently EOH) need explicit outer-CV
+        # context so every fold writes to a unique, reproducible location.
+        if hasattr(fold_extractor, "outer_seed"):
+            fold_extractor.outer_seed = random_state
+
+        if hasattr(fold_extractor, "fold_number"):
+            fold_extractor.fold_number = fold_number
+
         results = run_feature_experiment(
             fold_extractor,
             X_train,

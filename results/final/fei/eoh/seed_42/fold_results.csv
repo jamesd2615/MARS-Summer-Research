@@ -1,0 +1,284 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,extractor_train_time,extractor_train_fitness,program
+FEI,eoh,1,42,112,28,8,407.1785533,0.01135229999999865,0.9553571428571429,0.9545454545454547,0.9546896292113682,0.9547844572611652,0.8928571428571429,0.8833333333333332,0.8883333333333333,0.8922619047619048,406.96401860000014,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Local contrast in overlapping 3x3 patches (mean of local std)
+    pad = np.pad(image, 1, mode='edge')
+    local_std = np.zeros_like(image)
+    for i in range(3):
+        for j in range(3):
+            patch = pad[i:i+h, j:j+w]
+            local_std += (patch - image) ** 2
+    local_std = np.sqrt(local_std / 9.0)
+    local_contrast = np.mean(local_std)
+
+    # 2. Row-wise intensity oscillation (mean absolute difference between adjacent row means)
+    row_means = np.mean(image, axis=1)
+    row_oscillation = np.mean(np.abs(np.diff(row_means)))
+
+    # 3. Diagonal gradient energy (mean of abs of diagonal differences)
+    diag1 = np.abs(np.diff(image, axis=1)[:-1, :] - np.diff(image, axis=0)[:, 1:])
+    diag_energy = np.mean(diag1)
+
+    # 4. Moment skewness (standardized third central moment)
+    mean = np.mean(image)
+    std = np.std(image)
+    skew = np.mean((image - mean) ** 3) / (std ** 3 + 1e-10)
+
+    # 5. Percentile range (90th - 10th percentile)
+    p10, p90 = np.percentile(image, [10, 90])
+    percentile_range = p90 - p10
+
+    # 6. Binary structure density (fraction of pixels above local median in 5x5 blocks)
+    from numpy.lib.stride_tricks import sliding_window_view
+    if h >= 5 and w >= 5:
+        windows = sliding_window_view(image, (5, 5))
+        local_medians = np.median(windows, axis=(2, 3))
+        # Upsample medians to original size via edge padding
+        med_full = np.pad(local_medians, ((2, 2), (2, 2)), mode='edge')
+        binary_density = np.mean(image > med_full)
+    else:
+        binary_density = 0.0
+
+    # 7. Triangular mask intensity (upper-left triangle vs lower-right triangle)
+    tri_mask = np.triu(np.ones((h, w)), k=0).astype(bool)
+    upper_left = np.mean(image[tri_mask])
+    lower_right = np.mean(image[~tri_mask])
+    triangular_diff = upper_left - lower_right
+
+    # 8. Column-wise gradient asymmetry (mean of absolute difference of top-bottom gradients)
+    col_grad = np.abs(np.diff(image, axis=0))
+    half_h = h // 2
+    top_grad = col_grad[:half_h, :]
+    bot_grad = col_grad[half_h:, :]
+    min_len = min(top_grad.shape[0], bot_grad.shape[0])
+    grad_asym = np.mean(np.abs(top_grad[:min_len] - np.flipud(bot_grad[:min_len])))
+
+    return np.array([
+        local_contrast,
+        row_oscillation,
+        diag_energy,
+        skew,
+        percentile_range,
+        binary_density,
+        triangular_diff,
+        grad_asym
+    ], dtype=float)"
+FEI,eoh,2,43,112,28,8,329.9503058,0.007675500000004831,0.9732142857142857,0.9727272727272727,0.9726896292113683,0.9731773144040224,0.9285714285714286,0.9333333333333332,0.9257142857142858,0.9275510204081634,329.8995069,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Global interquartile range (IQR) as contrast
+    q75, q25 = np.percentile(image, [75, 25])
+    iqr = q75 - q25
+
+    # 2. Coefficient of variation (robust to scale) 
+    std = np.std(image)
+    mean = np.mean(image)
+    cv = std / (mean + 1e-12)
+
+    # 3. Radial intensity asymmetry: mean absolute difference between inner and outer rings
+    y, x = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2.0, w / 2.0
+    radius = np.sqrt((x - cx)**2 + (y - cy)**2)
+    r_max = radius.max()
+    inner_mask = radius < 0.3 * r_max
+    outer_mask = radius > 0.7 * r_max
+    inner_mean = np.mean(image[inner_mask]) if np.any(inner_mask) else 0.0
+    outer_mean = np.mean(image[outer_mask]) if np.any(outer_mask) else 0.0
+    radial_asym = np.abs(inner_mean - outer_mean)
+
+    # 4. Edge density: fraction of pixels where local variation (2x2) exceeds threshold
+    # Use a simple 2x2 variance proxy via horizontal and vertical differences
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_mag = np.zeros_like(image)
+    grad_mag[:, :-1] += np.abs(dx)
+    grad_mag[:-1, :] += np.abs(dy)
+    grad_mean = np.mean(grad_mag)
+    edge_density = np.mean(grad_mag > (grad_mean + std))
+
+    # 5. Low-frequency dominance: ratio of energy in downsampled (by 2) vs original
+    downsampled = image[::2, ::2]
+    energy_orig = np.mean(image**2)
+    energy_down = np.mean(downsampled**2)
+    low_freq_ratio = energy_down / (energy_orig + 1e-12)
+
+    # 6. Vertical periodicity: mean absolute difference between image and shifted by 1 row
+    vert_diff = np.abs(np.diff(image, axis=0))
+    periodicity = np.mean(vert_diff)
+
+    # 7. Central mass concentration: fraction of total intensity within central 50% area
+    centre = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+    total_intensity = np.sum(image)
+    centre_intensity = np.sum(centre)
+    mass_concentration = centre_intensity / (total_intensity + 1e-12)
+
+    # 8. Kurtosis of intensity distribution (peakedness)
+    if std > 1e-12:
+        kurtosis = np.mean((image - mean)**4) / (std**4)
+    else:
+        kurtosis = 0.0
+
+    return np.array([
+        iqr,
+        cv,
+        radial_asym,
+        edge_density,
+        low_freq_ratio,
+        periodicity,
+        mass_concentration,
+        kurtosis
+    ], dtype=float)"
+FEI,eoh,3,44,112,28,8,331.8791632,0.00734439999996539,0.9821428571428571,0.9825757575757577,0.983197961458831,0.9824229859167747,0.8928571428571429,0.9,0.8757142857142857,0.8811224489795918,331.46568639999987,0.04348,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Quadrant intensity ratios (top-left vs bottom-right, top-right vs bottom-left)
+    q1 = image[:h//2, :w//2].mean()
+    q2 = image[:h//2, w//2:].mean()
+    q3 = image[h//2:, :w//2].mean()
+    q4 = image[h//2:, w//2:].mean()
+    
+    # Gradient magnitude histogram skewed towards low vs high frequencies
+    gx = np.abs(np.diff(image, axis=1))
+    gy = np.abs(np.diff(image, axis=0))
+    # Pad to same shape for combined gradient
+    gx_pad = np.pad(gx, ((0,0),(0,1)), mode='edge')
+    gy_pad = np.pad(gy, ((0,1),(0,0)), mode='edge')
+    grad_mag = np.sqrt(gx_pad**2 + gy_pad**2)
+    
+    # High-frequency proportion (strong edges)
+    high_freq_mask = grad_mag > (np.mean(grad_mag) + np.std(grad_mag))
+    high_freq_ratio = np.mean(high_freq_mask)
+    
+    # Directional contrast: horizontal vs vertical edge strength ratio
+    horizontal_strength = np.mean(gx)
+    vertical_strength = np.mean(gy)
+    direction_balance = horizontal_strength / (vertical_strength + 1e-10)
+    
+    # Coarse-to-fine intensity variation (downsampled std vs full std)
+    coarse = image[::2, ::2]
+    coarse_std = np.std(coarse)
+    fine_std = np.std(image)
+    scale_difference = fine_std - coarse_std
+    
+    # Local contrast distribution (10th vs 90th percentile of local std)
+    local_std = np.zeros((h//4, w//4))
+    for i in range(h//4):
+        for j in range(w//4):
+            block = image[i*4:(i+1)*4, j*4:(j+1)*4]
+            local_std[i,j] = np.std(block)
+    contrast_spread = np.percentile(local_std, 90) - np.percentile(local_std, 10)
+    
+    # Entropy-like measure using intensity histogram
+    hist, _ = np.histogram(image, bins=16, range=(image.min(), image.max()+1e-10))
+    probs = hist / hist.sum()
+    probs = probs[probs > 0]
+    entropy = -np.sum(probs * np.log2(probs))
+    
+    return np.array([
+        (q1 - q4) / (q1 + q4 + 1e-10),  # diagonal contrast
+        (q2 - q3) / (q2 + q3 + 1e-10),  # anti-diagonal contrast
+        high_freq_ratio,                  # edge density
+        direction_balance,                # orientation bias
+        scale_difference,                 # texture coarseness
+        contrast_spread,                  # local contrast variability
+        entropy,                          # intensity complexity
+        np.mean(grad_mag) / (np.std(grad_mag) + 1e-10)  # edge consistency
+    ], dtype=float)"
+FEI,eoh,4,45,112,28,8,368.5638256999996,0.01870229999985895,0.9642857142857143,0.9651515151515152,0.9644268774703558,0.9642504234895538,0.8928571428571429,0.8833333333333332,0.8780952380952382,0.8884353741496598,368.52968759999976,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # central region with different bounds
+    centre = image[
+        int(0.10 * h):int(0.90 * h),
+        int(0.30 * w):int(0.70 * w)
+    ]
+
+    # gradients
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    # symmetry: compare top-bottom instead of left-right
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+
+    # threshold using median and 0.5*std
+    threshold = np.median(image) + 0.5 * np.std(image)
+
+    # central moments (second order)
+    cy, cx = np.meshgrid(np.arange(h), np.arange(w), indexing='ij')
+    cx = cx - np.mean(cx)
+    cy = cy - np.mean(cy)
+    mu20 = np.mean(image * (cx ** 2)) / (w**2)
+    mu02 = np.mean(image * (cy ** 2)) / (h**2)
+
+    return np.array([
+        np.mean(image),
+        np.median(image),
+        np.mean(centre),
+        np.std(centre),
+        np.mean(np.abs(dx)),
+        np.mean(np.abs(dy)),
+        np.mean(np.abs(top - bottom)),
+        np.mean(image > threshold) + (mu20 + mu02)
+    ], dtype=float)"
+FEI,eoh,5,46,112,28,8,347.7167364000002,0.016466900000068563,0.9464285714285714,0.9462121212121213,0.9461368341803125,0.9463546288080449,0.8571428571428571,0.8666666666666666,0.862142857142857,0.852295918367347,347.6748935999999,0.17391,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Downsample to a coarse grid using block means
+    coarse_h, coarse_w = max(1, h // 4), max(1, w // 4)
+    coarse = image[:coarse_h * 4, :coarse_w * 4].reshape(coarse_h, 4, coarse_w, 4).mean(axis=(1, 3))
+
+    # Second-order gradients (Laplacian-like via center differences)
+    d2x = np.diff(image, n=2, axis=1)
+    d2y = np.diff(image, n=2, axis=0)
+    laplace = np.zeros_like(image)
+    if d2x.shape[1] > 0 and d2y.shape[0] > 0:
+        laplace[1:-1, 1:-1] = d2y[:, 1:-1] + d2x[1:-1, :]
+    else:
+        laplace = np.abs(d2y).mean() * np.ones_like(image)  # fallback
+
+    # Diagonal symmetry (upper-left vs lower-right triangular regions)
+    tri1 = np.triu(image)
+    tri2 = np.tril(image)
+    diag_sym = np.mean(np.abs(tri1 - tri2.T))
+
+    # Contrast via 10th-90th percentile difference in center
+    p10, p90 = np.percentile(coarse, [10, 90])
+
+    # Texture: mean absolute difference from local 3x3 mean
+    pad = np.pad(image, 1, mode='edge')
+    local_mean = (pad[:-2, :-2] + pad[:-2, 1:-1] + pad[:-2, 2:] +
+                  pad[1:-1, :-2] + pad[1:-1, 1:-1] + pad[1:-1, 2:] +
+                  pad[2:, :-2] + pad[2:, 1:-1] + pad[2:, 2:]) / 9.0
+    texture = np.mean(np.abs(image - local_mean))
+
+    # Proportion of dark pixels (below mean - std)
+    dark_ratio = np.mean(image < (np.mean(image) - np.std(image)))
+
+    return np.array([
+        np.mean(coarse),
+        np.median(coarse),
+        p90 - p10,
+        diag_sym,
+        np.mean(np.abs(d2x)) if d2x.size > 0 else 0.0,
+        np.mean(np.abs(d2y)) if d2y.size > 0 else 0.0,
+        texture,
+        dark_ratio
+    ], dtype=float)"

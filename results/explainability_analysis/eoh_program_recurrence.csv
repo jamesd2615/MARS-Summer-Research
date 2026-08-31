@@ -1,0 +1,35 @@
+dataset,canonical_hash,selection_count,selection_locations,representative_path
+FEI,0332a160fe8d6f7f,1,seed_42/fold_1,programs\eoh\fei\seed_42\fold_1\selected_program.py
+FEI,05ed937481a08c3d,1,seed_42/fold_2,programs\eoh\fei\seed_42\fold_2\selected_program.py
+FEI,1d14807d7293e3aa,1,seed_42/fold_3,programs\eoh\fei\seed_42\fold_3\selected_program.py
+FEI,21a62c6f179327f3,1,seed_43/fold_5,programs\eoh\fei\seed_43\fold_5\selected_program.py
+FEI,2e621c171ea2be8a,1,seed_43/fold_4,programs\eoh\fei\seed_43\fold_4\selected_program.py
+FEI,4b98d0d1c71a2829,1,seed_42/fold_4,programs\eoh\fei\seed_42\fold_4\selected_program.py
+FEI,792dfc29ac25da9f,1,seed_43/fold_1,programs\eoh\fei\seed_43\fold_1\selected_program.py
+FEI,94271da80cf8455e,1,seed_43/fold_3,programs\eoh\fei\seed_43\fold_3\selected_program.py
+FEI,a0efcc7e20fa18b9,1,seed_43/fold_2,programs\eoh\fei\seed_43\fold_2\selected_program.py
+FEI,f89f3d99acd181fa,1,seed_42/fold_5,programs\eoh\fei\seed_42\fold_5\selected_program.py
+KSDD2,2134cc1c6a75d547,1,seed_43/fold_1,programs\eoh\ksdd2\seed_43\fold_1\selected_program.py
+KSDD2,22cf02866e385794,1,seed_42/fold_5,programs\eoh\ksdd2\seed_42\fold_5\selected_program.py
+KSDD2,45b6769ebe9b3751,1,seed_42/fold_3,programs\eoh\ksdd2\seed_42\fold_3\selected_program.py
+KSDD2,59a96e969b731eb3,1,seed_42/fold_2,programs\eoh\ksdd2\seed_42\fold_2\selected_program.py
+KSDD2,d95879c5ed6b8879,1,seed_43/fold_5,programs\eoh\ksdd2\seed_43\fold_5\selected_program.py
+KSDD2,da9de2c33a4afde4,1,seed_42/fold_1,programs\eoh\ksdd2\seed_42\fold_1\selected_program.py
+KSDD2,ede532b9de9f959d,1,seed_42/fold_4,programs\eoh\ksdd2\seed_42\fold_4\selected_program.py
+KSDD2,f1636eac94379555,1,seed_43/fold_3,programs\eoh\ksdd2\seed_43\fold_3\selected_program.py
+KSDD2,f7772120d3ba2c51,1,seed_43/fold_4,programs\eoh\ksdd2\seed_43\fold_4\selected_program.py
+KSDD2,fee9c15bcb24c995,1,seed_43/fold_2,programs\eoh\ksdd2\seed_43\fold_2\selected_program.py
+MVTEC,05ccb3e8d33c715a,3,seed_42/fold_1; seed_43/fold_3; seed_43/fold_4,programs\eoh\mvtec\seed_42\fold_1\selected_program.py
+MVTEC,021fc6522c38060c,1,seed_43/fold_1,programs\eoh\mvtec\seed_43\fold_1\selected_program.py
+MVTEC,1c330c85adc3e56a,1,seed_42/fold_5,programs\eoh\mvtec\seed_42\fold_5\selected_program.py
+MVTEC,47cd0e3953e13ec6,1,seed_43/fold_5,programs\eoh\mvtec\seed_43\fold_5\selected_program.py
+MVTEC,5b0afed1f4243adb,1,seed_42/fold_3,programs\eoh\mvtec\seed_42\fold_3\selected_program.py
+MVTEC,839379a6fff275c2,1,seed_43/fold_2,programs\eoh\mvtec\seed_43\fold_2\selected_program.py
+MVTEC,91be581a58d43b2a,1,seed_42/fold_4,programs\eoh\mvtec\seed_42\fold_4\selected_program.py
+MVTEC,e934bda03899e390,1,seed_42/fold_2,programs\eoh\mvtec\seed_42\fold_2\selected_program.py
+STL10,80a6bb91f285fbd5,5,seed_42/fold_1; seed_42/fold_3; seed_42/fold_4; seed_43/fold_3; seed_43/fold_5,programs\eoh\stl10\seed_42\fold_1\selected_program.py
+STL10,0ffad1f912794088,1,seed_43/fold_2,programs\eoh\stl10\seed_43\fold_2\selected_program.py
+STL10,5b905eb02d9c6b80,1,seed_42/fold_5,programs\eoh\stl10\seed_42\fold_5\selected_program.py
+STL10,65e55f7629677a7d,1,seed_42/fold_2,programs\eoh\stl10\seed_42\fold_2\selected_program.py
+STL10,7f49360c01804362,1,seed_43/fold_1,programs\eoh\stl10\seed_43\fold_1\selected_program.py
+STL10,ce78d10196a53ca3,1,seed_43/fold_4,programs\eoh\stl10\seed_43\fold_4\selected_program.py

@@ -17,9 +17,16 @@ def build_experiment_metadata(
     generations: int | None,
     n_samples: int,
     n_classes: int,
+    epochs: int | None = None,
+    batch_size: int | None = None,
+    learning_rate: float | None = None,
 ) -> dict:
     """
     Build reproducibility metadata for one MARS experiment.
+
+    Supports both:
+        - explainable evolutionary feature-extraction methods
+        - neural baseline methods
 
     The returned dictionary is designed to be saved alongside
     fold-level and summary results.
@@ -44,6 +51,24 @@ def build_experiment_metadata(
             else int(generations)
         ),
 
+        "epochs": (
+            None
+            if epochs is None
+            else int(epochs)
+        ),
+
+        "batch_size": (
+            None
+            if batch_size is None
+            else int(batch_size)
+        ),
+
+        "learning_rate": (
+            None
+            if learning_rate is None
+            else float(learning_rate)
+        ),
+
         "n_samples": int(
             n_samples
         ),
@@ -64,5 +89,14 @@ def build_experiment_metadata(
 
         "scikit_learn_version": sklearn.__version__,
     }
+
+    # Record PyTorch only when a neural method is being used.
+    if method_name.lower() in {
+        "cnn",
+        "mlp",
+    }:
+        import torch
+
+        metadata["pytorch_version"] = torch.__version__
 
     return metadata

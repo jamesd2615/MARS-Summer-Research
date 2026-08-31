@@ -3,6 +3,9 @@ import time
 
 import numpy as np
 from deap import base, creator, gp, tools
+from sklearn import preprocessing
+from sklearn.model_selection import StratifiedKFold
+from sklearn.svm import LinearSVC
 
 from src.features.base import BaseFeatureExtractor
 
@@ -20,6 +23,34 @@ from src.legacy.gp_original.gp_fr.gp_fr_main import (
     INIT_MAX_DEPTH,
     TOURNAMENT_SIZE,
 )
+
+
+def _eval_individual_rgb(individual, toolbox, x_train, y_train):
+    """Apply one evolved 2D GP program to R/G/B and concatenate features."""
+    try:
+        func = toolbox.compile(expr=individual)
+        features = []
+        for image in x_train:
+            parts = [
+                np.asarray(func(image[..., c]), dtype=float).ravel()
+                for c in range(3)
+            ]
+            features.append(np.concatenate(parts))
+        features = np.asarray(features, dtype=float)
+        if features.ndim == 1:
+            features = features.reshape(-1, 1)
+        if np.any(np.isnan(features)) or np.any(np.isinf(features)):
+            return (0.0,)
+        features = preprocessing.MinMaxScaler().fit_transform(features)
+        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+        accs = []
+        for tr, va in skf.split(features, y_train):
+            clf = LinearSVC(max_iter=5000)
+            clf.fit(features[tr], y_train[tr])
+            accs.append(clf.score(features[va], y_train[va]))
+        return (round(100 * np.mean(accs), 2),)
+    except Exception:
+        return (0.0,)
 
 
 class OriginalGPExtractor(BaseFeatureExtractor):
@@ -50,6 +81,7 @@ class OriginalGPExtractor(BaseFeatureExtractor):
         self.program_ = None
         self.train_time_ = None
         self.train_fitness_ = None
+        self.input_mode_ = None
 
     def fit(
         self,
@@ -62,11 +94,14 @@ class OriginalGPExtractor(BaseFeatureExtractor):
         X = np.asarray(X)
         y = np.asarray(y)
 
-        if X.ndim != 3:
+        if X.ndim == 3:
+            self.input_mode_ = "grayscale"
+        elif X.ndim == 4 and X.shape[-1] == 3:
+            self.input_mode_ = "rgb"
+        else:
             raise ValueError(
-                "OriginalGPExtractor expects image data with shape "
-                "(n_samples, height, width). "
-                f"Received {X.shape}."
+                "OriginalGPExtractor expects grayscale (n, h, w) or "
+                f"RGB (n, h, w, 3) image data. Received {X.shape}."
             )
 
         if len(X) != len(y):
@@ -139,9 +174,10 @@ class OriginalGPExtractor(BaseFeatureExtractor):
             pset=pset,
         )
 
+        evaluator = _eval_individual_rgb if self.input_mode_ == "rgb" else eval_individual
         toolbox.register(
             "evaluate",
-            eval_individual,
+            evaluator,
             toolbox=toolbox,
             x_train=X,
             y_train=y,
@@ -250,12 +286,10 @@ class OriginalGPExtractor(BaseFeatureExtractor):
 
         X = np.asarray(X)
 
-        if X.ndim != 3:
-            raise ValueError(
-                "Expected image data with shape "
-                "(n_samples, height, width). "
-                f"Received {X.shape}."
-            )
+        if self.input_mode_ == "grayscale" and X.ndim != 3:
+            raise ValueError(f"Expected grayscale (n, h, w); received {X.shape}.")
+        if self.input_mode_ == "rgb" and (X.ndim != 4 or X.shape[-1] != 3):
+            raise ValueError(f"Expected RGB (n, h, w, 3); received {X.shape}.")
 
         function = self.toolbox_.compile(
             expr=self.best_individual_
@@ -264,14 +298,15 @@ class OriginalGPExtractor(BaseFeatureExtractor):
         features = []
 
         for image in X:
-            feature_vector = np.asarray(
-                function(image),
-                dtype=float,
-            ).ravel()
+            if self.input_mode_ == "rgb":
+                feature_vector = np.concatenate([
+                    np.asarray(function(image[..., c]), dtype=float).ravel()
+                    for c in range(3)
+                ])
+            else:
+                feature_vector = np.asarray(function(image), dtype=float).ravel()
 
-            features.append(
-                feature_vector
-            )
+            features.append(feature_vector)
 
         try:
             feature_matrix = np.asarray(

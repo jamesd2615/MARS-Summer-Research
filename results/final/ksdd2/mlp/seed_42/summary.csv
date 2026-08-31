@@ -1,0 +1,13 @@
+metric,mean,std,n_folds
+train_accuracy,0.8933173641602924,0.00015511411985245804,5
+train_balanced_accuracy,0.5,0.0,5
+train_macro_f1,0.4718265282415618,4.326715147043775e-05,5
+train_weighted_f1,0.8429816718374612,0.00022369393679133503,5
+train_precision,0.0,0.0,5
+train_recall,0.0,0.0,5
+validation_accuracy,0.8933175627754985,0.0006198856542349907,5
+validation_balanced_accuracy,0.5,0.0,5
+validation_macro_f1,0.4718265411710011,0.00017300131301029714,5
+validation_weighted_f1,0.8429820432089947,0.0008937686841799107,5
+validation_precision,0.0,0.0,5
+validation_recall,0.0,0.0,5

@@ -1,0 +1,18 @@
+{
+  "batch_size": 64,
+  "dataset": "fei",
+  "epochs": 50,
+  "folds": 5,
+  "generations": null,
+  "learning_rate": 0.001,
+  "method": "mlp",
+  "n_classes": 10,
+  "n_samples": 140,
+  "numpy_version": "2.2.2",
+  "population": null,
+  "python_version": "3.13.1",
+  "pytorch_version": "2.13.0+cpu",
+  "scikit_learn_version": "1.9.0",
+  "seed": 43,
+  "timestamp_utc": "2026-08-29T02:27:48.325705+00:00"
+}

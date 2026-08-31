@@ -28,9 +28,13 @@ def _safe_name(value: str) -> str:
 def get_results_directory(
     dataset_name: str,
     method_name: str,
+    seed: int | None = None,
 ) -> Path:
     """
-    Return the standard results directory for one dataset/method pair.
+    Return the standard results directory for one dataset/method run.
+
+    When a seed is provided, results are stored under a seed-specific
+    subdirectory so repeated runs do not overwrite one another.
     """
     dataset_folder = _safe_name(
         dataset_name
@@ -46,6 +50,12 @@ def get_results_directory(
         / method_folder
     )
 
+    if seed is not None:
+        output_dir = (
+            output_dir
+            / f"seed_{int(seed)}"
+        )
+
     output_dir.mkdir(
         parents=True,
         exist_ok=True,
@@ -59,6 +69,7 @@ def save_cross_validation_results(
     *,
     dataset_name: str,
     method_name: str,
+    seed: int | None = None,
 ) -> dict[str, Path]:
     """
     Save fold-level and summary cross-validation results.
@@ -84,6 +95,7 @@ def save_cross_validation_results(
     output_dir = get_results_directory(
         dataset_name,
         method_name,
+        seed=seed,
     )
 
     fold_path = (
@@ -154,6 +166,7 @@ def save_experiment_metadata(
     *,
     dataset_name: str,
     method_name: str,
+    seed: int | None = None,
     filename: str = "metadata.json",
 ) -> Path:
     """
@@ -167,6 +180,7 @@ def save_experiment_metadata(
     output_dir = get_results_directory(
         dataset_name,
         method_name,
+        seed=seed,
     )
 
     metadata_path = (

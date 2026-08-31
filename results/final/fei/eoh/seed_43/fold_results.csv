@@ -1,0 +1,308 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,extractor_train_time,extractor_train_fitness,program
+FEI,eoh,1,43,112,28,8,317.9091659000005,0.02244810000047437,0.9196428571428571,0.9181818181818182,0.9149784997611086,0.9158099276499898,0.8928571428571429,0.8833333333333332,0.8700000000000001,0.8892857142857143,317.84554690000004,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Horizontal and vertical Sobel-like gradients (using central differences)
+    gx = np.zeros_like(image)
+    gy = np.zeros_like(image)
+    gx[:, 1:-1] = (image[:, 2:] - image[:, :-2]) / 2.0
+    gy[1:-1, :] = (image[2:, :] - image[:-2, :]) / 2.0
+    grad_mag = np.sqrt(gx**2 + gy**2)
+
+    # Vertical symmetry (top vs bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+
+    # Local contrast: difference between high and low percentile intensities
+    p_low = np.percentile(image, 25)
+    p_high = np.percentile(image, 75)
+    local_contrast = p_high - p_low
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(grad_mag),
+            np.std(grad_mag),
+            np.mean(np.abs(gx)),
+            np.mean(np.abs(gy)),
+            np.mean(np.abs(top - bottom)),
+            local_contrast,
+        ],
+        dtype=float,
+    )"
+FEI,eoh,2,44,112,28,8,339.9270185000005,0.006845400001111557,0.9375,0.9371212121212121,0.9373432197093525,0.9380738920282072,0.7142857142857143,0.7333333333333333,0.7007142857142857,0.6912414965986394,339.84967329999927,0.04348,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Intensity moments (skewness and kurtosis via standardized moments)
+    mean = np.mean(image)
+    std = np.std(image)
+    if std > 0:
+        skew = np.mean((image - mean)**3) / (std**3)
+        kurt = np.mean((image - mean)**4) / (std**4) - 3
+    else:
+        skew = 0.0
+        kurt = 0.0
+    
+    # Center-to-edge contrast (difference between center and border means)
+    center_region = image[int(0.3*h):int(0.7*h), int(0.3*w):int(0.7*w)]
+    border_mask = np.ones((h, w), dtype=bool)
+    border_mask[int(0.1*h):int(0.9*h), int(0.1*w):int(0.9*w)] = False
+    border_mean = np.mean(image[border_mask]) if np.any(border_mask) else mean
+    center_edge_contrast = np.mean(center_region) - border_mean
+    
+    # Gradient directional ratio (horizontal vs vertical activity)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_x = np.mean(np.abs(dx))
+    grad_y = np.mean(np.abs(dy))
+    grad_ratio = grad_x / (grad_y + 1e-10)
+    
+    # Texture coarseness via local range (max-min in small blocks)
+    block_h, block_w = 4, 4
+    h_blocks = h // block_h
+    w_blocks = w // block_w
+    if h_blocks > 0 and w_blocks > 0:
+        blocks = image[:h_blocks*block_h, :w_blocks*block_w].reshape(
+            h_blocks, block_h, w_blocks, block_w
+        )
+        block_max = blocks.max(axis=(1, 3))
+        block_min = blocks.min(axis=(1, 3))
+        local_range = np.mean(block_max - block_min)
+    else:
+        local_range = np.ptp(image)
+    
+    # Vertical symmetry (correlation between top and bottom halves)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    if half_h > 0 and np.std(top) > 0 and np.std(bottom) > 0:
+        vert_sym = np.mean((top - np.mean(top)) * (bottom - np.mean(bottom))) / (
+            np.std(top) * np.std(bottom)
+        )
+    else:
+        vert_sym = 0.0
+    
+    # High-intensity spatial dispersion (std of coordinates above threshold)
+    threshold = mean + std
+    bright_mask = image > threshold
+    if np.any(bright_mask):
+        ys, xs = np.nonzero(bright_mask)
+        spatial_dispersion = np.std(xs) / w + np.std(ys) / h
+    else:
+        spatial_dispersion = 0.0
+    
+    return np.array([
+        skew,
+        kurt,
+        center_edge_contrast,
+        grad_ratio,
+        local_range,
+        vert_sym,
+        spatial_dispersion,
+        np.max(image) - np.min(image)  # overall intensity spread
+    ], dtype=float)"
+FEI,eoh,3,45,112,28,8,322.488409399999,0.00546320000103151,0.9553571428571429,0.9545454545454547,0.9552466013518645,0.9546965628356606,0.8928571428571429,0.8833333333333332,0.8780952380952382,0.8884353741496599,322.45464080000056,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Row-wise mean profile variance (vertical texture)
+    row_means = np.mean(image, axis=1)
+    feat1 = np.std(row_means)
+
+    # 2. Column-wise mean profile variance (horizontal texture)
+    col_means = np.mean(image, axis=0)
+    feat2 = np.std(col_means)
+
+    # 3. Laplacian approximation (second derivative) mean absolute
+    lap = np.zeros_like(image)
+    lap[1:-1, 1:-1] = (image[2:, 1:-1] + image[:-2, 1:-1] +
+                       image[1:-1, 2:] + image[1:-1, :-2] -
+                       4 * image[1:-1, 1:-1])
+    feat3 = np.mean(np.abs(lap))
+
+    # 4. Quadrant energy ratio (top-left vs bottom-right)
+    tl = image[:h//2, :w//2]
+    br = image[h//2:, w//2:]
+    feat4 = np.mean(tl**2) / (np.mean(br**2) + 1e-12)
+
+    # 5. Quadrant energy ratio (top-right vs bottom-left)
+    tr = image[:h//2, w//2:]
+    bl = image[h//2:, :w//2]
+    feat5 = np.mean(tr**2) / (np.mean(bl**2) + 1e-12)
+
+    # 6. Horizontal gradient absolute skewness-like measure (asymmetry in edges)
+    dx = np.diff(image, axis=1)
+    abs_dx = np.abs(dx)
+    mean_abs_dx = np.mean(abs_dx)
+    feat6 = np.mean((abs_dx - mean_abs_dx)**3) / (mean_abs_dx**3 + 1e-12)
+
+    # 7. Fraction of pixels above mean + 0.5*std (tail proportion)
+    high_thresh = np.mean(image) + 0.5 * np.std(image)
+    feat7 = np.mean(image > high_thresh)
+
+    # 8. Coefficient of variation of row-wise standard deviations (spatial uniformity)
+    row_stds = np.std(image, axis=1)
+    feat8 = np.std(row_stds) / (np.mean(row_stds) + 1e-12)
+
+    return np.array([feat1, feat2, feat3, feat4, feat5, feat6, feat7, feat8], dtype=float)"
+FEI,eoh,4,46,112,28,8,357.2263901999995,0.003910299999915878,0.9375,0.9371212121212121,0.9349289164941339,0.9350194715567387,0.8214285714285714,0.8166666666666668,0.8080952380952382,0.8193877551020409,357.0814725,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Normalized entropy (deterministic binning)
+    bins = np.linspace(image.min(), image.max() + 1e-12, 16)
+    hist, _ = np.histogram(image, bins=bins)
+    probs = hist / (h * w)
+    probs = probs[probs > 0]
+    entropy = -np.sum(probs * np.log(probs)) / np.log(16)
+
+    # 2. Local binary pattern uniformity (using 3x3 neighborhoods)
+    padded = np.pad(image, 1, mode='edge')
+    center = padded[1:-1, 1:-1]
+    neighbors = np.stack([
+        padded[:-2, :-2], padded[:-2, 1:-1], padded[:-2, 2:],
+        padded[1:-1, 2:], padded[2:, 2:], padded[2:, 1:-1],
+        padded[2:, :-2], padded[1:-1, :-2]
+    ])
+    lbp = (neighbors >= center).astype(np.uint8)
+    # Count number of 0/1 transitions around the ring
+    transitions = np.sum(np.abs(np.diff(lbp, axis=0, append=lbp[0:1])), axis=0)
+    uniformity = np.mean(transitions <= 2)
+
+    # 3. Row periodicity via autocorrelation at half-height
+    row_mean = np.mean(image, axis=1)
+    row_centered = row_mean - np.mean(row_mean)
+    lag = max(1, h // 5)
+    if h > 2 * lag:
+        corr = np.corrcoef(row_centered[:-lag], row_centered[lag:])[0, 1]
+    else:
+        corr = 0.0
+    row_period = np.nan_to_num(corr)
+
+    # 4. Column periodicity similarly
+    col_mean = np.mean(image, axis=0)
+    col_centered = col_mean - np.mean(col_mean)
+    if w > 2 * lag:
+        corr_col = np.corrcoef(col_centered[:-lag], col_centered[lag:])[0, 1]
+    else:
+        corr_col = 0.0
+    col_period = np.nan_to_num(corr_col)
+
+    # 5. Asymmetry ratio: mean of upper half vs lower half
+    top = np.mean(image[:h//2])
+    bottom = np.mean(image[h//2:])
+    asym_ud = (top - bottom) / (top + bottom + 1e-12)
+
+    # 6. Left-right asymmetry
+    left = np.mean(image[:, :w//2])
+    right = np.mean(image[:, w//2:])
+    asym_lr = (left - right) / (left + right + 1e-12)
+
+    # 7. Gradient magnitude skewness (alternative computation)
+    gy, gx = np.gradient(image)
+    mag = np.hypot(gx, gy)
+    mag_std = np.std(mag)
+    if mag_std > 0:
+        grad_skew = np.mean(((mag - np.mean(mag)) / mag_std) ** 3)
+    else:
+        grad_skew = 0.0
+
+    # 8. High-frequency content ratio (Laplacian energy normalized)
+    laplacian = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])
+    from numpy.lib.stride_tricks import sliding_window_view
+    if h >= 3 and w >= 3:
+        windows = sliding_window_view(image, (3, 3))
+        lap_vals = np.tensordot(windows, laplacian, axes=([2, 3], [0, 1]))
+        high_freq = np.mean(lap_vals ** 2) / (np.var(image) + 1e-12)
+    else:
+        high_freq = 0.0
+
+    return np.array([
+        entropy,
+        uniformity,
+        row_period,
+        col_period,
+        asym_ud,
+        asym_lr,
+        grad_skew,
+        high_freq
+    ], dtype=float)"
+FEI,eoh,5,47,112,28,8,339.3760977000002,0.005514599999514758,0.9642857142857143,0.9636363636363636,0.9614299516908211,0.9621187025534851,0.8928571428571429,0.9,0.9016666666666666,0.8946428571428572,339.2433781999989,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Radial intensity profile: average intensity at different distance bands from center
+    y_coords, x_coords = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2.0, w / 2.0
+    distances = np.sqrt((y_coords - cy)**2 + (x_coords - cx)**2)
+    max_dist = distances.max()
+    dist_bands = np.floor(distances / (max_dist / 4.0)).astype(int)
+    dist_bands = np.clip(dist_bands, 0, 3)
+    radial_means = [np.mean(image[dist_bands == i]) for i in range(4)]
+    radial_spread = np.std(radial_means)
+    
+    # Local binary pattern count: proportion of pixels where right neighbor is brighter
+    right_neighbor = np.pad(image, ((0,0),(0,1)), mode='edge')[:, 1:]
+    lbp_right = (right_neighbor > image).astype(float)
+    lbp_proportion = np.mean(lbp_right)
+    
+    # Third central moment (skewness-like) of intensity distribution
+    mean_intensity = np.mean(image)
+    diff = image - mean_intensity
+    skewness = np.mean(diff**3) / (np.std(image)**3 + 1e-12)
+    
+    # Interquartile range
+    flat = image.ravel()
+    q75, q25 = np.percentile(flat, [75, 25])
+    iqr = q75 - q25
+    
+    # Vertical edge density: count significant vertical edges
+    dy = np.abs(np.diff(image, axis=0))
+    edge_thresh = np.mean(dy) + np.std(dy)
+    vertical_edge_density = np.mean(dy > edge_thresh)
+    
+    # Horizontal line pattern: mean absolute difference between rows
+    row_means = np.mean(image, axis=1)
+    row_diff = np.abs(np.diff(row_means))
+    row_variability = np.mean(row_diff)
+    
+    # Moment-based asymmetry: ratio of intensity-weighted x-coordinate vs y-coordinate variance
+    total_mass = np.sum(image) + 1e-12
+    x_w = np.sum(image * x_coords) / total_mass
+    y_w = np.sum(image * y_coords) / total_mass
+    x_var = np.sum(image * (x_coords - x_w)**2) / total_mass
+    y_var = np.sum(image * (y_coords - y_w)**2) / total_mass
+    moment_ratio = x_var / (y_var + 1e-12)
+    
+    # Fourier-like low-frequency energy (using 2D convolution with averaging kernel)
+    kernel = np.ones((3,3)) / 9.0
+    from numpy.lib.stride_tricks import sliding_window_view
+    padded = np.pad(image, 1, mode='edge')
+    windows = sliding_window_view(padded, (3,3))
+    local_means = np.mean(windows, axis=(2,3))
+    low_freq_energy = np.mean(local_means**2) / (np.mean(image**2) + 1e-12)
+    
+    return np.array([
+        radial_spread,
+        lbp_proportion,
+        skewness,
+        iqr,
+        vertical_edge_density,
+        row_variability,
+        moment_ratio,
+        low_freq_energy
+    ], dtype=float)"

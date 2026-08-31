@@ -1,0 +1,18 @@
+{
+  "batch_size": 64,
+  "dataset": "mvtec",
+  "epochs": 50,
+  "folds": 5,
+  "generations": null,
+  "learning_rate": 0.001,
+  "method": "cnn",
+  "n_classes": 2,
+  "n_samples": 1725,
+  "numpy_version": "2.2.2",
+  "population": null,
+  "python_version": "3.13.1",
+  "pytorch_version": "2.13.0+cpu",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-28T23:19:02.359666+00:00"
+}

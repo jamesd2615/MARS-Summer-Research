@@ -1,0 +1,8 @@
+[
+    {
+        "algorithm": "The algorithm computes eight deterministic regional intensity, gradient, symmetry, and threshold-proportion statistics from the input grayscale image.",
+        "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n\n    centre = image[\n        int(0.20 * h):int(0.85 * h),\n        int(0.20 * w):int(0.80 * w)\n    ]\n\n    dx = np.diff(image, axis=1)\n    dy = np.diff(image, axis=0)\n\n    half = w // 2\n    left = image[:, :half]\n    right = np.fliplr(image[:, w-half:])\n\n    threshold = np.mean(image) + np.std(image)\n\n    return np.array(\n        [\n            np.mean(image),\n            np.std(image),\n            np.mean(centre),\n            np.std(centre),\n            np.mean(np.abs(dx)),\n            np.mean(np.abs(dy)),\n            np.mean(np.abs(left - right)),\n            np.mean(image > threshold),\n        ],\n        dtype=float,\n    )",
+        "objective": 0.34783,
+        "other_inf": null
+    }
+]

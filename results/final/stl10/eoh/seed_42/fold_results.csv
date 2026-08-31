@@ -1,0 +1,215 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,extractor_train_time,extractor_train_fitness,program
+STL10,eoh,1,42,10400,2600,8,775.2209541000002,2.7150298000005932,0.35759615384615384,0.35759615384615384,0.32388775925979296,0.323887759259793,0.36538461538461536,0.36538461538461536,0.33274290178120663,0.3327429017812067,770.5471071000002,0.6351,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )"
+STL10,eoh,2,43,10400,2600,8,446.1098735000005,5.686725000000479,0.3641346153846154,0.36413461538461533,0.34257977633366093,0.342579776333661,0.36153846153846153,0.36153846153846153,0.3393212153901774,0.33932121539017734,441.3885741999993,0.63365,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # 1. Red-blue mean ratio (log)
+    f1 = np.log(np.mean(red) / (np.mean(blue) + 1e-6))
+
+    # 2. Green intensity ratio to total
+    f2 = np.mean(green) / (np.mean(red) + np.mean(green) + np.mean(blue) + 1e-6)
+
+    # 3. Central vs peripheral intensity difference (60% center)
+    ch, cw = int(0.3*h), int(0.3*w)
+    ch_start, cw_start = (h - ch)//2, (w - cw)//2
+    centre = intensity[ch_start:ch_start+ch, cw_start:cw_start+cw]
+    f3 = np.mean(centre) - np.mean(intensity)
+
+    # 4. Horizontal gradient relative to intensity
+    grad_x = np.abs(np.diff(intensity, axis=1))
+    f4 = np.mean(grad_x) / (np.mean(intensity) + 1e-6)
+
+    # 5. Vertical gradient relative to intensity
+    grad_y = np.abs(np.diff(intensity, axis=0))
+    f5 = np.mean(grad_y) / (np.mean(intensity) + 1e-6)
+
+    # 6. Color range standard deviation
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+    f6 = np.std(colour_range)
+
+    # 7. Red-green channel correlation
+    f7 = np.corrcoef(red.ravel(), green.ravel())[0, 1]
+
+    # 8. Top-bottom asymmetry in blue channel
+    top = blue[:h//2, :]
+    bottom = blue[h//2:, :]
+    f8 = np.mean(top) - np.mean(bottom)
+
+    return np.array([f1, f2, f3, f4, f5, f6, f7, f8], dtype=float)"
+STL10,eoh,3,44,10400,2600,8,472.2944808000011,2.3197536999996373,0.3605769230769231,0.360576923076923,0.32647193814721986,0.32647193814721986,0.35846153846153844,0.35846153846153844,0.32879048702580227,0.3287904870258022,467.4340101000007,0.63413,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )"
+STL10,eoh,4,45,10400,2600,8,625.6362148999997,2.5892488999998022,0.36365384615384616,0.3636538461538462,0.3317662028374693,0.3317662028374693,0.3507692307692308,0.3507692307692308,0.316497634705901,0.31649763470590103,620.7915926000005,0.62837,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )"
+STL10,eoh,5,46,10400,2600,8,589.0678678000004,2.0250396999999793,0.36596153846153845,0.36596153846153845,0.3352114735651992,0.3352114735651992,0.37038461538461537,0.37038461538461537,0.3355940147116132,0.3355940147116132,582.9519561999987,0.63029,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # Central region (different crop than before)
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    # Horizontal and vertical gradients
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+
+    # Colour saturation (max-min per pixel)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    # Central vs peripheral luminance contrast (peripheral = outside centre)
+    mask = np.zeros_like(intensity, dtype=bool)
+    mask[int(0.20 * h):int(0.85 * h), int(0.20 * w):int(0.80 * w)] = True
+    peripheral = intensity[~mask]
+    centre_peripheral_contrast = np.mean(centre) - np.mean(peripheral)
+
+    # Gradient energy ratio (horizontal / (horizontal + vertical + eps))
+    h_energy = np.mean(dx ** 2)
+    v_energy = np.mean(dy ** 2)
+    gradient_ratio = h_energy / (h_energy + v_energy + 1e-12)
+
+    # Saturation spread (std of colour range)
+    saturation_spread = np.std(colour_range)
+
+    return np.array(
+        [
+            np.median(red),
+            np.median(green),
+            np.median(blue),
+            np.std(intensity),
+            centre_peripheral_contrast,
+            gradient_ratio,
+            np.mean(np.abs(dx)) - np.mean(np.abs(dy)),
+            saturation_spread,
+        ],
+        dtype=float,
+    )"

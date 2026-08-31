@@ -1,0 +1,14 @@
+{
+  "dataset": "ksdd2",
+  "folds": 2,
+  "generations": 1,
+  "method": "gp_original",
+  "n_classes": 2,
+  "n_samples": 3337,
+  "numpy_version": "2.2.2",
+  "population": 2,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-28T15:26:58.542204+00:00"
+}

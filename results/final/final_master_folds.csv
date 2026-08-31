@@ -1,0 +1,2327 @@
+dataset,method,fold,experiment_seed,seed,n_train,n_validation,epochs,batch_size,learning_rate,model_training_time,device,initial_training_loss,final_training_loss,training_loss_change,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,n_features,feature_extraction_time,classifier_training_time,extractor_train_time,extractor_train_fitness,program,train_precision,train_recall,validation_precision,validation_recall
+FEI,cnn,1,42,42,112,28,50.0,64.0,0.001,15.502341600134969,cpu,2.3065262862614224,0.0441003484385354,-2.262425937822887,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.7857142857142857,0.8,0.7733333333333334,0.7761904761904761,,,,,,,,,,
+FEI,cnn,2,42,43,112,28,50.0,64.0,0.001,13.066958200186493,cpu,2.307882070541382,0.0662810270275388,-2.241601043513843,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9285714285714286,0.9333333333333332,0.935,0.9303571428571428,,,,,,,,,,
+FEI,cnn,3,42,44,112,28,50.0,64.0,0.001,13.877007700037211,cpu,2.3065766266414096,0.0170888592089925,-2.289487767432417,1.0,1.0,1.0,1.0,0.8928571428571429,0.9,0.8823809523809525,0.8858843537414965,,,,,,,,,,
+FEI,cnn,4,42,45,112,28,50.0,64.0,0.001,11.416364799952134,cpu,2.3061466557638988,0.0613248305661337,-2.244821825197765,0.9910714285714286,0.9916666666666666,0.9913043478260868,0.9910714285714286,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,cnn,5,42,46,112,28,50.0,64.0,0.001,10.647035999922082,cpu,2.307793072291783,0.0232883884704538,-2.284504683821329,1.0,1.0,1.0,1.0,0.8928571428571429,0.9,0.8871428571428572,0.8790816326530612,,,,,,,,,,
+FEI,cnn,1,43,43,112,28,50.0,64.0,0.001,5.651077299844474,cpu,2.307661839893886,0.0697575679847172,-2.237904271909169,0.9732142857142856,0.9727272727272728,0.9732380952380952,0.9737159863945576,0.9285714285714286,0.9333333333333332,0.9323809523809524,0.9275510204081632,,,,,,,,,,
+FEI,cnn,2,43,44,112,28,50.0,64.0,0.001,5.772247600136325,cpu,2.3073525428771973,0.0204337018408945,-2.286918841036303,1.0,1.0,1.0,1.0,0.8571428571428571,0.8666666666666666,0.8480952380952381,0.8443877551020409,,,,,,,,,,
+FEI,cnn,3,43,45,112,28,50.0,64.0,0.001,5.769943899940699,cpu,2.308022737503052,0.044884480535984,-2.263138256967068,0.9910714285714286,0.990909090909091,0.9912380952380954,0.9910374149659864,0.9642857142857144,0.95,0.9523809523809524,0.9608843537414966,,,,,,,,,,
+FEI,cnn,4,43,46,112,28,50.0,64.0,0.001,5.62663449998945,cpu,2.3082687173570906,0.0694334794368062,-2.2388352379202843,0.9910714285714286,0.9916666666666666,0.9913043478260868,0.9910714285714286,0.8214285714285714,0.8166666666666667,0.8233333333333335,0.8226190476190476,,,,,,,,,,
+FEI,cnn,5,43,47,112,28,50.0,64.0,0.001,5.677928699878976,cpu,2.310915333884103,0.0397784946752446,-2.2711368392088587,1.0,1.0,1.0,1.0,0.8214285714285714,0.8333333333333333,0.8230952380952381,0.8104591836734694,,,,,,,,,,
+FEI,cnn,1,44,44,112,28,50.0,64.0,0.001,5.217719200067222,cpu,2.31150484085083,0.0395637149257319,-2.2719411259250983,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9285714285714286,0.9333333333333332,0.9257142857142858,0.9275510204081634,,,,,,,,,,
+FEI,cnn,2,44,45,112,28,50.0,64.0,0.001,5.116110000060871,cpu,2.3076578889574324,0.0343658748481954,-2.273292014109237,1.0,1.0,1.0,1.0,0.8214285714285714,0.8333333333333333,0.8257142857142856,0.813265306122449,,,,,,,,,,
+FEI,cnn,3,44,46,112,28,50.0,64.0,0.001,4.957141300197691,cpu,2.307831423623221,0.0679023643689496,-2.2399290592542718,0.9910714285714286,0.9916666666666666,0.9913043478260868,0.9910714285714286,0.8571428571428571,0.85,0.8383333333333333,0.8505952380952381,,,,,,,,,,
+FEI,cnn,4,44,47,112,28,50.0,64.0,0.001,5.257216199999675,cpu,2.3082903112683977,0.0248407913105828,-2.283449519957814,1.0,1.0,1.0,1.0,0.8571428571428571,0.8666666666666666,0.8616666666666667,0.8589285714285715,,,,,,,,,,
+FEI,cnn,5,44,48,112,28,50.0,64.0,0.001,5.181167999980971,cpu,2.307724135262625,0.073324407849993,-2.2343997274126326,0.9821428571428572,0.9818181818181818,0.9821428571428572,0.9824617346938777,0.9285714285714286,0.9333333333333332,0.9314285714285712,0.926530612244898,,,,,,,,,,
+FEI,eoh,1,42,42,112,28,,,,,,,,,0.9553571428571428,0.9545454545454548,0.9546896292113682,0.9547844572611652,0.8928571428571429,0.8833333333333332,0.8883333333333333,0.8922619047619048,8.0,407.1785533,0.0113522999999986,406.96401860000014,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Local contrast in overlapping 3x3 patches (mean of local std)
+    pad = np.pad(image, 1, mode='edge')
+    local_std = np.zeros_like(image)
+    for i in range(3):
+        for j in range(3):
+            patch = pad[i:i+h, j:j+w]
+            local_std += (patch - image) ** 2
+    local_std = np.sqrt(local_std / 9.0)
+    local_contrast = np.mean(local_std)
+
+    # 2. Row-wise intensity oscillation (mean absolute difference between adjacent row means)
+    row_means = np.mean(image, axis=1)
+    row_oscillation = np.mean(np.abs(np.diff(row_means)))
+
+    # 3. Diagonal gradient energy (mean of abs of diagonal differences)
+    diag1 = np.abs(np.diff(image, axis=1)[:-1, :] - np.diff(image, axis=0)[:, 1:])
+    diag_energy = np.mean(diag1)
+
+    # 4. Moment skewness (standardized third central moment)
+    mean = np.mean(image)
+    std = np.std(image)
+    skew = np.mean((image - mean) ** 3) / (std ** 3 + 1e-10)
+
+    # 5. Percentile range (90th - 10th percentile)
+    p10, p90 = np.percentile(image, [10, 90])
+    percentile_range = p90 - p10
+
+    # 6. Binary structure density (fraction of pixels above local median in 5x5 blocks)
+    from numpy.lib.stride_tricks import sliding_window_view
+    if h >= 5 and w >= 5:
+        windows = sliding_window_view(image, (5, 5))
+        local_medians = np.median(windows, axis=(2, 3))
+        # Upsample medians to original size via edge padding
+        med_full = np.pad(local_medians, ((2, 2), (2, 2)), mode='edge')
+        binary_density = np.mean(image > med_full)
+    else:
+        binary_density = 0.0
+
+    # 7. Triangular mask intensity (upper-left triangle vs lower-right triangle)
+    tri_mask = np.triu(np.ones((h, w)), k=0).astype(bool)
+    upper_left = np.mean(image[tri_mask])
+    lower_right = np.mean(image[~tri_mask])
+    triangular_diff = upper_left - lower_right
+
+    # 8. Column-wise gradient asymmetry (mean of absolute difference of top-bottom gradients)
+    col_grad = np.abs(np.diff(image, axis=0))
+    half_h = h // 2
+    top_grad = col_grad[:half_h, :]
+    bot_grad = col_grad[half_h:, :]
+    min_len = min(top_grad.shape[0], bot_grad.shape[0])
+    grad_asym = np.mean(np.abs(top_grad[:min_len] - np.flipud(bot_grad[:min_len])))
+
+    return np.array([
+        local_contrast,
+        row_oscillation,
+        diag_energy,
+        skew,
+        percentile_range,
+        binary_density,
+        triangular_diff,
+        grad_asym
+    ], dtype=float)",,,,
+FEI,eoh,2,42,43,112,28,,,,,,,,,0.9732142857142856,0.9727272727272728,0.9726896292113684,0.9731773144040224,0.9285714285714286,0.9333333333333332,0.9257142857142858,0.9275510204081634,8.0,329.9503058,0.0076755000000048,329.8995069,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Global interquartile range (IQR) as contrast
+    q75, q25 = np.percentile(image, [75, 25])
+    iqr = q75 - q25
+
+    # 2. Coefficient of variation (robust to scale) 
+    std = np.std(image)
+    mean = np.mean(image)
+    cv = std / (mean + 1e-12)
+
+    # 3. Radial intensity asymmetry: mean absolute difference between inner and outer rings
+    y, x = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2.0, w / 2.0
+    radius = np.sqrt((x - cx)**2 + (y - cy)**2)
+    r_max = radius.max()
+    inner_mask = radius < 0.3 * r_max
+    outer_mask = radius > 0.7 * r_max
+    inner_mean = np.mean(image[inner_mask]) if np.any(inner_mask) else 0.0
+    outer_mean = np.mean(image[outer_mask]) if np.any(outer_mask) else 0.0
+    radial_asym = np.abs(inner_mean - outer_mean)
+
+    # 4. Edge density: fraction of pixels where local variation (2x2) exceeds threshold
+    # Use a simple 2x2 variance proxy via horizontal and vertical differences
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_mag = np.zeros_like(image)
+    grad_mag[:, :-1] += np.abs(dx)
+    grad_mag[:-1, :] += np.abs(dy)
+    grad_mean = np.mean(grad_mag)
+    edge_density = np.mean(grad_mag > (grad_mean + std))
+
+    # 5. Low-frequency dominance: ratio of energy in downsampled (by 2) vs original
+    downsampled = image[::2, ::2]
+    energy_orig = np.mean(image**2)
+    energy_down = np.mean(downsampled**2)
+    low_freq_ratio = energy_down / (energy_orig + 1e-12)
+
+    # 6. Vertical periodicity: mean absolute difference between image and shifted by 1 row
+    vert_diff = np.abs(np.diff(image, axis=0))
+    periodicity = np.mean(vert_diff)
+
+    # 7. Central mass concentration: fraction of total intensity within central 50% area
+    centre = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+    total_intensity = np.sum(image)
+    centre_intensity = np.sum(centre)
+    mass_concentration = centre_intensity / (total_intensity + 1e-12)
+
+    # 8. Kurtosis of intensity distribution (peakedness)
+    if std > 1e-12:
+        kurtosis = np.mean((image - mean)**4) / (std**4)
+    else:
+        kurtosis = 0.0
+
+    return np.array([
+        iqr,
+        cv,
+        radial_asym,
+        edge_density,
+        low_freq_ratio,
+        periodicity,
+        mass_concentration,
+        kurtosis
+    ], dtype=float)",,,,
+FEI,eoh,3,42,44,112,28,,,,,,,,,0.9821428571428572,0.9825757575757575,0.983197961458831,0.9824229859167748,0.8928571428571429,0.9,0.8757142857142857,0.8811224489795918,8.0,331.8791632,0.0073443999999653,331.46568639999987,0.04348,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Quadrant intensity ratios (top-left vs bottom-right, top-right vs bottom-left)
+    q1 = image[:h//2, :w//2].mean()
+    q2 = image[:h//2, w//2:].mean()
+    q3 = image[h//2:, :w//2].mean()
+    q4 = image[h//2:, w//2:].mean()
+    
+    # Gradient magnitude histogram skewed towards low vs high frequencies
+    gx = np.abs(np.diff(image, axis=1))
+    gy = np.abs(np.diff(image, axis=0))
+    # Pad to same shape for combined gradient
+    gx_pad = np.pad(gx, ((0,0),(0,1)), mode='edge')
+    gy_pad = np.pad(gy, ((0,1),(0,0)), mode='edge')
+    grad_mag = np.sqrt(gx_pad**2 + gy_pad**2)
+    
+    # High-frequency proportion (strong edges)
+    high_freq_mask = grad_mag > (np.mean(grad_mag) + np.std(grad_mag))
+    high_freq_ratio = np.mean(high_freq_mask)
+    
+    # Directional contrast: horizontal vs vertical edge strength ratio
+    horizontal_strength = np.mean(gx)
+    vertical_strength = np.mean(gy)
+    direction_balance = horizontal_strength / (vertical_strength + 1e-10)
+    
+    # Coarse-to-fine intensity variation (downsampled std vs full std)
+    coarse = image[::2, ::2]
+    coarse_std = np.std(coarse)
+    fine_std = np.std(image)
+    scale_difference = fine_std - coarse_std
+    
+    # Local contrast distribution (10th vs 90th percentile of local std)
+    local_std = np.zeros((h//4, w//4))
+    for i in range(h//4):
+        for j in range(w//4):
+            block = image[i*4:(i+1)*4, j*4:(j+1)*4]
+            local_std[i,j] = np.std(block)
+    contrast_spread = np.percentile(local_std, 90) - np.percentile(local_std, 10)
+    
+    # Entropy-like measure using intensity histogram
+    hist, _ = np.histogram(image, bins=16, range=(image.min(), image.max()+1e-10))
+    probs = hist / hist.sum()
+    probs = probs[probs > 0]
+    entropy = -np.sum(probs * np.log2(probs))
+    
+    return np.array([
+        (q1 - q4) / (q1 + q4 + 1e-10),  # diagonal contrast
+        (q2 - q3) / (q2 + q3 + 1e-10),  # anti-diagonal contrast
+        high_freq_ratio,                  # edge density
+        direction_balance,                # orientation bias
+        scale_difference,                 # texture coarseness
+        contrast_spread,                  # local contrast variability
+        entropy,                          # intensity complexity
+        np.mean(grad_mag) / (np.std(grad_mag) + 1e-10)  # edge consistency
+    ], dtype=float)",,,,
+FEI,eoh,4,42,45,112,28,,,,,,,,,0.9642857142857144,0.9651515151515152,0.9644268774703558,0.9642504234895538,0.8928571428571429,0.8833333333333332,0.8780952380952382,0.8884353741496598,8.0,368.5638256999996,0.0187022999998589,368.52968759999976,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # central region with different bounds
+    centre = image[
+        int(0.10 * h):int(0.90 * h),
+        int(0.30 * w):int(0.70 * w)
+    ]
+
+    # gradients
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    # symmetry: compare top-bottom instead of left-right
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+
+    # threshold using median and 0.5*std
+    threshold = np.median(image) + 0.5 * np.std(image)
+
+    # central moments (second order)
+    cy, cx = np.meshgrid(np.arange(h), np.arange(w), indexing='ij')
+    cx = cx - np.mean(cx)
+    cy = cy - np.mean(cy)
+    mu20 = np.mean(image * (cx ** 2)) / (w**2)
+    mu02 = np.mean(image * (cy ** 2)) / (h**2)
+
+    return np.array([
+        np.mean(image),
+        np.median(image),
+        np.mean(centre),
+        np.std(centre),
+        np.mean(np.abs(dx)),
+        np.mean(np.abs(dy)),
+        np.mean(np.abs(top - bottom)),
+        np.mean(image > threshold) + (mu20 + mu02)
+    ], dtype=float)",,,,
+FEI,eoh,5,42,46,112,28,,,,,,,,,0.9464285714285714,0.9462121212121212,0.9461368341803124,0.9463546288080448,0.8571428571428571,0.8666666666666666,0.862142857142857,0.852295918367347,8.0,347.7167364000002,0.0164669000000685,347.6748935999999,0.17391,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Downsample to a coarse grid using block means
+    coarse_h, coarse_w = max(1, h // 4), max(1, w // 4)
+    coarse = image[:coarse_h * 4, :coarse_w * 4].reshape(coarse_h, 4, coarse_w, 4).mean(axis=(1, 3))
+
+    # Second-order gradients (Laplacian-like via center differences)
+    d2x = np.diff(image, n=2, axis=1)
+    d2y = np.diff(image, n=2, axis=0)
+    laplace = np.zeros_like(image)
+    if d2x.shape[1] > 0 and d2y.shape[0] > 0:
+        laplace[1:-1, 1:-1] = d2y[:, 1:-1] + d2x[1:-1, :]
+    else:
+        laplace = np.abs(d2y).mean() * np.ones_like(image)  # fallback
+
+    # Diagonal symmetry (upper-left vs lower-right triangular regions)
+    tri1 = np.triu(image)
+    tri2 = np.tril(image)
+    diag_sym = np.mean(np.abs(tri1 - tri2.T))
+
+    # Contrast via 10th-90th percentile difference in center
+    p10, p90 = np.percentile(coarse, [10, 90])
+
+    # Texture: mean absolute difference from local 3x3 mean
+    pad = np.pad(image, 1, mode='edge')
+    local_mean = (pad[:-2, :-2] + pad[:-2, 1:-1] + pad[:-2, 2:] +
+                  pad[1:-1, :-2] + pad[1:-1, 1:-1] + pad[1:-1, 2:] +
+                  pad[2:, :-2] + pad[2:, 1:-1] + pad[2:, 2:]) / 9.0
+    texture = np.mean(np.abs(image - local_mean))
+
+    # Proportion of dark pixels (below mean - std)
+    dark_ratio = np.mean(image < (np.mean(image) - np.std(image)))
+
+    return np.array([
+        np.mean(coarse),
+        np.median(coarse),
+        p90 - p10,
+        diag_sym,
+        np.mean(np.abs(d2x)) if d2x.size > 0 else 0.0,
+        np.mean(np.abs(d2y)) if d2y.size > 0 else 0.0,
+        texture,
+        dark_ratio
+    ], dtype=float)",,,,
+FEI,eoh,1,43,43,112,28,,,,,,,,,0.9196428571428572,0.9181818181818182,0.9149784997611086,0.9158099276499898,0.8928571428571429,0.8833333333333332,0.8700000000000001,0.8892857142857143,8.0,317.9091659000005,0.0224481000004743,317.84554690000004,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Horizontal and vertical Sobel-like gradients (using central differences)
+    gx = np.zeros_like(image)
+    gy = np.zeros_like(image)
+    gx[:, 1:-1] = (image[:, 2:] - image[:, :-2]) / 2.0
+    gy[1:-1, :] = (image[2:, :] - image[:-2, :]) / 2.0
+    grad_mag = np.sqrt(gx**2 + gy**2)
+
+    # Vertical symmetry (top vs bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+
+    # Local contrast: difference between high and low percentile intensities
+    p_low = np.percentile(image, 25)
+    p_high = np.percentile(image, 75)
+    local_contrast = p_high - p_low
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(grad_mag),
+            np.std(grad_mag),
+            np.mean(np.abs(gx)),
+            np.mean(np.abs(gy)),
+            np.mean(np.abs(top - bottom)),
+            local_contrast,
+        ],
+        dtype=float,
+    )",,,,
+FEI,eoh,2,43,44,112,28,,,,,,,,,0.9375,0.937121212121212,0.9373432197093524,0.9380738920282072,0.7142857142857143,0.7333333333333333,0.7007142857142857,0.6912414965986394,8.0,339.9270185000005,0.0068454000011115,339.84967329999927,0.04348,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Intensity moments (skewness and kurtosis via standardized moments)
+    mean = np.mean(image)
+    std = np.std(image)
+    if std > 0:
+        skew = np.mean((image - mean)**3) / (std**3)
+        kurt = np.mean((image - mean)**4) / (std**4) - 3
+    else:
+        skew = 0.0
+        kurt = 0.0
+    
+    # Center-to-edge contrast (difference between center and border means)
+    center_region = image[int(0.3*h):int(0.7*h), int(0.3*w):int(0.7*w)]
+    border_mask = np.ones((h, w), dtype=bool)
+    border_mask[int(0.1*h):int(0.9*h), int(0.1*w):int(0.9*w)] = False
+    border_mean = np.mean(image[border_mask]) if np.any(border_mask) else mean
+    center_edge_contrast = np.mean(center_region) - border_mean
+    
+    # Gradient directional ratio (horizontal vs vertical activity)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_x = np.mean(np.abs(dx))
+    grad_y = np.mean(np.abs(dy))
+    grad_ratio = grad_x / (grad_y + 1e-10)
+    
+    # Texture coarseness via local range (max-min in small blocks)
+    block_h, block_w = 4, 4
+    h_blocks = h // block_h
+    w_blocks = w // block_w
+    if h_blocks > 0 and w_blocks > 0:
+        blocks = image[:h_blocks*block_h, :w_blocks*block_w].reshape(
+            h_blocks, block_h, w_blocks, block_w
+        )
+        block_max = blocks.max(axis=(1, 3))
+        block_min = blocks.min(axis=(1, 3))
+        local_range = np.mean(block_max - block_min)
+    else:
+        local_range = np.ptp(image)
+    
+    # Vertical symmetry (correlation between top and bottom halves)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    if half_h > 0 and np.std(top) > 0 and np.std(bottom) > 0:
+        vert_sym = np.mean((top - np.mean(top)) * (bottom - np.mean(bottom))) / (
+            np.std(top) * np.std(bottom)
+        )
+    else:
+        vert_sym = 0.0
+    
+    # High-intensity spatial dispersion (std of coordinates above threshold)
+    threshold = mean + std
+    bright_mask = image > threshold
+    if np.any(bright_mask):
+        ys, xs = np.nonzero(bright_mask)
+        spatial_dispersion = np.std(xs) / w + np.std(ys) / h
+    else:
+        spatial_dispersion = 0.0
+    
+    return np.array([
+        skew,
+        kurt,
+        center_edge_contrast,
+        grad_ratio,
+        local_range,
+        vert_sym,
+        spatial_dispersion,
+        np.max(image) - np.min(image)  # overall intensity spread
+    ], dtype=float)",,,,
+FEI,eoh,3,43,45,112,28,,,,,,,,,0.9553571428571428,0.9545454545454548,0.9552466013518645,0.9546965628356606,0.8928571428571429,0.8833333333333332,0.8780952380952382,0.8884353741496599,8.0,322.488409399999,0.0054632000010315,322.45464080000056,0.08696,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Row-wise mean profile variance (vertical texture)
+    row_means = np.mean(image, axis=1)
+    feat1 = np.std(row_means)
+
+    # 2. Column-wise mean profile variance (horizontal texture)
+    col_means = np.mean(image, axis=0)
+    feat2 = np.std(col_means)
+
+    # 3. Laplacian approximation (second derivative) mean absolute
+    lap = np.zeros_like(image)
+    lap[1:-1, 1:-1] = (image[2:, 1:-1] + image[:-2, 1:-1] +
+                       image[1:-1, 2:] + image[1:-1, :-2] -
+                       4 * image[1:-1, 1:-1])
+    feat3 = np.mean(np.abs(lap))
+
+    # 4. Quadrant energy ratio (top-left vs bottom-right)
+    tl = image[:h//2, :w//2]
+    br = image[h//2:, w//2:]
+    feat4 = np.mean(tl**2) / (np.mean(br**2) + 1e-12)
+
+    # 5. Quadrant energy ratio (top-right vs bottom-left)
+    tr = image[:h//2, w//2:]
+    bl = image[h//2:, :w//2]
+    feat5 = np.mean(tr**2) / (np.mean(bl**2) + 1e-12)
+
+    # 6. Horizontal gradient absolute skewness-like measure (asymmetry in edges)
+    dx = np.diff(image, axis=1)
+    abs_dx = np.abs(dx)
+    mean_abs_dx = np.mean(abs_dx)
+    feat6 = np.mean((abs_dx - mean_abs_dx)**3) / (mean_abs_dx**3 + 1e-12)
+
+    # 7. Fraction of pixels above mean + 0.5*std (tail proportion)
+    high_thresh = np.mean(image) + 0.5 * np.std(image)
+    feat7 = np.mean(image > high_thresh)
+
+    # 8. Coefficient of variation of row-wise standard deviations (spatial uniformity)
+    row_stds = np.std(image, axis=1)
+    feat8 = np.std(row_stds) / (np.mean(row_stds) + 1e-12)
+
+    return np.array([feat1, feat2, feat3, feat4, feat5, feat6, feat7, feat8], dtype=float)",,,,
+FEI,eoh,4,43,46,112,28,,,,,,,,,0.9375,0.937121212121212,0.934928916494134,0.9350194715567388,0.8214285714285714,0.8166666666666668,0.8080952380952382,0.8193877551020409,8.0,357.2263901999995,0.0039102999999158,357.0814725,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Normalized entropy (deterministic binning)
+    bins = np.linspace(image.min(), image.max() + 1e-12, 16)
+    hist, _ = np.histogram(image, bins=bins)
+    probs = hist / (h * w)
+    probs = probs[probs > 0]
+    entropy = -np.sum(probs * np.log(probs)) / np.log(16)
+
+    # 2. Local binary pattern uniformity (using 3x3 neighborhoods)
+    padded = np.pad(image, 1, mode='edge')
+    center = padded[1:-1, 1:-1]
+    neighbors = np.stack([
+        padded[:-2, :-2], padded[:-2, 1:-1], padded[:-2, 2:],
+        padded[1:-1, 2:], padded[2:, 2:], padded[2:, 1:-1],
+        padded[2:, :-2], padded[1:-1, :-2]
+    ])
+    lbp = (neighbors >= center).astype(np.uint8)
+    # Count number of 0/1 transitions around the ring
+    transitions = np.sum(np.abs(np.diff(lbp, axis=0, append=lbp[0:1])), axis=0)
+    uniformity = np.mean(transitions <= 2)
+
+    # 3. Row periodicity via autocorrelation at half-height
+    row_mean = np.mean(image, axis=1)
+    row_centered = row_mean - np.mean(row_mean)
+    lag = max(1, h // 5)
+    if h > 2 * lag:
+        corr = np.corrcoef(row_centered[:-lag], row_centered[lag:])[0, 1]
+    else:
+        corr = 0.0
+    row_period = np.nan_to_num(corr)
+
+    # 4. Column periodicity similarly
+    col_mean = np.mean(image, axis=0)
+    col_centered = col_mean - np.mean(col_mean)
+    if w > 2 * lag:
+        corr_col = np.corrcoef(col_centered[:-lag], col_centered[lag:])[0, 1]
+    else:
+        corr_col = 0.0
+    col_period = np.nan_to_num(corr_col)
+
+    # 5. Asymmetry ratio: mean of upper half vs lower half
+    top = np.mean(image[:h//2])
+    bottom = np.mean(image[h//2:])
+    asym_ud = (top - bottom) / (top + bottom + 1e-12)
+
+    # 6. Left-right asymmetry
+    left = np.mean(image[:, :w//2])
+    right = np.mean(image[:, w//2:])
+    asym_lr = (left - right) / (left + right + 1e-12)
+
+    # 7. Gradient magnitude skewness (alternative computation)
+    gy, gx = np.gradient(image)
+    mag = np.hypot(gx, gy)
+    mag_std = np.std(mag)
+    if mag_std > 0:
+        grad_skew = np.mean(((mag - np.mean(mag)) / mag_std) ** 3)
+    else:
+        grad_skew = 0.0
+
+    # 8. High-frequency content ratio (Laplacian energy normalized)
+    laplacian = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])
+    from numpy.lib.stride_tricks import sliding_window_view
+    if h >= 3 and w >= 3:
+        windows = sliding_window_view(image, (3, 3))
+        lap_vals = np.tensordot(windows, laplacian, axes=([2, 3], [0, 1]))
+        high_freq = np.mean(lap_vals ** 2) / (np.var(image) + 1e-12)
+    else:
+        high_freq = 0.0
+
+    return np.array([
+        entropy,
+        uniformity,
+        row_period,
+        col_period,
+        asym_ud,
+        asym_lr,
+        grad_skew,
+        high_freq
+    ], dtype=float)",,,,
+FEI,eoh,5,43,47,112,28,,,,,,,,,0.9642857142857144,0.9636363636363636,0.9614299516908212,0.9621187025534852,0.8928571428571429,0.9,0.9016666666666666,0.8946428571428572,8.0,339.3760977000002,0.0055145999995147,339.2433781999989,0.13043,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Radial intensity profile: average intensity at different distance bands from center
+    y_coords, x_coords = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2.0, w / 2.0
+    distances = np.sqrt((y_coords - cy)**2 + (x_coords - cx)**2)
+    max_dist = distances.max()
+    dist_bands = np.floor(distances / (max_dist / 4.0)).astype(int)
+    dist_bands = np.clip(dist_bands, 0, 3)
+    radial_means = [np.mean(image[dist_bands == i]) for i in range(4)]
+    radial_spread = np.std(radial_means)
+    
+    # Local binary pattern count: proportion of pixels where right neighbor is brighter
+    right_neighbor = np.pad(image, ((0,0),(0,1)), mode='edge')[:, 1:]
+    lbp_right = (right_neighbor > image).astype(float)
+    lbp_proportion = np.mean(lbp_right)
+    
+    # Third central moment (skewness-like) of intensity distribution
+    mean_intensity = np.mean(image)
+    diff = image - mean_intensity
+    skewness = np.mean(diff**3) / (np.std(image)**3 + 1e-12)
+    
+    # Interquartile range
+    flat = image.ravel()
+    q75, q25 = np.percentile(flat, [75, 25])
+    iqr = q75 - q25
+    
+    # Vertical edge density: count significant vertical edges
+    dy = np.abs(np.diff(image, axis=0))
+    edge_thresh = np.mean(dy) + np.std(dy)
+    vertical_edge_density = np.mean(dy > edge_thresh)
+    
+    # Horizontal line pattern: mean absolute difference between rows
+    row_means = np.mean(image, axis=1)
+    row_diff = np.abs(np.diff(row_means))
+    row_variability = np.mean(row_diff)
+    
+    # Moment-based asymmetry: ratio of intensity-weighted x-coordinate vs y-coordinate variance
+    total_mass = np.sum(image) + 1e-12
+    x_w = np.sum(image * x_coords) / total_mass
+    y_w = np.sum(image * y_coords) / total_mass
+    x_var = np.sum(image * (x_coords - x_w)**2) / total_mass
+    y_var = np.sum(image * (y_coords - y_w)**2) / total_mass
+    moment_ratio = x_var / (y_var + 1e-12)
+    
+    # Fourier-like low-frequency energy (using 2D convolution with averaging kernel)
+    kernel = np.ones((3,3)) / 9.0
+    from numpy.lib.stride_tricks import sliding_window_view
+    padded = np.pad(image, 1, mode='edge')
+    windows = sliding_window_view(padded, (3,3))
+    local_means = np.mean(windows, axis=(2,3))
+    low_freq_energy = np.mean(local_means**2) / (np.mean(image**2) + 1e-12)
+    
+    return np.array([
+        radial_spread,
+        lbp_proportion,
+        skewness,
+        iqr,
+        vertical_edge_density,
+        row_variability,
+        moment_ratio,
+        low_freq_energy
+    ], dtype=float)",,,,
+FEI,gp_modified,1,42,42,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,645.0,10.23221020004712,0.0563185999635607,9.975984811782835,100.0,"FC3(RIF_R(SobelY_R(RegionR(Image, 38, 38, 16, 45))), uLBP(Image), HOG(Gau(Image, 1)))",,,,
+FEI,gp_modified,2,42,43,112,28,,,,,,,,,1.0,1.0,1.0,1.0,0.9642857142857144,0.9666666666666666,0.965714285714286,0.9632653061224488,778.0,12.76014870009385,0.0501304999925196,12.383090019226074,99.13,"FC4(SIFT(Image), RIF_R(LoG1_R(Min_R(Min_R(RegionS(Mean(Image), 56, 23, 43))))), Hist(Image), HOG(Image))",,,,
+FEI,gp_modified,3,42,44,112,28,,,,,,,,,1.0,1.0,1.0,1.0,0.9642857142857144,0.9666666666666666,0.965714285714286,0.9632653061224488,261.0,11.771689599845558,0.0452153999358415,11.324673652648926,100.0,"FC4(Hist_R(Max_R(Sobel_R(Min_R(Min_R(Max_R(LoG2_R(Med_R(Mean_R(Mean_R(Mean_R(Lap_R(LoG2_R(LoG2_R(Med_R(SobelX_R(Gau_R(Lap_R(Min_R(Gau_R(RegionS(Image, 20, 41, 1), 1))), 1))))))))))))))))), RIF(Mean(Image)), uLBP(Mean(Image)), SIFT(Gau(Image, 3)))",,,,
+FEI,gp_modified,4,42,45,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,804.0,10.595837999833748,0.0416894000954926,10.268692255020142,100.0,"FC4(HOG(Image), Hist(Sobel(Gau(Lap(Image), 1))), SIFT_R(RegionS(SobelX(Lap(Image)), 18, 11, 23)), HOG_R(Sobel_R(LoG1_R(SobelY_R(LoG1_R(Lap_R(Sobel_R(LoG2_R(RegionS(SobelY(Image), 31, 17, 17))))))))))",,,,
+FEI,gp_modified,5,42,46,112,28,,,,,,,,,1.0,1.0,1.0,1.0,0.8928571428571429,0.8833333333333332,0.8833333333333332,0.8869047619047619,269.0,8.359188199974597,0.0263044000603258,8.078531503677368,99.13,"FC4(DIF(Med(LoG2(SobelX(Image)))), Hist_R(RegionS(Image, 41, 3, 15)), uLBP(SobelX(Gau(Lap(Image), 1))), SIFT_R(Med_R(Max_R(Mean_R(Lap_R(RegionS(Image, 41, 3, 15)))))))",,,,
+FEI,gp_modified,1,43,43,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,778.0,17.447046399815008,0.0494284001179039,16.966148853302002,99.13,"FC4(SIFT(Image), RIF_R(LoG2_R(SobelX_R(SobelY_R(LoG1_R(Min_R(RegionR(Sobel(Image), 46, 49, 49, 54))))))), Hist(Mean(Image)), HOG(Image))",,,,
+FEI,gp_modified,2,43,44,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,261.0,17.08727729995735,0.0719141000881791,15.099440097808838,100.0,"FC4(Hist_R(Max_R(Min_R(SobelY_R(Min_R(SobelY_R(Med_R(GauD_R(Gau_R(Med_R(LoG2_R(SobelY_R(Max_R(Sobel_R(Min_R(Min_R(Max_R(LoG2_R(Med_R(Mean_R(Mean_R(Mean_R(Lap_R(LoG2_R(LoG2_R(Med_R(SobelX_R(Gau_R(Lap_R(Min_R(Gau_R(RegionS(Image, 20, 41, 1), 1))), 1))))))))))))))))))), 1), 1, 0, 2)))))))), RIF(Mean(Image)), uLBP(Mean(Image)), SIFT(Gau(Image, 1)))",,,,
+FEI,gp_modified,3,43,45,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,646.0,11.626413699937984,0.0329077001661062,11.211525678634644,97.31,"FC3(Hist_R(SobelY_R(Mean_R(RegionR(Min(Image), 61, 60, 22, 60)))), HOG(GauD(Min(Lap(Mean(Image))), 3, 0, 0)), DIF_R(Sobel_R(Mean_R(RegionR(Min(Image), 61, 5, 22, 60)))))",,,,
+FEI,gp_modified,4,43,46,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,640.0,9.622396999970078,0.0363508998416364,9.238112688064575,99.13,"FC3(HOG(Image), HOG_R(GauD_R(Gau_R(Lap_R(Med_R(Med_R(SobelY_R(SobelY_R(Lap_R(RegionR(LoG2(Image), 32, 59, 56, 19))))))), 3), 2, 1, 0)), RIF(Image))",,,,
+FEI,gp_modified,5,43,47,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,138.0,9.786787600023672,0.0407302000094205,9.411266088485718,99.13,"FC2(SIFT(Image), RIF(Image))",,,,
+FEI,gp_original,1,42,42,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,740.0,10.105066200019792,0.0380717001389712,9.91961932182312,100.0,"FC4(Hist(Image), HOG_R(GauD_R(RegionR(Image, 38, 31, 7, 56), 1, 0, 1)), HOG(Image), Hist(Image))",,,,
+FEI,gp_original,2,42,43,112,28,,,,,,,,,1.0,1.0,1.0,1.0,0.9642857142857144,0.9666666666666666,0.965714285714286,0.9632653061224488,827.0,11.373266299953684,0.0436939999926835,11.037565231323242,100.0,"FC4(HOG(Image), Hist(Image), SIFT_R(Med_R(Sobel_R(Med_R(Min_R(Med_R(RegionS(Image, 17, 33, 54))))))), uLBP_R(SobelX_R(SobelY_R(LoG1_R(LoG1_R(RegionS(Mean(Image), 42, 28, 43)))))))",,,,
+FEI,gp_original,3,42,44,112,28,,,,,,,,,1.0,1.0,1.0,1.0,0.9642857142857144,0.9666666666666666,0.96,0.9642857142857144,731.0,10.9180325998459,0.0531347999349236,10.408461093902588,100.0,"FC4(SIFT(Image), HOG_R(SobelY_R(Med_R(GauD_R(Gau_R(Med_R(LoG2_R(SobelY_R(Max_R(Sobel_R(Min_R(Min_R(Max_R(LoG2_R(Med_R(Mean_R(Mean_R(Mean_R(Lap_R(LoG2_R(LoG2_R(Med_R(SobelX_R(Gau_R(Lap_R(Min_R(Gau_R(RegionS(Image, 20, 41, 1), 1))), 1))))))))))))))))))), 1), 1, 0, 2)))), DIF_R(Lap_R(RegionS(GauD(Image, 1, 1, 0), 30, 18, 58))), HOG(LoG1(Gau(Gau(Image, 2), 2))))",,,,
+FEI,gp_original,4,42,45,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,594.0,8.867269500158727,0.0372895000036805,8.696888446807861,100.0,"FC2(HOG(Image), DIF(Gau(Image, 1)))",,,,
+FEI,gp_original,5,42,46,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,418.0,13.597205199999737,0.0792500001844018,12.92144250869751,100.0,"FC4(HOG_R(Gau_R(Mean_R(Min_R(GauD_R(Max_R(Max_R(Gau_R(RegionR(Image, 22, 31, 34, 37), 3))), 2, 2, 0))), 1)), SIFT(Min(Min(SobelX(Image)))), SIFT(Med(GauD(Sobel(Image), 3, 0, 0))), DIF(Max(Gau(GauD(Image, 3, 1, 0), 2))))",,,,
+FEI,gp_original,1,43,43,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,689.0,11.153965499950573,0.0407994000706821,10.86306619644165,100.0,"FC4(HOG(Image), uLBP(Image), HOG_R(Min_R(RegionS(Image, 3, 43, 43))), DIF(Image))",,,,
+FEI,gp_original,2,43,44,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,187.0,10.020620699971914,0.0380210999865084,9.61243486404419,100.0,"FC2(uLBP(Image), SIFT(LoG1(Max(Max(Image)))))",,,,
+FEI,gp_original,3,43,45,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,274.0,10.739833900006488,0.116256000008434,10.270514965057371,99.13,"FC3(DIF(Image), SIFT(Image), SIFT(Image))",,,,
+FEI,gp_original,4,43,46,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,528.0,15.468885600101205,0.0913658000063151,13.452230453491213,100.0,"FC4(HOG_R(Gau_R(Mean_R(Min_R(GauD_R(Max_R(Gau_R(RegionR(Image, 22, 22, 34, 37), 3)), 2, 2, 0))), 1)), SIFT(Min(Min(SobelX(Image)))), SIFT(Med(GauD(Sobel(Image), 3, 0, 0))), SIFT(Image))",,,,
+FEI,gp_original,5,43,47,112,28,,,,,,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,512.0,17.81066339998506,0.1603355000261217,17.05049419403076,100.0,"FC4(SIFT(Image), SIFT(Image), SIFT_R(Med_R(SobelY_R(RegionS(Sobel(Image), 41, 16, 57)))), SIFT_R(LoG2_R(Lap_R(Mean_R(Mean_R(RegionR(Lap(Image), 54, 57, 30, 57)))))))",,,,
+FEI,mlp,1,42,42,112,28,50.0,64.0,0.001,1.640443400014192,cpu,2.3407223905835832,0.1015626043081283,-2.239159786275455,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9642857142857144,0.9666666666666666,0.9657142857142856,0.9632653061224488,,,,,,,,,,
+FEI,mlp,2,42,43,112,28,50.0,64.0,0.001,1.907995000015944,cpu,2.44682206426348,0.1197250581213406,-2.3270970061421394,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,3,42,44,112,28,50.0,64.0,0.001,1.7434143999125808,cpu,2.3836991105760847,0.0741568686706679,-2.309542241905417,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,4,42,45,112,28,50.0,64.0,0.001,1.799861199920997,cpu,2.321035998208182,0.0820626190730503,-2.238973379135132,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,5,42,46,112,28,50.0,64.0,0.001,1.6785957000683993,cpu,2.502072334289551,0.0965372483645166,-2.405535085925034,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9285714285714286,0.9166666666666666,0.918095238095238,0.9241496598639456,,,,,,,,,,
+FEI,mlp,1,43,43,112,28,50.0,64.0,0.001,0.7343381000682712,cpu,2.4444994245256697,0.1067855097353458,-2.337713914790324,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9642857142857144,0.9666666666666666,0.9657142857142856,0.9632653061224488,,,,,,,,,,
+FEI,mlp,2,43,44,112,28,50.0,64.0,0.001,0.7831254999618977,cpu,2.3795083250318254,0.0764159602778298,-2.303092364753996,1.0,1.0,1.0,1.0,0.9642857142857144,0.9666666666666666,0.96,0.9642857142857144,,,,,,,,,,
+FEI,mlp,3,43,45,112,28,50.0,64.0,0.001,0.7776835998520255,cpu,2.336827652794974,0.0884038465363638,-2.2484238062586104,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,4,43,46,112,28,50.0,64.0,0.001,0.788183500058949,cpu,2.473966291972569,0.0980855758701052,-2.375880716102464,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,5,43,47,112,28,50.0,64.0,0.001,0.7559274001978338,cpu,2.3849397046225413,0.0755380631557532,-2.309401641466788,1.0,1.0,1.0,1.0,0.9285714285714286,0.9333333333333332,0.9314285714285716,0.926530612244898,,,,,,,,,,
+FEI,mlp,1,44,44,112,28,50.0,64.0,0.001,0.7703939999919385,cpu,2.3978774547576904,0.1286990961858204,-2.26917835857187,0.9910714285714286,0.990909090909091,0.9908902691511386,0.991052942916297,0.9285714285714286,0.9333333333333332,0.9257142857142858,0.9275510204081634,,,,,,,,,,
+FEI,mlp,2,44,45,112,28,50.0,64.0,0.001,0.7858991001266986,cpu,2.340431996754237,0.0752562273825917,-2.2651757693716457,0.9910714285714286,0.9916666666666666,0.9913043478260868,0.9910714285714286,0.9642857142857144,0.9666666666666666,0.965714285714286,0.9632653061224488,,,,,,,,,,
+FEI,mlp,3,44,46,112,28,50.0,64.0,0.001,0.8211402001325041,cpu,2.483844654900687,0.1189712722386632,-2.364873382662024,0.9910714285714286,0.990909090909091,0.9908902691511388,0.991052942916297,1.0,1.0,1.0,1.0,,,,,,,,,,
+FEI,mlp,4,44,47,112,28,50.0,64.0,0.001,0.7892633001320064,cpu,2.372931139809745,0.0785608153258051,-2.2943703244839395,0.9910714285714286,0.9916666666666666,0.9913043478260868,0.9910714285714286,0.9285714285714286,0.9333333333333332,0.9314285714285716,0.926530612244898,,,,,,,,,,
+FEI,mlp,5,44,48,112,28,50.0,64.0,0.001,0.7857870999723673,cpu,2.4742206845964705,0.1167855965239661,-2.357435088072505,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,
+KSDD2,cnn,1,42,42,2669,668,50.0,64.0,0.001,354.8373896998819,cpu,0.3789059235032197,0.1591265621190662,-0.2197793613841534,0.956912701386287,0.8121475038266808,0.8666164018347389,0.9529242036374254,0.9416167664670658,0.7687852407577795,0.8173366147115122,0.9359779211061062,,,,,,,0.952127659574468,0.6280701754385964,0.8478260869565217,0.5492957746478874
+KSDD2,cnn,2,42,43,2669,668,50.0,64.0,0.001,473.505680100061,cpu,0.408166223393705,0.1430179506383973,-0.2651482727553077,0.9587860621955788,0.8140926270410724,0.8711849979817126,0.9548060047574204,0.940119760479042,0.7527498135719612,0.808194791397479,0.9329758090847334,,,,,,,0.9728260869565216,0.6302816901408451,0.8809523809523809,0.5138888888888888
+KSDD2,cnn,3,42,44,2670,667,50.0,64.0,0.001,431.6647025998682,cpu,0.3844862939266676,0.1244341318275821,-0.2600521620990855,0.9621722846441948,0.824351759902902,0.8824095767712802,0.9585813305380472,0.9385307346326835,0.7546908970602136,0.8049220672682527,0.9319955280768148,,,,,,,0.9946236559139784,0.6491228070175439,0.8409090909090909,0.5211267605633803
+KSDD2,cnn,4,42,45,2670,667,50.0,64.0,0.001,281.40714040002786,cpu,0.3845864115136393,0.1641639941528941,-0.2204224173607451,0.9573033707865168,0.8185369083085071,0.8695216049382716,0.953695900957137,0.967016491754123,0.8574770772284714,0.902199413489736,0.9648678593254691,,,,,,,0.9384615384615383,0.6421052631578947,0.9622641509433962,0.7183098591549296
+KSDD2,cnn,5,42,46,2670,667,50.0,64.0,0.001,321.5072866999544,cpu,0.3925314751233947,0.1367404541663462,-0.2557910209570485,0.9591760299625468,0.8226746110559418,0.8750096095247462,0.95568030004021,0.9580209895052474,0.8338335381416013,0.8755265262596641,0.9552863664142336,,,,,,,0.9536082474226804,0.6491228070175439,0.9056603773584906,0.676056338028169
+KSDD2,cnn,1,43,43,2669,668,50.0,64.0,0.001,142.20112969982438,cpu,0.3806381937759831,0.1386537072351694,-0.2419844865408137,0.9509179467965532,0.8412295419757447,0.8630218721364049,0.9493146039940528,0.9476047904191616,0.8341826503409064,0.8538740867130419,0.9460280122259744,,,,,,,0.8130081300813008,0.7017543859649122,0.7903225806451613,0.6901408450704225
+KSDD2,cnn,2,43,44,2669,668,50.0,64.0,0.001,173.60446810000576,cpu,0.3828811061074109,0.1114551367474745,-0.2714259693599363,0.968902210565755,0.8678315174063247,0.9089117826649205,0.9671019438004946,0.9550898203592816,0.8038777032065623,0.8605660849962429,0.9506214255966652,,,,,,,0.958904109589041,0.7394366197183099,0.9565217391304348,0.6111111111111112
+KSDD2,cnn,3,43,45,2670,667,50.0,64.0,0.001,172.1423629000783,cpu,0.3823200459337413,0.1493581654901584,-0.2329618804435828,0.9595505617977528,0.8213395123027696,0.8754526481645291,0.9559474606667032,0.9550224887556222,0.8197490310993478,0.8646729427041064,0.9517069090840068,,,,,,,0.9633507853403142,0.6456140350877193,0.9019607843137256,0.647887323943662
+KSDD2,cnn,4,43,46,2670,667,50.0,64.0,0.001,158.51586679997854,cpu,0.3926548537466856,0.143369802341479,-0.2492850514052066,0.9576779026217228,0.8141123248372504,0.8689408889570395,0.953760064512722,0.9490254872563718,0.7853766896682106,0.8394909688013137,0.9438568892893456,,,,,,,0.9574468085106383,0.631578947368421,0.9111111111111112,0.5774647887323944
+KSDD2,cnn,5,43,47,2670,667,50.0,64.0,0.001,181.95314579992555,cpu,0.3939654559678353,0.129002353214146,-0.2649631027536892,0.9636704119850188,0.83754827319872,0.8896003335136455,0.96072386565351,0.9535232383808095,0.8189101049248511,0.8611844004484637,0.9502981686736136,,,,,,,0.9747474747474748,0.6771929824561403,0.8846153846153846,0.647887323943662
+KSDD2,cnn,1,44,44,2669,668,50.0,64.0,0.001,202.43121229996905,cpu,0.3712115559786971,0.1362993251902193,-0.2349122307884778,0.9625327838141626,0.8492758742493818,0.890059283132153,0.960258580747076,0.9595808383233532,0.8532922830113007,0.8841640816169245,0.9577618812970388,,,,,,,0.9262672811059908,0.7052631578947368,0.8793103448275862,0.7183098591549296
+KSDD2,cnn,2,44,45,2669,668,50.0,64.0,0.001,266.434524100041,cpu,0.3967484004736929,0.1480694839283517,-0.2486789165453412,0.9602847508430123,0.8226858003366109,0.8772892724294914,0.9567305025647114,0.9565868263473054,0.8413497390007457,0.8755836432181783,0.9543325633659752,,,,,,,0.968421052631579,0.647887323943662,0.8771929824561403,0.6944444444444444
+KSDD2,cnn,3,44,46,2670,667,50.0,64.0,0.001,201.4683650000952,cpu,0.4031286945503749,0.1204888539702704,-0.2826398405801044,0.9655430711610486,0.8586781418956195,0.8992181653471976,0.9635220906514852,0.9460269865067468,0.7836988373192173,0.8326549955396967,0.9410708338961652,,,,,,,0.9406392694063926,0.7228070175438597,0.8723404255319149,0.5774647887323944
+KSDD2,cnn,4,44,47,2670,667,50.0,64.0,0.001,229.76774509996176,cpu,0.3968098227227671,0.1228264145860064,-0.2739834081367607,0.9655430711610486,0.8494096877413659,0.8970156161957659,0.9630889198813002,0.9400299850074962,0.7679364779279705,0.8140611061552185,0.9345231487735168,,,,,,,0.966183574879227,0.7017543859649122,0.8297872340425532,0.5492957746478874
+KSDD2,cnn,5,44,48,2670,667,50.0,64.0,0.001,190.3570298999548,cpu,0.4095935851447144,0.1038871807663628,-0.3057064043783516,0.9711610486891386,0.8710912501379234,0.9151975033194616,0.96938074226659,0.9430284857571214,0.7696143302769638,0.8206075533661741,0.9372518174410334,,,,,,,0.9814814814814816,0.743859649122807,0.8666666666666667,0.5492957746478874
+KSDD2,eoh,1,42,42,2669,668,,,,,,,,,0.941925814911952,0.7543293006004945,0.8115422968975852,0.9348193258670248,0.938622754491018,0.754700733715526,0.8049496136452658,0.93209621777703,8.0,477.4277084,0.1412786999999298,395.3271979000001,0.05993,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Edge magnitude
+    sobel_x = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], dtype=float)
+    sobel_y = np.array([[-1, -2, -1], [0, 0, 0], [1, 2, 1]], dtype=float)
+    
+    # Pad image for convolution
+    padded = np.pad(image, 1, mode='edge')
+    grad_x = np.zeros_like(image)
+    grad_y = np.zeros_like(image)
+    
+    for i in range(h):
+        for j in range(w):
+            region = padded[i:i+3, j:j+3]
+            grad_x[i, j] = np.sum(region * sobel_x)
+            grad_y[i, j] = np.sum(region * sobel_y)
+    
+    edge_mag = np.sqrt(grad_x**2 + grad_y**2)
+    edge_mag /= (np.max(edge_mag) + 1e-10)
+    
+    # Percentile-based regions
+    p10 = np.percentile(image, 10)
+    p90 = np.percentile(image, 90)
+    low_region = image < p10
+    high_region = image > p90
+    
+    # Directional ratios in central band
+    central_band = image[int(0.3*h):int(0.7*h), :]
+    band_half = central_band.shape[1] // 2
+    left_band = central_band[:, :band_half]
+    right_band = central_band[:, band_half:]
+    
+    # Edge density in low vs high regions
+    edge_low = np.mean(edge_mag[low_region]) if np.any(low_region) else 0.0
+    edge_high = np.mean(edge_mag[high_region]) if np.any(high_region) else 0.0
+    
+    # Vertical vs horizontal gradient energy
+    vert_energy = np.mean(grad_y**2)
+    horiz_energy = np.mean(grad_x**2)
+    
+    # Contrast between central horizontal band and outer areas
+    outer = np.concatenate([image[:int(0.3*h), :], image[int(0.7*h):, :]])
+    center_mean = np.mean(central_band)
+    outer_mean = np.mean(outer)
+    
+    # Edge density ratio
+    edge_density = np.mean(edge_mag > 0.5)
+    
+    return np.array([
+        edge_low - edge_high,           # Edge contrast between dark and bright areas
+        vert_energy / (horiz_energy + 1e-10),  # Gradient orientation ratio
+        center_mean - outer_mean,       # Center-surround intensity difference
+        np.mean(edge_mag) * 10,         # Overall edge magnitude
+        np.mean(left_band) - np.mean(right_band),  # Horizontal asymmetry
+        np.std(edge_mag[edge_mag > 0.3]) if np.any(edge_mag > 0.3) else 0.0,  # Edge variability
+        edge_density * 5,               # Edge density
+        np.mean(image > (p10 + p90) / 2)  # Mid-high intensity proportion
+    ], dtype=float)",0.8963414634146342,0.5157894736842106,0.8409090909090909,0.5211267605633803
+KSDD2,eoh,2,42,43,2669,668,,,,,,,,,0.9449231922068192,0.7582573006171198,0.8190704570241436,0.9378559900963812,0.93562874251497,0.7135999254287845,0.7777726200146997,0.9246937713293384,8.0,541.6030514999998,0.436354499999652,540.6584037000002,0.06554,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Sobel-like edge magnitudes (deterministic)
+    gx = np.zeros_like(image)
+    gy = np.zeros_like(image)
+    if w >= 3:
+        gx[:, 1:-1] = (image[:, 2:] - image[:, :-2]) / 2.0
+    if h >= 3:
+        gy[1:-1, :] = (image[2:, :] - image[:-2, :]) / 2.0
+    edge_mag = np.sqrt(gx**2 + gy**2)
+
+    # Row and column variance (orientation/structure)
+    row_var = np.var(image, axis=1)
+    col_var = np.var(image, axis=0)
+    row_var_mean = np.mean(row_var)
+    col_var_mean = np.mean(col_var)
+    var_ratio = row_var_mean / (col_var_mean + 1e-12)
+
+    # Local binary pattern like texture: compare each pixel to its right and below neighbour
+    right_diff = np.zeros_like(image)
+    down_diff = np.zeros_like(image)
+    if w > 1 and h > 1:
+        right_diff[:, :-1] = (image[:, 1:] > image[:, :-1]).astype(float)
+        down_diff[:-1, :] = (image[1:, :] > image[:-1, :]).astype(float)
+    texture = np.mean(right_diff * down_diff)  # high when both horizontal and vertical transitions agree
+
+    # Quadrant symmetry (top-bottom and left-right intensity differences)
+    top_bottom = np.abs(np.mean(image[:h//2, :]) - np.mean(image[h//2:, :]))
+    left_right = np.abs(np.mean(image[:, :w//2]) - np.mean(image[:, w//2:]))
+
+    # Low-intensity proportion (dark pixel ratio)
+    low_thresh = np.mean(image) - np.std(image)
+    dark_ratio = np.mean(image < low_thresh)
+
+    # Edge magnitude statistics
+    edge_mean = np.mean(edge_mag)
+    edge_std = np.std(edge_mag)
+
+    return np.array([
+        var_ratio,
+        top_bottom,
+        left_right,
+        texture,
+        edge_mean,
+        edge_std,
+        dark_ratio,
+        np.mean(edge_mag > np.mean(edge_mag) + np.std(edge_mag))
+    ], dtype=float)",0.9308176100628932,0.5211267605633803,0.9393939393939394,0.4305555555555556
+KSDD2,eoh,3,42,44,2670,667,,,,,,,,,0.9438202247191012,0.7615579830078341,0.8187270976058398,0.9371651349989186,0.934032983508246,0.7211574818035731,0.7783517612228867,0.924564000399655,8.0,382.6055019,0.0700205000002824,372.9805830000005,0.05993,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Row-wise linear trend magnitude (average slope)
+    x = np.arange(w, dtype=float)
+    x_mean = x - np.mean(x)
+    row_slopes = np.sum(image * x_mean, axis=1) / np.sum(x_mean**2)
+    row_trend = np.mean(np.abs(row_slopes))
+
+    # 2. Column-wise quadratic curvature magnitude
+    y = np.arange(h, dtype=float)
+    y_mean = y - np.mean(y)
+    y2_mean = y_mean**2 - np.mean(y_mean**2)
+    denom = np.sum(y_mean**4) - (np.sum(y_mean**2)**2)/h + 1e-10
+    col_curv = np.zeros(w)
+    for i in range(w):
+        coeffs = np.polyfit(y, image[:, i], 2)
+        col_curv[i] = coeffs[0]
+    quadratic_curv = np.mean(np.abs(col_curv))
+
+    # 3. Circular band intensity variance (polar rings)
+    cy, cx = h/2.0, w/2.0
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.sqrt((xx - cx)**2 + (yy - cy)**2)
+    r_max = np.max(r)
+    ring_means = []
+    for k in range(5):
+        mask = (r >= k*r_max/5) & (r < (k+1)*r_max/5)
+        if mask.sum() > 0:
+            ring_means.append(np.mean(image[mask]))
+        else:
+            ring_means.append(0.0)
+    ring_variance = np.std(ring_means)
+
+    # 4. Gradient orientation entropy (8-bin histogram)
+    gy, gx = np.gradient(image)
+    angle = np.arctan2(gy, gx)
+    angle_flat = angle.ravel()
+    hist, _ = np.histogram(angle_flat, bins=8, range=(-np.pi, np.pi))
+    prob = hist / (hist.sum() + 1e-10)
+    entropy = -np.sum(prob * np.log(prob + 1e-10))
+
+    # 5. Co-occurrence contrast via shifted dot product (horizontal offset 2)
+    shift = 2
+    slice1 = image[:, 0:w-shift]
+    slice2 = image[:, shift:]
+    cooccurrence = np.mean((slice1 - slice2)**2)
+
+    # 6. Inter-quadrant mean difference (top vs bottom)
+    top = image[:h//2, :]
+    bottom = image[h//2:, :]
+    top_bottom_diff = np.abs(np.mean(top) - np.mean(bottom))
+
+    # 7. Intensity range within center 50%
+    center = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+    center_range = np.ptp(center)
+
+    # 8. Proportion of pixels with large local contrast (max-min in 3x3 neighborhood)
+    padded = np.pad(image, 1, mode='edge')
+    patches = np.lib.stride_tricks.sliding_window_view(padded, (3, 3))
+    local_min = patches.min(axis=(2, 3))
+    local_max = patches.max(axis=(2, 3))
+    contrast_map = local_max - local_min
+    threshold_c = np.mean(contrast_map) + np.std(contrast_map)
+    high_contrast_prop = np.mean(contrast_map > threshold_c)
+
+    return np.array([
+        row_trend,
+        quadratic_curv,
+        ring_variance,
+        entropy,
+        cooccurrence,
+        top_bottom_diff,
+        center_range,
+        high_contrast_prop,
+    ], dtype=float)",0.9041916167664672,0.5298245614035088,0.8648648648648649,0.4507042253521127
+KSDD2,eoh,4,42,45,2670,667,,,,,,,,,0.9404494382022472,0.730321085733201,0.7958883422256262,0.9309921702411598,0.9505247376311844,0.773808961149447,0.8378599367969769,0.9442430670810756,8.0,320.5843020000002,0.1991349999998419,319.05682439999964,0.05243,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Multi-scale regional differences
+    quarters = [
+        image[:h//2, :w//2],
+        image[:h//2, w//2:],
+        image[h//2:, :w//2],
+        image[h//2:, w//2:]
+    ]
+    regional_means = [np.mean(q) for q in quarters]
+    regional_diff = np.std(regional_means)
+
+    # Directional gradient anisotropies
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    dx_energy = np.mean(dx**2)
+    dy_energy = np.mean(dy**2)
+    anisotropy = (dy_energy - dx_energy) / (dy_energy + dx_energy + 1e-10)
+
+    # Skewness-based contrast
+    centered = image - np.mean(image)
+    skewness = np.mean(centered**3) / (np.std(image)**3 + 1e-10)
+
+    # Row/column variability texture
+    row_variability = np.mean(np.std(image, axis=1))
+    col_variability = np.mean(np.std(image, axis=0))
+
+    # Directional gradient ratio
+    grad_ratio = (np.mean(np.abs(dy)) + 1e-10) / (np.mean(np.abs(dx)) + 1e-10)
+
+    # Edge density (proportion of strong gradient pixels)
+    grad_mag = np.sqrt(dx[:-1,:]**2 + dy[:,:-1]**2)
+    edge_threshold = np.mean(grad_mag) + np.std(grad_mag)
+    edge_density = np.mean(grad_mag > edge_threshold)
+
+    return np.array([
+        regional_diff,
+        anisotropy,
+        skewness,
+        row_variability,
+        col_variability,
+        grad_ratio,
+        edge_density,
+        np.mean(image) * np.std(centre := image[int(0.2*h):int(0.85*h), int(0.2*w):int(0.8*w)]),
+    ], dtype=float)",0.9565217391304348,0.4631578947368421,0.975,0.5492957746478874
+KSDD2,eoh,5,42,46,2670,667,,,,,,,,,0.9430711610486892,0.7472360145647137,0.8101905203765509,0.9351007018499128,0.9490254872563718,0.7729700349749504,0.8343026654196867,0.942824253643578,8.0,363.7504071000003,0.1705080000001544,363.0823633,0.04869,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Larger central region (15% to 90%)
+    centre = image[
+        int(0.15 * h):int(0.90 * h),
+        int(0.15 * w):int(0.90 * w)
+    ]
+
+    # Sobel-like gradients (using central differences with padding)
+    padded = np.pad(image, 1, mode='edge')
+    dx = (padded[1:-1, 2:] - padded[1:-1, :-2]) / 2.0
+    dy = (padded[2:, 1:-1] - padded[:-2, 1:-1]) / 2.0
+    edge_mag = np.sqrt(dx**2 + dy**2)
+
+    # Quadrant symmetry: top-left vs bottom-right and top-right vs bottom-left
+    qh, qw = h // 2, w // 2
+    tl = image[:qh, :qw]
+    br = image[qh:2*qh, qw:2*qw]
+    tr = image[:qh, qw:2*qw]
+    bl = image[qh:2*qh, :qw]
+    # Ensure same size by cropping
+    min_h = min(tl.shape[0], br.shape[0])
+    min_w = min(tl.shape[1], br.shape[1])
+    tl = tl[:min_h, :min_w]
+    br = br[:min_h, :min_w]
+    tr = tr[:min_h, :min_w]
+    bl = bl[:min_h, :min_w]
+    sym_diag = np.mean(np.abs(tl - br))
+    sym_anti = np.mean(np.abs(tr - bl))
+
+    # Lower threshold: mean + 0.5*std
+    threshold = np.mean(image) + 0.5 * np.std(image)
+
+    # Coefficient of variation for global intensity
+    global_std = np.std(image)
+    global_mean = np.mean(image)
+    cv = global_std / (global_mean + 1e-9)
+
+    return np.array(
+        [
+            global_mean,
+            cv,
+            np.mean(centre),
+            np.std(centre),
+            np.mean(edge_mag),
+            np.std(edge_mag),
+            sym_diag - sym_anti,
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )",0.9403973509933776,0.4982456140350877,0.951219512195122,0.5492957746478874
+KSDD2,eoh,1,43,43,2669,668,,,,,,,,,0.9374297489696516,0.7286427057576828,0.7892479941293205,0.9282263245179956,0.937125748502994,0.722839549861986,0.7848136217211228,0.9273690998123404,8.0,456.1415328000003,0.1255478000002767,452.6862586000007,0.05243,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Adaptive ternary thresholds (low/mid/high)
+    lo = np.percentile(image, 25)
+    hi = np.percentile(image, 75)
+    low_bin = (image < lo).mean()
+    mid_bin = ((image >= lo) & (image < hi)).mean()
+    high_bin = (image >= hi).mean()
+
+    # Radial intensity falloff from center
+    y, x = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2.0, w / 2.0
+    dist = np.sqrt((x - cx)**2 + (y - cy)**2)
+    max_dist = np.sqrt((w/2)**2 + (h/2)**2)
+    norm_dist = dist / max_dist
+    # Weighted mean intensity by ring distance
+    radial_energy = np.mean(image * (1 - norm_dist))
+
+    # Edge density (fraction of strong gradient pixels)
+    grad = np.hypot(
+        np.diff(image, axis=1, prepend=image[:, :1]),
+        np.diff(image, axis=0, prepend=image[:1, :])
+    )
+    grad_thresh = np.mean(grad) + np.std(grad)
+    edge_density = (grad > grad_thresh).mean()
+
+    # Low-frequency sinusoidal projection energy (2D cosine basis)
+    fy = np.cos(np.pi * np.arange(h) / h).reshape(-1, 1)
+    fx = np.cos(np.pi * np.arange(w) / w).reshape(1, -1)
+    lowfreq_energy = np.mean(image * fy * fx)
+
+    # Symmetric difference between top-left and bottom-right quadrants (with overlap)
+    qh, qw = h // 4, w // 4
+    tl = image[:h - qh, :w - qw]
+    br = image[qh:, qw:]
+    diag_sym = np.mean(np.abs(tl - br))
+
+    # Saturation-like contrast using local range with 3x3 mean pooling
+    pooled = np.lib.stride_tricks.sliding_window_view(image, (3, 3)).mean(axis=(2, 3))
+    local_range = pooled.max() - pooled.min()
+
+    # Intensity variation ratio (interquartile range / median)
+    iqr = np.percentile(image, 75) - np.percentile(image, 25)
+    med = np.median(image)
+    iqr_ratio = iqr / (med + 1e-10)
+
+    return np.array([
+        np.mean(image),
+        low_bin / (high_bin + 1e-10),
+        mid_bin,
+        radial_energy,
+        edge_density,
+        lowfreq_energy,
+        diag_sym,
+        iqr_ratio,
+    ], dtype=float)",0.9041095890410958,0.4631578947368421,0.9142857142857144,0.4507042253521127
+KSDD2,eoh,2,43,44,2669,668,,,,,,,,,0.9321843387036344,0.7061527445596008,0.7656114981555616,0.921153515040673,0.93562874251497,0.7074944071588367,0.7738249907479586,0.9238872313247976,8.0,436.4123875999994,0.1924660999993648,433.56054219999896,0.05618,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # 1. Central region mean (already in provided code, keep for baseline)
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+    centre_mean = np.mean(centre)
+
+    # 2. Block-wise intensity extrema difference (max of block maxima - min of block minima)
+    bh, bw = h // 4, w // 4
+    blocks = [
+        image[y:y+bh, x:x+bw]
+        for y in range(0, h - bh + 1, bh)
+        for x in range(0, w - bw + 1, bw)
+    ]
+    block_max = np.max([np.max(b) for b in blocks])
+    block_min = np.min([np.min(b) for b in blocks])
+    block_extrema_diff = block_max - block_min
+
+    # 3. Spatial frequency ratio (high-frequency energy / low-frequency energy) via simple finite differences
+    # High-frequency: second difference magnitude
+    d2x = np.diff(image, n=2, axis=1)
+    d2y = np.diff(image, n=2, axis=0)
+    high_freq = np.mean(d2x**2) + np.mean(d2y**2)
+    # Low-frequency: mean of 2x2 pooled (like downsampled) minus original mean
+    pooled = (image[0::2, 0::2] + image[0::2, 1::2] + image[1::2, 0::2] + image[1::2, 1::2]) / 4.0
+    low_freq = np.mean((pooled - np.mean(image))**2)
+    freq_ratio = high_freq / (low_freq + 1e-10)
+
+    # 4. Directional derivative skewness (horizontal minus vertical)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    skew_x = np.mean((dx - np.mean(dx))**3) / (np.std(dx)**3 + 1e-10)
+    skew_y = np.mean((dy - np.mean(dy))**3) / (np.std(dy)**3 + 1e-10)
+    derivative_skew = skew_x - skew_y
+
+    # 5. Contrast-normalized intensity deviation (MAD / mean)
+    mad = np.mean(np.abs(image - np.mean(image)))
+    contrast_dev = mad / (np.mean(image) + 1e-10)
+
+    # 6. Quadrant median spread (range of medians across four quadrants)
+    q1 = image[:h//2, :w//2]
+    q2 = image[:h//2, w//2:]
+    q3 = image[h//2:, :w//2]
+    q4 = image[h//2:, w//2:]
+    medians = np.array([np.median(q1), np.median(q2), np.median(q3), np.median(q4)])
+    quadrant_median_spread = np.max(medians) - np.min(medians)
+
+    # 7. Horizontal symmetry at multiple offsets (mean absolute difference at lag 1 and 2)
+    sym1 = np.mean(np.abs(image[:, :-1] - image[:, 1:]))
+    sym2 = np.mean(np.abs(image[:, :-2] - image[:, 2:]))
+    sym_offset = (sym1 + sym2) / 2.0
+
+    # 8. Proportion of pixels above Otsu-like threshold (mean + std, but using local mean of centre)
+    threshold = centre_mean + np.std(image)
+    high_prop = np.mean(image > threshold)
+
+    return np.array([
+        centre_mean,
+        block_extrema_diff,
+        freq_ratio,
+        derivative_skew,
+        contrast_dev,
+        quadrant_median_spread,
+        sym_offset,
+        high_prop
+    ], dtype=float)",0.8814814814814815,0.4190140845070422,0.967741935483871,0.4166666666666667
+KSDD2,eoh,3,43,45,2670,667,,,,,,,,,0.9370786516853932,0.7191658391261172,0.7829268292682927,0.9268018635242532,0.9265367316341828,0.7045561962378297,0.7552293577981651,0.9164056503858165,8.0,450.6776915999999,0.2209536999998818,450.0711838000007,0.04494,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Larger central crop (10% to 90%)
+    centre = image[
+        int(0.10 * h):int(0.90 * h),
+        int(0.10 * w):int(0.90 * w)
+    ]
+
+    # Sobel-like gradients using central differences
+    dx = (image[:, 2:] - image[:, :-2]) / 2.0
+    dy = (image[2:, :] - image[:-2, :]) / 2.0
+
+    # Diagonal symmetry (top-left vs bottom-right)
+    tl = image[:h//2, :w//2]
+    br = image[h//2:, w//2:]
+    # Make same shape by cropping to min size
+    min_h = min(tl.shape[0], br.shape[0])
+    min_w = min(tl.shape[1], br.shape[1])
+    tl_crop = tl[:min_h, :min_w]
+    br_crop = br[:min_h, :min_w]
+
+    # Two different thresholds: mean and mean - 0.5*std
+    t1 = np.mean(image) + 0.5 * np.std(image)
+    t2 = np.mean(image) - 0.5 * np.std(image)
+
+    return np.array(
+        [
+            np.mean(centre),           # central mean
+            np.std(centre),            # central std
+            np.mean(np.abs(dx)),       # horizontal gradient
+            np.mean(np.abs(dy)),       # vertical gradient
+            np.mean(np.abs(tl_crop - br_crop)),  # diagonal symmetry
+            np.mean(image > t1),       # high threshold proportion
+            np.mean(image < t2),       # low threshold proportion
+            np.mean(np.abs(image - np.median(image))),  # median absolute deviation
+        ],
+        dtype=float,
+    )",0.9333333333333332,0.4421052631578947,0.7894736842105263,0.4225352112676056
+KSDD2,eoh,4,43,46,2670,667,,,,,,,,,0.9235955056179777,0.6467394902350215,0.7052750506467197,0.9047846047979996,0.9250374812593704,0.6540906512902921,0.7138812628689087,0.9073490022318972,8.0,362.535723500001,0.7516998999999487,361.2932335999994,0.05993,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Central region for robust local statistics (exclude borders)
+    centre = image[
+        int(0.15 * h):int(0.85 * h),
+        int(0.15 * w):int(0.85 * w)
+    ]
+
+    # Gradients (edge magnitudes)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_mag = np.sqrt(dx[:-1, :]**2 + dy[:, :-1]**2)
+
+    # Quadrant symmetry (top vs bottom, left vs right)
+    top = image[:h//2, :]
+    bottom = np.flipud(image[h - h//2:, :])
+    symmetry_v = np.mean(np.abs(top - bottom))
+
+    # Left vs right symmetry using central column overlap
+    left = image[:, :w//2]
+    right = np.fliplr(image[:, w - w//2:])
+    symmetry_h = np.mean(np.abs(left - right))
+
+    # Proportions of bright and dark pixels relative to median intensity
+    med = np.median(image)
+    bright_ratio = np.mean(image > med + np.std(image) * 0.5)
+    dark_ratio = np.mean(image < med - np.std(image) * 0.5)
+
+    # Regional contrast (difference between central and peripheral means)
+    peripheral_top = image[:int(0.1*h), :]
+    peripheral_bottom = image[int(0.9*h):, :]
+    peripheral_left = image[:, :int(0.1*w)]
+    peripheral_right = image[:, int(0.9*w):]
+    peripheral_mean = (np.mean(peripheral_top) + np.mean(peripheral_bottom) +
+                       np.mean(peripheral_left) + np.mean(peripheral_right)) / 4.0
+    regional_contrast = np.mean(centre) - peripheral_mean
+
+    # Second-order moment (variance of gradients as texture)
+    texture = np.std(grad_mag)
+
+    return np.array([
+        np.mean(centre),
+        np.std(centre),
+        np.mean(grad_mag),
+        np.sqrt(np.mean(dx**2) + np.mean(dy**2)),
+        symmetry_v,
+        symmetry_h,
+        bright_ratio - dark_ratio,
+        regional_contrast + texture,
+    ], dtype=float)",0.9655172413793104,0.2947368421052631,0.9565217391304348,0.3098591549295774
+KSDD2,eoh,5,43,47,2670,667,,,,,,,,,0.9415730337078652,0.7402184707050645,0.8035520239065471,0.933062354819312,0.9475262368815592,0.7721311088004538,0.8308002290303176,0.9414160306944004,8.0,483.52027219999945,0.4082385000001522,481.7496119000007,0.06554,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Different central crop: tighter and slightly offset
+    centre = image[
+        int(0.30 * h):int(0.75 * h),
+        int(0.25 * w):int(0.70 * w)
+    ]
+
+    # Sobel-like gradients (using central differences with padding)
+    padded = np.pad(image, 1, mode='edge')
+    gx = (padded[1:-1, 2:] - padded[1:-1, :-2]) / 2.0
+    gy = (padded[2:, 1:-1] - padded[:-2, 1:-1]) / 2.0
+    grad_mag = np.sqrt(gx**2 + gy**2)
+
+    # Vertical symmetry on a resized core (using downsampling via slicing)
+    step = max(1, h // 32)
+    small = image[::step, ::step]
+    sh, sw = small.shape
+    half = sw // 2
+    left = small[:, :half]
+    right = np.fliplr(small[:, sw-half:])
+
+    # Local contrast via percentile range
+    p_low, p_high = np.percentile(image, [15, 85])
+
+    # Skewness (third central moment normalized)
+    mean = np.mean(image)
+    std = np.std(image)
+    skew = np.mean((image - mean)**3) / (std**3 + 1e-12)
+
+    return np.array(
+        [
+            np.median(centre),              # robust central intensity
+            np.std(centre),                 # central variability
+            np.mean(grad_mag),              # overall gradient magnitude
+            np.std(grad_mag),               # gradient variability
+            np.mean(np.abs(left - right)),  # vertical symmetry difference
+            p_high - p_low,                 # local contrast range
+            np.mean(image > mean + 0.5 * std),  # high-intensity proportion (different threshold)
+            skew,                           # intensity skewness
+        ],
+        dtype=float,
+    )",0.9387755102040816,0.4842105263157895,0.9285714285714286,0.5492957746478874
+KSDD2,gp_modified,1,42,42,2669,668,,,,,,,,,0.9542899962532784,0.7952328388084304,0.8548861792965756,0.949340055164443,0.938622754491018,0.773314931464836,0.8137060844131552,0.9338270505209356,220.0,314.46736439992674,2.6984738998580724,305.9137809276581,94.57,"FC4(Hist(Image), DIF(SobelY(Max(Gau(Min(Image), 1)))), SIFT(Max(Max(LoG1(GauD(Image, 1, 2, 1))))), RIF_R(Gau_R(RegionS(Mean(Gau(Image, 3)), 60, 7, 11), 1)))",0.9657142857142856,0.5929824561403508,0.8,0.5633802816901409
+KSDD2,gp_modified,2,42,43,2669,668,,,,,,,,,0.9482952416635444,0.7694496117164201,0.8311868191501454,0.9418682387185896,0.934131736526946,0.7127609992542878,0.7745666513268906,0.923342638239398,151.0,149.99019760009833,2.439412100007757,142.3171968460083,94.08,"FC4(Hist(Lap(GauD(Image, 1, 2, 0))), RIF(SobelY(Med(Image))), DIF_R(Max_R(GauD_R(Max_R(RegionR(Image, 14, 14, 29, 6)), 1, 2, 1))), uLBP(SobelX(SobelY(Lap(Image)))))",0.9506172839506172,0.5422535211267606,0.9117647058823528,0.4305555555555556
+KSDD2,gp_modified,3,42,44,2670,667,,,,,,,,,0.951310861423221,0.7858325057927839,0.8447643871346305,0.9459161032313936,0.9415292353823088,0.7563687494092068,0.8114631123480681,0.9347207199166176,246.0,146.79528070008382,3.3466953998431563,142.4106068611145,94.16,"FC4(Hist_R(Gau_R(RegionR(Image, 11, 42, 42, 28), 2)), uLBP(Image), uLBP_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(RegionR(Image, 11, 42, 42, 28))))))), 1)), Hist(Image))",0.9479768786127168,0.5754385964912281,0.8809523809523809,0.5211267605633803
+KSDD2,gp_modified,4,42,45,2670,667,,,,,,,,,0.947565543071161,0.762109676707492,0.8266233766233766,0.9405151028746536,0.9535232383808095,0.8003001228849608,0.8547851308738736,0.9490351425850396,210.0,81.41937820008025,5.563595799962059,80.24155759811401,94.23,"FC4(Hist(Image), Hist(Image), Hist(Image), DIF(Image))",0.967741935483871,0.5263157894736842,0.9347826086956522,0.6056338028169014
+KSDD2,gp_modified,5,42,46,2670,667,,,,,,,,,0.9483146067415732,0.7656184486373165,0.8298040201097872,0.9415060990715242,0.9415292353823088,0.7811820587957274,0.8227671301942455,0.936961462105845,128.0,56.8561927000992,3.85356940003112,56.48764705657959,94.08,"FC2(Hist(Image), Hist(Image))",0.9681528662420382,0.5333333333333333,0.82,0.5774647887323944
+KSDD2,gp_modified,1,43,43,2669,668,,,,,,,,,0.9430498313975272,0.7456905687036383,0.8093872396087836,0.9349164477361092,0.9416167664670658,0.7439663104253662,0.8052084968932953,0.9335640421451796,202.0,149.36457219999284,1.963457300094888,144.02736282348633,93.89,"FC4(Hist(Lap(GauD(Image, 1, 2, 0))), RIF(SobelY(Med(Image))), Hist(Lap(GauD(Image, 1, 2, 0))), Hist_R(Min_R(LoG1_R(RegionR(Lap(Image), 0, 44, 7, 12)))))",0.9463087248322148,0.4947368421052631,0.9210526315789472,0.4929577464788732
+KSDD2,gp_modified,2,43,44,2669,668,,,,,,,,,0.9531659797677032,0.792336935660082,0.8510244206083517,0.948128228659844,0.940119760479042,0.7466442953020134,0.8050887021475257,0.9323481887765088,246.0,156.91415470000356,2.943989000050351,150.78295803070068,94.27,"FC4(Hist_R(Gau_R(RegionS(Image, 23, 22, 23), 2)), uLBP(Image), uLBP_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(RegionR(Image, 11, 42, 42, 28)))))))))))), 1)), Hist(Image))",0.9542857142857144,0.5880281690140845,0.9,0.5
+KSDD2,gp_modified,3,43,45,2670,667,,,,,,,,,0.9501872659176028,0.774390378461878,0.8376395809929813,0.9439599311242028,0.944527736131934,0.7642499291048304,0.8211316706891929,0.9380683753055088,156.0,100.44120209990068,4.752119899960235,94.3210027217865,94.53,"FC4(Hist(Image), Hist(Image), RIF_R(Gau_R(Min_R(Min_R(Med_R(Sobel_R(Gau_R(Min_R(GauD_R(Min_R(LoG2_R(Gau_R(SobelX_R(Med_R(Min_R(LoG2_R(Sobel_R(RegionS(LoG2(Image), 34, 33, 14)))))), 1))), 3, 0, 1)), 2))))), 2)), DIF(Image))",0.9691358024691358,0.5508771929824562,0.9047619047619048,0.5352112676056338
+KSDD2,gp_modified,4,43,46,2670,667,,,,,,,,,0.9483146067415732,0.7640737062782743,0.829100185528757,0.9413648871193012,0.9460269865067468,0.7588855279326968,0.8216577540106952,0.9388818959504204,128.0,60.21857710019685,3.64086199994199,59.777108669281006,94.27,"FC2(Hist(Image), Hist(Image))",0.9741935483870968,0.5298245614035088,0.9487179487179488,0.5211267605633803
+KSDD2,gp_modified,5,43,47,2670,667,,,,,,,,,0.9468164794007492,0.7647798742138365,0.826299614610001,0.9400970139178116,0.9505247376311844,0.8048255978825976,0.8500337255489769,0.9466596987049456,251.0,168.06720659998246,3.885697999969125,162.34527897834778,94.08,"FC4(uLBP(Image), Hist_R(LoG2_R(LoG2_R(GauD_R(LoG1_R(Max_R(Med_R(LoG2_R(GauD_R(SobelY_R(SobelY_R(GauD_R(Sobel_R(GauD_R(LoG2_R(Sobel_R(RegionR(Image, 50, 8, 6, 37))), 3, 0, 2)), 1, 2, 1))), 3, 0, 1))))), 2, 1, 1)))), Hist(Image), Hist(Image))",0.9440993788819876,0.5333333333333333,0.88,0.6197183098591549
+KSDD2,gp_original,1,42,42,2669,668,,,,,,,,,0.9535406519295616,0.7994473389850465,0.8547903613612033,0.9489643095224864,0.9491017964071856,0.7977917757803099,0.8443530701754386,0.9448965555730644,200.0,197.37691499991345,2.719752399949357,187.2237617969513,95.02,"FC4(Hist(GauD(Gau(Max(SobelX(Image)), 2), 1, 1, 0)), uLBP_R(LoG1_R(Sobel_R(Sobel_R(Mean_R(Mean_R(LoG2_R(Max_R(LoG2_R(Gau_R(Min_R(GauD_R(Mean_R(Max_R(GauD_R(Gau_R(Min_R(LoG1_R(RegionS(Image, 42, 59, 60))), 2), 1, 1, 2))), 3, 0, 2)), 2)))))))))), uLBP_R(Mean_R(SobelX_R(Lap_R(LoG1_R(LoG2_R(SobelY_R(Lap_R(LoG2_R(Med_R(Mean_R(Mean_R(SobelY_R(Min_R(LoG2_R(Med_R(RegionS(GauD(Image, 1, 1, 0), 13, 42, 22))))))))))))))))), DIF_R(Min_R(SobelY_R(LoG1_R(LoG2_R(SobelY_R(Lap_R(LoG2_R(Med_R(Mean_R(Mean_R(SobelY_R(Min_R(LoG2_R(Med_R(RegionS(GauD(Image, 1, 1, 0), 13, 33, 22)))))))))))))))))",0.9398907103825136,0.6035087719298246,0.8775510204081632,0.6056338028169014
+KSDD2,gp_original,2,42,43,2669,668,,,,,,,,,0.9494192581491196,0.7762822216316769,0.8365204395389007,0.94346382001684,0.940119760479042,0.7344332587621178,0.7985281698636748,0.9310174439394826,128.0,100.23377659986728,3.814721500035376,99.84115076065063,94.57,"FC2(Hist(Image), Hist(Image))",0.9461077844311376,0.5563380281690141,0.9444444444444444,0.4722222222222222
+KSDD2,gp_original,3,42,44,2670,667,,,,,,,,,0.9599250936329587,0.8400860642171466,0.881734135488494,0.9573679503679856,0.9145427286356822,0.728861423575007,0.7519782893749715,0.9100270497673292,338.0,235.55779360001907,3.545113299973309,221.45597791671756,93.22,"FC4(Hist_R(RegionR(Image, 60, 10, 51, 3)), SIFT_R(Gau_R(Lap_R(Mean_R(Min_R(LoG1_R(Gau_R(Med_R(Max_R(Lap_R(Mean_R(Med_R(Max_R(RegionR(Image, 11, 42, 42, 28))))))), 1))))), 1)), DIF(Max(Image)), SIFT(Image))",0.9158878504672896,0.6877192982456141,0.625,0.4929577464788732
+KSDD2,gp_original,4,42,45,2670,667,,,,,,,,,0.947940074906367,0.7654088050314465,0.8289227614824758,0.9411528280249868,0.952023988005997,0.793257869363834,0.8489326765188834,0.9471594252135016,251.0,163.14495049999095,5.75715749990195,160.45087146759033,94.34,"FC4(Hist(Image), uLBP(Image), Hist(Image), Hist(Image))",0.9620253164556962,0.5333333333333333,0.9333333333333332,0.5915492957746479
+KSDD2,gp_original,5,42,46,2670,667,,,,,,,,,0.9483146067415732,0.7671631909963588,0.8305014573396926,0.9416459379075044,0.9490254872563718,0.7915800170148407,0.8419519402319358,0.9443446764574894,192.0,166.81686179991812,7.379727000137791,165.4053657054901,94.19,"FC3(Hist(Image), Hist(Image), Hist_R(RegionR(Max(Image), 4, 1, 8, 34)))",0.9622641509433962,0.5368421052631579,0.8936170212765957,0.5915492957746479
+KSDD2,gp_original,1,43,43,2669,668,,,,,,,,,0.949793930310978,0.7757248616507713,0.8374040734679032,0.9437160651369496,0.9416167664670658,0.7501710430084696,0.8084059569773856,0.934202879403906,73.0,99.94400470005348,2.29328679991886,98.17824697494508,94.19,"FC2(HOG_R(SobelY_R(SobelX_R(Sobel_R(LoG2_R(SobelY_R(Lap_R(LoG2_R(Min_R(Gau_R(RegionS(Image, 8, 53, 19), 1)))))))))), Hist(Image))",0.9575757575757576,0.5543859649122806,0.9,0.5070422535211268
+KSDD2,gp_original,2,43,44,2669,668,,,,,,,,,0.9441738478831024,0.7454306552100864,0.8111641193735306,0.9359201191943388,0.93562874251497,0.7258109619686801,0.7852298811900436,0.9262119980670768,146.0,166.8763824000489,2.546810300089419,161.30406594276428,92.99,"FC2(DIF(Image), SIFT(Image))",0.9655172413793104,0.4929577464788732,0.8918918918918919,0.4583333333333333
+KSDD2,gp_original,3,43,45,2670,667,,,,,,,,,0.9501872659176028,0.774390378461878,0.8376395809929813,0.9439599311242028,0.9370314842578712,0.753851970885717,0.8017241379310345,0.9306467455927208,223.0,114.99413729994558,3.4658337999135256,111.42516040802002,94.57,"FC4(Hist(Image), uLBP(Image), Hist(Image), HOG_R(Lap_R(Mean_R(RegionR(LoG2(Image), 44, 12, 11, 39)))))",0.9691358024691358,0.5508771929824562,0.8222222222222222,0.5211267605633803
+KSDD2,gp_original,4,43,46,2670,667,,,,,,,,,0.9602996254681648,0.8233035418735518,0.8777590806059266,0.9567632484321348,0.9460269865067468,0.7650888552793269,0.8245557633855507,0.9394609744461416,256.0,127.81706100003794,2.894093400100246,122.45505046844482,94.49,"FC3(SIFT(Image), Hist(Image), Hist(Image))",0.9685863874345548,0.6491228070175439,0.926829268292683,0.5352112676056338
+KSDD2,gp_original,5,43,47,2670,667,,,,,,,,,0.9617977528089888,0.8287763433741586,0.8828159288410335,0.9584828222409908,0.9505247376311844,0.8172322525758579,0.8543523573200993,0.9475082607579584,274.0,227.2824545998592,2.511022200109437,212.58507013320923,94.64,"FC4(SIFT(Image), Hist_R(LoG2_R(LoG2_R(GauD_R(LoG1_R(Max_R(Med_R(LoG2_R(Lap_R(LoG1_R(SobelY_R(LoG2_R(LoG1_R(SobelY_R(LoG2_R(Mean_R(Max_R(Max_R(SobelX_R(Med_R(LoG2_R(LoG1_R(GauD_R(Min_R(SobelX_R(Min_R(RegionR(Gau(Image, 3), 2, 16, 57, 35)))), 2, 0, 1))))))))))))))))))), 2, 1, 1)))), Hist(Image), DIF(Image))",0.9740932642487048,0.6596491228070176,0.8518518518518519,0.647887323943662
+KSDD2,mlp,1,42,42,2669,668,50.0,64.0,0.001,68.879055300029,cpu,0.3608548758783872,0.3324269458523132,-0.028427930026074,0.8932184338703635,0.5,0.471798931327924,0.8428390050848787,0.8937125748502994,0.5,0.4719367588932806,0.8435516319140375,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,2,42,43,2669,668,50.0,64.0,0.001,52.58682810002938,cpu,0.3690109533868777,0.3217568231928701,-0.0472541301940075,0.8935931060322218,0.5,0.4719034428175702,0.8433793264293031,0.8922155688622755,0.5,0.4715189873417721,0.8413931630410066,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,3,42,44,2670,667,50.0,64.0,0.001,36.4599254000932,cpu,0.3641105909695786,0.3217328163456827,-0.0423777746238958,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,4,42,45,2670,667,50.0,64.0,0.001,41.4590031998232,cpu,0.3631938989242811,0.336479000451413,-0.0267148984728681,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,5,42,46,2670,667,50.0,64.0,0.001,38.50536839989945,cpu,0.3621773399663775,0.3229880169759529,-0.0391893229904246,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,1,43,43,2669,668,50.0,64.0,0.001,32.490214499877766,cpu,0.3544503014245789,0.3266190977389556,-0.0278312036856233,0.8935931060322218,0.5048436948074885,0.4822148751297885,0.8451753234964163,0.8937125748502994,0.5,0.4719367588932806,0.8435516319140375,,,,,,,0.6,0.0105263157894736,0.0,0.0
+KSDD2,mlp,2,43,44,2669,668,50.0,64.0,0.001,31.42719239997677,cpu,0.3601763826400968,0.3264007829422806,-0.0337755996978162,0.8935931060322218,0.5,0.4719034428175702,0.8433793264293031,0.8922155688622755,0.5,0.4715189873417721,0.8413931630410066,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,3,43,45,2670,667,50.0,64.0,0.001,31.13333899993449,cpu,0.3626978623286615,0.3326810071977337,-0.0300168551309278,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,4,43,46,2670,667,50.0,64.0,0.001,33.56749639986083,cpu,0.3703546250580848,0.3203328737382139,-0.0500217513198709,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,5,43,47,2670,667,50.0,64.0,0.001,36.506151700159535,cpu,0.3697917668560471,0.324910655606552,-0.044881111249495,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,1,44,44,2669,668,50.0,64.0,0.001,32.88239899999462,cpu,0.366060401447349,0.3317711412817318,-0.0342892601656172,0.8950917946796553,0.5149505475097139,0.5024235645041014,0.8500450808003848,0.8937125748502994,0.5062047325831033,0.4855909500103038,0.8463841847428041,,,,,,,0.6923076923076923,0.031578947368421,0.5,0.0140845070422535
+KSDD2,mlp,2,44,45,2669,668,50.0,64.0,0.001,32.623536800034344,cpu,0.3581611095809365,0.331767955738402,-0.0263931538425344,0.8939677781940801,0.5017605633802817,0.4755056054940438,0.8442929481294367,0.8922155688622755,0.5,0.4715189873417721,0.8413931630410066,,,,,,,1.0,0.0035211267605633,0.0,0.0
+KSDD2,mlp,3,44,46,2670,667,50.0,64.0,0.001,31.176343300146986,cpu,0.3761321128084418,0.3430357222253464,-0.0330963905830954,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,4,44,47,2670,667,50.0,64.0,0.001,34.28387379995547,cpu,0.3578838835494795,0.3292464046219315,-0.028637478927548,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+KSDD2,mlp,5,44,48,2670,667,50.0,64.0,0.001,31.64563839999028,cpu,0.3609476942694589,0.3241941535517517,-0.0367535407177071,0.8932584269662921,0.5,0.4718100890207715,0.8428966758910413,0.8935532233883059,0.5,0.4718923198733175,0.8433218070299766,,,,,,,0.0,0.0,0.0,0.0
+MVTEC,cnn,1,42,42,1380,345,50.0,64.0,0.001,121.9130116000306,cpu,0.6134859658669735,0.4696195046106974,-0.143866461256276,0.7971014492753623,0.6567440278117392,0.6785774891112302,0.7679654877075686,0.7275362318840579,0.5488991295442909,0.5379288726775333,0.6743432170840375,,,,,,,0.7995049504950495,0.963220675944334,0.7515923566878981,0.9365079365079364
+MVTEC,cnn,2,42,43,1380,345,50.0,64.0,0.001,99.62904690019786,cpu,0.5930238896521969,0.4878745419391687,-0.1051493477130281,0.7942028985507247,0.6522363147319292,0.6730730730730731,0.7642088465276872,0.7681159420289855,0.6241679467485919,0.6376811594202898,0.7378701953371141,,,,,,,0.7973640856672158,0.9622266401590456,0.7866666666666666,0.9365079365079364
+MVTEC,cnn,3,42,44,1380,345,50.0,64.0,0.001,108.85230979998596,cpu,0.6128603601801222,0.4902902592783389,-0.1225701009017833,0.7855072463768116,0.6319941314678772,0.6482732254364725,0.7488902802326376,0.7797101449275362,0.6219278033794162,0.6355093416370107,0.7411679947392852,,,,,,,0.7872168284789643,0.967196819085487,0.7838709677419354,0.9642857142857144
+MVTEC,cnn,4,42,45,1380,345,50.0,64.0,0.001,101.61075760005042,cpu,0.631802064785059,0.4926231173501498,-0.1391789474349091,0.7739130434782608,0.607932142562385,0.616579277328166,0.7294182001100213,0.7478260869565218,0.5871407985080953,0.5901213999918065,0.7058206329519013,,,,,,,0.7764518695306285,0.9692154915590864,0.7662337662337663,0.9402390438247012
+MVTEC,cnn,5,42,46,1380,345,50.0,64.0,0.001,141.36603100015782,cpu,0.5933184334333392,0.4134171862533127,-0.1799012471800265,0.8101449275362319,0.7154662669623626,0.7340993531192361,0.7994284780248937,0.7246376811594203,0.6211112994829194,0.6277640859067111,0.7141797362173665,,,,,,,0.8352835283528353,0.9215491559086396,0.7888888888888889,0.848605577689243
+MVTEC,cnn,1,43,43,1380,345,50.0,64.0,0.001,64.53850900009274,cpu,0.5974994800229003,0.4493677322415338,-0.1481317477813665,0.8079710144927537,0.6776373842506458,0.7027696794187712,0.783752923958061,0.7855072463768116,0.6462493599590373,0.6648550724637681,0.7575299306868304,,,,,,,0.8100418410041841,0.9622266401590456,0.7966666666666666,0.9484126984126984
+MVTEC,cnn,2,43,44,1380,345,50.0,64.0,0.001,67.8390315999277,cpu,0.6088707953259564,0.4786709978960562,-0.1301997974299001,0.7956521739130434,0.6532303505172176,0.6744618699788194,0.7654265636681657,0.782608695652174,0.6306963645673324,0.6466563793032815,0.7476676797681128,,,,,,,0.7976973684210527,0.9642147117296224,0.7882736156351792,0.9603174603174603
+MVTEC,cnn,3,43,45,1380,345,50.0,64.0,0.001,67.72199439979158,cpu,0.6255324052727741,0.4755896669367085,-0.1499427383360655,0.7695652173913043,0.5925038007250614,0.593642586227332,0.7160909374339737,0.7507246376811594,0.5715565796210957,0.5662280701754385,0.6966056445461479,,,,,,,0.7683307332293292,0.9791252485089464,0.7610062893081762,0.9603174603174603
+MVTEC,cnn,4,43,46,1380,345,50.0,64.0,0.001,72.45172249991447,cpu,0.5990572585575823,0.4597404440244039,-0.1393168145331784,0.8043478260869565,0.6701401183671405,0.6942934782608696,0.778562145557656,0.7565217391304347,0.6064253623802661,0.6153641962200043,0.7214012021383659,,,,,,,0.8068276436303081,0.9622641509433962,0.7755775577557755,0.9362549800796812
+MVTEC,cnn,5,43,47,1380,345,50.0,64.0,0.001,69.44843539991416,cpu,0.6002578604048577,0.4359549119852591,-0.1643029484195985,0.8202898550724638,0.7148219833817433,0.7390468928707586,0.8059404487615132,0.7681159420289855,0.6509917775705688,0.6656328745880985,0.7498728829033826,,,,,,,0.8320209973753281,0.9443892750744788,0.8,0.9083665338645418
+MVTEC,cnn,1,44,44,1380,345,50.0,64.0,0.001,62.7502643999178,cpu,0.6056616458339967,0.4863148686678513,-0.1193467771661453,0.7876811594202898,0.636004826655043,0.6533789848257937,0.7521903635728502,0.7942028985507247,0.6352406554019457,0.6531681415929204,0.755097806848788,,,,,,,0.7891321978913219,0.967196819085487,0.7891373801916933,0.98015873015873
+MVTEC,cnn,2,44,45,1380,345,50.0,64.0,0.001,67.61191970016807,cpu,0.6132772037948387,0.4610240753146185,-0.1522531284802202,0.7855072463768116,0.6185560434186326,0.6303896978186043,0.7400477410946524,0.7507246376811594,0.5817332309267793,0.5824890239783856,0.7046326887214953,,,,,,,0.7799684542586751,0.9831013916500994,0.7660256410256411,0.9484126984126984
+MVTEC,cnn,3,44,46,1380,345,50.0,64.0,0.001,64.137037999928,cpu,0.5960121175517207,0.4681079560431881,-0.1279041615085325,0.782608695652174,0.6820786510881237,0.6968463230534458,0.7706907637651572,0.7188405797101449,0.5870455709165386,0.5926899623909154,0.6971584423584024,,,,,,,0.8185920577617328,0.9015904572564613,0.7719298245614035,0.873015873015873
+MVTEC,cnn,4,44,47,1380,345,50.0,64.0,0.001,71.15807810006663,cpu,0.6079792154008063,0.4501705357993858,-0.1578086796014205,0.8152173913043478,0.7079704800977606,0.7313656381611944,0.8003176634436319,0.782608695652174,0.6742604051877596,0.6907900240197895,0.7674683827766211,,,,,,,0.8286713286713286,0.9414101290963256,0.8120567375886525,0.9123505976095616
+MVTEC,cnn,5,44,48,1380,345,50.0,64.0,0.001,68.18535150005482,cpu,0.599684548896292,0.4200525039348049,-0.179632044961487,0.8304347826086956,0.744560196586362,0.7645497630331753,0.8217704512672573,0.7623188405797101,0.6470077138255489,0.6604004609622587,0.7450628186338983,,,,,,,0.8504079782411604,0.9314796425024826,0.7985865724381626,0.900398406374502
+MVTEC,eoh,1,42,42,1380,345,,,,,,,,,0.7369565217391304,0.5256243288929524,0.4811272384894333,0.6479839020743751,0.7246376811594203,0.5096006144393241,0.4579150195994111,0.6331584212028882,8.0,428.0281051000002,0.0485841999998228,427.7031444999993,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )",0.7393894266567387,0.9870775347912524,0.7343283582089553,0.9761904761904762
+MVTEC,eoh,2,42,43,1380,345,,,,,,,,,0.7528985507246376,0.570153942654235,0.5620389044364758,0.6944464746385816,0.7623188405797101,0.5828853046594982,0.5808640512030343,0.7079623397972697,8.0,398.32645779999984,0.0307191000001694,397.995664,0.23913,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Central region (as before but more focused)
+    centre = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+
+    # Gradients
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_mag = np.sqrt(dx[:-1, :]**2 + dy[:, :-1]**2)
+
+    # Horizontal and vertical gradient magnitudes separately
+    grad_x = np.abs(dx)
+    grad_y = np.abs(dy)
+
+    # Edge density (rather than mean abs gradient)
+    edge_thresh = np.mean(grad_mag) + np.std(grad_mag)
+    edge_density = np.mean(grad_mag > edge_thresh)
+
+    # Vertical symmetry (left-right)
+    half_w = w // 2
+    left = image[:, :half_w]
+    right = np.fliplr(image[:, w-half_w:])
+    # Ensure same shape if w odd
+    if left.shape[1] != right.shape[1]:
+        right = right[:, :left.shape[1]]
+    vert_sym = np.mean(np.abs(left - right))
+
+    # Horizontal symmetry (top-bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    if top.shape[0] != bottom.shape[0]:
+        bottom = bottom[:top.shape[0], :]
+    hor_sym = np.mean(np.abs(top - bottom))
+
+    # Contrast between center and periphery
+    periphery_mean = (np.mean(image) * image.size - np.mean(centre) * centre.size) / (image.size - centre.size)
+    centre_periphery_diff = np.mean(centre) - periphery_mean
+
+    # Regional intensity variance ratio (centre vs overall)
+    var_ratio = np.std(centre) / (np.std(image) + 1e-9)
+
+    # Proportion of bright pixels in centre vs overall
+    overall_bright = np.mean(image > (np.mean(image) + np.std(image)))
+    centre_bright = np.mean(centre > (np.mean(centre) + np.std(centre)))
+    bright_ratio = centre_bright / (overall_bright + 1e-9)
+
+    return np.array([
+        np.mean(grad_x),          # horizontal gradient average
+        np.mean(grad_y),          # vertical gradient average
+        edge_density,             # edge density
+        vert_sym,                 # left-right symmetry
+        hor_sym,                  # top-bottom symmetry
+        centre_periphery_diff,    # centre vs periphery contrast
+        var_ratio,                # centre std / overall std
+        bright_ratio,             # centre bright proportion ratio
+    ], dtype=float)",0.7587548638132295,0.9691848906560636,0.765625,0.9722222222222222
+MVTEC,eoh,3,42,44,1380,345,,,,,,,,,0.7333333333333333,0.5231392394297317,0.4791940141769493,0.6458081736238732,0.744927536231884,0.5370583717357911,0.501837752690995,0.6622164895499218,8.0,318.2750507999999,0.0577726000001348,317.7703628,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Global intensity
+    mean_intensity = np.mean(image)
+    std_intensity = np.std(image)
+
+    # Vertical asymmetry (top vs bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    vertical_asym = np.mean(np.abs(top - bottom))
+
+    # Gradient magnitude (combined dx and dy)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    # Pad to align shapes
+    dx_pad = np.pad(dx, ((0,0), (0,1)), mode='edge')
+    dy_pad = np.pad(dy, ((0,1), (0,0)), mode='edge')
+    grad_mag = np.sqrt(dx_pad**2 + dy_pad**2)
+    grad_mean = np.mean(grad_mag)
+    grad_std = np.std(grad_mag)
+
+    # Sobel-like edge energy (sum of absolute directional gradients)
+    sobely = np.abs(dy).sum() / (h * w)
+    sobelx = np.abs(dx).sum() / (h * w)
+
+    # Spatial frequency (mean of absolute second difference)
+    d2x = np.diff(image, n=2, axis=1)
+    spatial_freq = np.mean(np.abs(d2x))
+
+    # Threshold proportion (using median + std as alternative)
+    threshold = np.median(image) + std_intensity
+    proportion = np.mean(image > threshold)
+
+    return np.array([
+        mean_intensity,
+        std_intensity,
+        vertical_asym,
+        grad_mean,
+        grad_std,
+        sobely,
+        spatial_freq,
+        proportion
+    ], dtype=float)",0.7384155455904334,0.9821073558648112,0.7455089820359282,0.988095238095238
+MVTEC,eoh,4,42,45,1380,345,,,,,,,,,0.7355072463768116,0.5200074012741905,0.4697174668981367,0.6421951743592216,0.7275362318840579,0.5099813511909808,0.4503389830508474,0.6279715057725374,8.0,351.8070103,0.0532923999999184,350.14805200000046,0.26087,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Radial intensity profile: mean intensity at different distances from center
+    y, x = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2, w / 2
+    radii = np.sqrt((y - cy)**2 + (x - cx)**2)
+    max_radius = np.sqrt((h/2)**2 + (w/2)**2)
+    radial_bins = (radii / max_radius * 4).astype(int)  # 5 bins
+    radial_mean = np.zeros(5)
+    for i in range(5):
+        mask = (radial_bins == i)
+        if mask.any():
+            radial_mean[i] = np.mean(image[mask])
+    radial_spread = np.ptp(radial_mean)  # range of radial means
+
+    # Gradient orientation histogram (bin into 4 quadrants)
+    gx = np.gradient(image, axis=1)
+    gy = np.gradient(image, axis=0)
+    mag = np.sqrt(gx**2 + gy**2)
+    orient = np.arctan2(gy, gx)
+    # Divide into 4 orientation bins (0,45,90,135 degrees approx)
+    hist = np.zeros(4)
+    for i in range(4):
+        angle_start = -np.pi + i * (np.pi/2)
+        angle_end = angle_start + np.pi/2
+        mask = (orient >= angle_start) & (orient < angle_end)
+        hist[i] = np.sum(mag[mask])
+    orientation_norm_ratio = hist[0] / (np.sum(hist) + 1e-10)  # dominant orientation proportion
+
+    # Wavelet-like horizontal and vertical detail (Haar approx via differencing)
+    h_detail = np.mean(np.abs(image[:, 1:] - image[:, :-1]))
+    v_detail = np.mean(np.abs(image[1:, :] - image[:-1, :]))
+    detail_ratio = h_detail / (v_detail + 1e-10)
+
+    # Spatial autocorrelation at lag 1 and 2 horizontally
+    flat = image.flatten()
+    n = len(flat)
+    centered = flat - np.mean(flat)
+    autocorr1 = np.sum(centered[:-1] * centered[1:]) / (np.sum(centered**2) + 1e-10)
+    autocorr2 = np.sum(centered[:-2] * centered[2:]) / (np.sum(centered**2) + 1e-10)
+    autocorr_diff = autocorr1 - autocorr2
+
+    # Intensity histogram skewness (using percentiles)
+    p25, p50, p75 = np.percentile(image, [25, 50, 75])
+    skewness = (p75 - 2*p50 + p25) / (p75 - p25 + 1e-10)
+
+    # Low-frequency ratio (average of 4 corner quadrants vs center)
+    center_region = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+    corner_top_left = image[:int(0.25*h), :int(0.25*w)]
+    corner_bottom_right = image[int(0.75*h):, int(0.75*w):]
+    low_freq_ratio = np.mean(center_region) / (np.mean(corner_top_left) + np.mean(corner_bottom_right) + 1e-10)
+
+    # Edge density using Laplacian zero-crossings approximation (via second derivative)
+    lap = np.zeros_like(image)
+    lap[1:-1, 1:-1] = (4*image[1:-1, 1:-1] - image[:-2, 1:-1] - image[2:, 1:-1] - image[1:-1, :-2] - image[1:-1, 2:])
+    zero_cross = ((lap[:-1, :-1] * lap[1:, 1:] < 0) | (lap[:-1, 1:] * lap[1:, :-1] < 0)).sum()
+    edge_density = zero_cross / ((h-1)*(w-1))
+
+    return np.array([
+        radial_spread,
+        orientation_norm_ratio,
+        detail_ratio,
+        autocorr_diff,
+        skewness,
+        low_freq_ratio,
+        edge_density,
+        np.median(image)
+    ], dtype=float)",0.7377777777777778,0.9890764647467726,0.7315634218289085,0.9880478087649402
+MVTEC,eoh,5,42,46,1380,345,,,,,,,,,0.7463768115942029,0.5510860970525358,0.5302945432479111,0.6766579600551216,0.7246376811594203,0.5346062558277529,0.5111200608582808,0.6581475450130129,8.0,344.4222152000002,0.0868669999999838,343.4730943000004,0.26087,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Feature 1: inner vs outer radial intensity difference
+    cy, cx = h // 2, w // 2
+    y, x = np.ogrid[:h, :w]
+    r = np.sqrt((y - cy) ** 2 + (x - cx) ** 2)
+    r_max = r.max()
+    inner = image[r < 0.4 * r_max]
+    outer = image[r >= 0.7 * r_max]
+    f1 = np.mean(inner) - np.mean(outer)
+
+    # Feature 2: standard deviation of radial intensities
+    bins = np.linspace(0, r_max, 5)
+    radial_means = [np.mean(image[(r >= bins[i]) & (r < bins[i+1])]) for i in range(4)]
+    f2 = np.std(radial_means)
+
+    # Feature 3-6: directional edge densities (Sobel-like via central differences)
+    gx = np.zeros_like(image)
+    gy = np.zeros_like(image)
+    gx[:, 1:-1] = image[:, 2:] - image[:, :-2]
+    gy[1:-1, :] = image[2:, :] - image[:-2, :]
+    gx[:, 0] = image[:, 1] - image[:, 0]
+    gx[:, -1] = image[:, -1] - image[:, -2]
+    gy[0, :] = image[1, :] - image[0, :]
+    gy[-1, :] = image[-1, :] - image[-2, :]
+
+    magnitude = np.sqrt(gx**2 + gy**2)
+    eps = 1e-10
+    angle = np.arctan2(gy, gx + eps)
+
+    # Four directional masks (0°, 45°, 90°, 135°)
+    f3 = np.mean(magnitude[(angle > -np.pi/8) & (angle <= np.pi/8)])
+    f4 = np.mean(magnitude[(angle > np.pi/8) & (angle <= 3*np.pi/8)])
+    f5 = np.mean(magnitude[(angle > 3*np.pi/8) | (angle <= -3*np.pi/8)])
+    f6 = np.mean(magnitude[(angle > -3*np.pi/8) & (angle <= -np.pi/8)])
+
+    # Feature 7: second-order gradient magnitude (Laplacian-like)
+    dxx = np.zeros_like(image)
+    dyy = np.zeros_like(image)
+    dxx[:, 1:-1] = image[:, 2:] - 2*image[:, 1:-1] + image[:, :-2]
+    dyy[1:-1, :] = image[2:, :] - 2*image[1:-1, :] + image[:-2, :]
+    f7 = np.mean(np.abs(dxx + dyy))
+
+    # Feature 8: vertical symmetry of gradient orientation distribution
+    top_half = image[:h//2, :]
+    bottom_half = np.flipud(image[h - h//2:, :])
+    gx_top = np.diff(top_half, axis=1)
+    gx_bottom = np.diff(bottom_half, axis=1)
+    # Compare signs of horizontal gradients
+    sign_diff = np.mean(np.sign(gx_top) != np.sign(gx_bottom))
+    f8 = sign_diff
+
+    return np.array([f1, f2, f3, f4, f5, f6, f7, f8], dtype=float)",0.7509549274255156,0.9761668321747764,0.7422360248447205,0.952191235059761
+MVTEC,eoh,1,43,43,1380,345,,,,,,,,,0.736231884057971,0.5284868330126195,0.4888888888888889,0.6517230273752013,0.7188405797101449,0.4988479262672811,0.4374590260384273,0.6208183171605711,8.0,501.0022881000005,0.044409899999664,499.2004929000013,0.26449,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Ensure even dimensions for pyramid
+    h_pad = h - (h % 2)
+    w_pad = w - (w % 2)
+    img = image[:h_pad, :w_pad]
+
+    # 1. Pyramid decomposition: downsample by averaging 2x2 blocks
+    block_shape = (h_pad // 2, w_pad // 2)
+    downsampled = img.reshape(block_shape[0], 2, block_shape[1], 2).mean(axis=(1, 3))
+
+    # 2. Quadrant energy ratios (top/bottom, left/right on downsampled)
+    qh, qw = block_shape
+    top = downsampled[:qh//2, :]
+    bottom = downsampled[qh//2:, :]
+    left_q = downsampled[:, :qw//2]
+    right_q = downsampled[:, qw//2:]
+
+    top_energy = np.sum(top**2)
+    bottom_energy = np.sum(bottom**2) + 1e-9
+    left_energy = np.sum(left_q**2)
+    right_energy = np.sum(right_q**2) + 1e-9
+
+    # 3. Gradient orientation statistics (0, 45, 90, 135 degrees)
+    gy, gx = np.gradient(img)
+    magnitude = np.sqrt(gx**2 + gy**2) + 1e-9
+    angle = np.arctan2(gy, gx)
+    
+    # Binned orientation energy at 4 directions
+    bins = np.zeros(4)
+    for i in range(4):
+        mask = (angle >= -np.pi/4 + i*np.pi/2) & (angle < np.pi/4 + i*np.pi/2)
+        bins[i] = np.sum(magnitude[mask])
+    orientation_entropy = -np.sum((bins / (np.sum(bins)+1e-9)) * np.log(bins / (np.sum(bins)+1e-9) + 1e-9))
+
+    # 4. Intensity range compression ratio (percentile-based)
+    p10, p90 = np.percentile(img, [10, 90])
+    range_compression = (p90 - p10) / (np.max(img) - np.min(img) + 1e-9)
+
+    # 5. Spatial autocorrelation at lag 1 (row-wise) and lag 1 (col-wise)
+    row_auto = np.mean((img[:, :-1] - np.mean(img)) * (img[:, 1:] - np.mean(img))) / (np.var(img) + 1e-9)
+    col_auto = np.mean((img[:-1, :] - np.mean(img)) * (img[1:, :] - np.mean(img))) / (np.var(img) + 1e-9)
+
+    # 6. Edge density (high gradient proportion)
+    edge_thresh = np.mean(magnitude) + np.std(magnitude)
+    edge_density = np.mean(magnitude > edge_thresh)
+
+    # 7. Global skewness (standardized)
+    skew = np.mean((img - np.mean(img))**3) / (np.std(img)**3 + 1e-9)
+
+    # 8. Downsampled coefficient of variation (local texture)
+    coeff_var = np.std(downsampled) / (np.mean(downsampled) + 1e-9)
+
+    return np.array([
+        top_energy / (bottom_energy + top_energy),
+        left_energy / (right_energy + left_energy),
+        orientation_entropy,
+        range_compression,
+        row_auto,
+        col_auto,
+        edge_density,
+        skew * coeff_var
+    ], dtype=float)",0.7406296851574213,0.9821073558648112,0.7299703264094956,0.9761904761904762
+MVTEC,eoh,2,43,44,1380,345,,,,,,,,,0.7289855072463768,0.5016797610061555,0.4267855476923487,0.6173947038182427,0.7304347826086957,0.5,0.4221105527638191,0.6166484596897531,8.0,379.3710138999995,0.0638780999997834,378.92084559999967,0.26812,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Multiscale box mean energies (coarse to fine)
+    def pooled_energy(img, block_h, block_w):
+        ph, pw = h // block_h, w // block_w
+        pooled = img[:ph*block_h, :pw*block_w].reshape(ph, block_h, pw, block_w).mean(axis=(1,3))
+        return np.mean(pooled**2)
+    
+    energy_coarse = pooled_energy(image, 16, 16)
+    energy_fine = pooled_energy(image, 4, 4)
+    energy_ratio = energy_fine / (energy_coarse + 1e-8)
+    
+    # Vertical gradient skewness (directional asymmetry)
+    dy = np.diff(image, axis=0)
+    dy_flat = dy.flatten()
+    dy_mean = np.mean(dy_flat)
+    dy_std = np.std(dy_flat)
+    skew = np.mean(((dy_flat - dy_mean) / (dy_std + 1e-8))**3)
+    
+    # Radial intensity dispersion (distance-weighted)
+    yy, xx = np.mgrid[0:h, 0:w]
+    cy, cx = h/2.0, w/2.0
+    dist = np.sqrt((yy - cy)**2 + (xx - cx)**2)
+    dist_norm = dist / dist.max()
+    weighted_std = np.sqrt(np.mean(dist_norm * (image - np.mean(image))**2))
+    
+    # Quadrant contrast (differences between four quadrants)
+    qh, qw = h // 2, w // 2
+    q1 = image[:qh, :qw]
+    q2 = image[:qh, qw:]
+    q3 = image[qh:, :qw]
+    q4 = image[qh:, qw:]
+    quad_contrast = np.std([np.mean(q1), np.mean(q2), np.mean(q3), np.mean(q4)])
+    
+    # Horizontal profile deviation (mean absolute difference from row-wise means)
+    row_means = np.mean(image, axis=1, keepdims=True)
+    row_dev = np.mean(np.abs(image - row_means))
+    
+    # Top-bottom intensity asymmetry
+    top = image[:qh, :]
+    bottom = image[qh:, :]
+    tb_asym = np.mean(np.abs(top - np.flipud(bottom)))
+    
+    # Central dark proportion (relative to overall mean)
+    central = image[int(0.3*h):int(0.7*h), int(0.3*w):int(0.7*w)]
+    dark_prop = np.mean(central < np.mean(image))
+    
+    return np.array([energy_coarse, energy_fine, energy_ratio, skew, 
+                     weighted_std, quad_contrast, row_dev, tb_asym, dark_prop], dtype=float)[:8]",0.7296511627906976,0.9980119284294234,0.7304347826086957,1.0
+MVTEC,eoh,3,43,45,1380,345,,,,,,,,,0.731159420289855,0.5107297392117881,0.4496205781144683,0.629896716163956,0.7391304347826086,0.5161290322580645,0.4554924242424242,0.6366106719367589,8.0,302.20272119999936,0.0463680000011663,302.01827440000125,0.27174,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )",0.7332843497428362,0.9920477137176938,0.7368421052631579,1.0
+MVTEC,eoh,4,43,46,1380,345,,,,,,,,,0.7369565217391304,0.5269081576418156,0.4852518817273358,0.6506205260459658,0.7217391304347827,0.5193057557006019,0.4808777429467085,0.6417936486302304,8.0,320.22009269999944,0.0250262999998085,319.9421037000011,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )",0.7406576980568012,0.9841112214498512,0.7355623100303952,0.9641434262948207
+MVTEC,eoh,5,43,47,1380,345,,,,,,,,,0.744927536231884,0.5517809648812202,0.5326984126984127,0.6773793420749943,0.7333333333333333,0.5405823514452828,0.5166301169590644,0.6639132553606238,8.0,364.3877974999996,0.0187833999989379,364.08813890000056,0.25,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # radial intensity profile: mean intensity on a central disk vs outer ring
+    cy, cx = h / 2.0, w / 2.0
+    y_grid, x_grid = np.mgrid[0:h, 0:w]
+    dist = np.sqrt((y_grid - cy) ** 2 + (x_grid - cx) ** 2)
+    max_dist = np.sqrt((h / 2) ** 2 + (w / 2) ** 2)
+    inner_mask = dist < 0.4 * max_dist
+    outer_mask = dist > 0.6 * max_dist
+    inner_mean = np.mean(image[inner_mask]) if np.any(inner_mask) else 0.0
+    outer_mean = np.mean(image[outer_mask]) if np.any(outer_mask) else 0.0
+    radial_contrast = inner_mean - outer_mean
+
+    # edge orientation ratios: horizontal vs vertical edge magnitudes
+    gx = np.abs(np.diff(image, axis=1))
+    gy = np.abs(np.diff(image, axis=0))
+    gx_mean = np.mean(gx)
+    gy_mean = np.mean(gy)
+    edge_ratio = gx_mean / (gy_mean + 1e-12)
+
+    # vertical symmetry: compare top half vs bottom half (flipped vertically)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+    vert_sym = np.mean(np.abs(top - bottom))
+
+    # low-intensity proportion using a threshold based on median
+    med = np.median(image)
+    low_frac = np.mean(image < (med - np.std(image)))
+
+    return np.array([
+        inner_mean,
+        outer_mean,
+        radial_contrast,
+        edge_ratio,
+        gy_mean - gx_mean,
+        vert_sym,
+        low_frac,
+        np.mean(np.abs(np.diff(image, axis=0)[:, 1:] - np.diff(image, axis=0)[:, :-1])),  # vertical edge curvature proxy
+    ], dtype=float)",0.7513430544896393,0.9721946375372392,0.7446153846153846,0.9641434262948207
+MVTEC,gp_modified,1,42,42,1380,345,,,,,,,,,0.8565217391304348,0.7840071868255707,0.8040734143886006,0.8504982620592437,0.7043478260869566,0.5805171530977983,0.5850235849056604,0.6875779327317474,211.0,90.0083359000273,1.9538280998822304,86.024343252182,79.06,"FC4(HOG_R(Max_R(RegionS(Min(Min(Image)), 11, 50, 51))), Hist(Image), SIFT(Max(Max(LoG1(GauD(Image, 1, 2, 1))))), RIF_R(Gau_R(RegionS(Mean(Gau(Image, 3)), 34, 7, 11), 1)))",0.8713235294117647,0.9423459244532804,0.7697841726618705,0.8492063492063492
+MVTEC,gp_modified,2,42,43,1380,345,,,,,,,,,0.8057971014492754,0.6971433431496582,0.7186621389710446,0.7903669518437553,0.7304347826086957,0.6187275985663083,0.626488632262721,0.7172987306418968,220.0,67.87395100016147,2.279932799981907,64.23782563209534,75.29,"FC4(RIF(Image), DIF(Image), Hist_R(Max_R(Sobel_R(RegionR(Image, 9, 29, 19, 21)))), SIFT(Image))",0.8231173380035026,0.9343936381709742,0.7890909090909091,0.8611111111111112
+MVTEC,gp_modified,3,42,44,1380,345,,,,,,,,,0.8905797101449275,0.8418021284060344,0.8556284333973738,0.8881604023288229,0.7333333333333333,0.6410650281618023,0.6464848970863406,0.7272387062282812,246.0,71.53106140019372,1.886251300107688,68.776437997818,80.36,"FC4(Hist_R(Gau_R(RegionS(Image, 57, 22, 23), 2)), uLBP(Image), uLBP_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(RegionR(Image, 11, 42, 42, 28))))))), 1))))))), 1)), Hist(Image))",0.905982905982906,0.94831013916501,0.803030303030303,0.8412698412698413
+MVTEC,gp_modified,4,42,45,1380,345,,,,,,,,,0.8065217391304348,0.6826011485286639,0.7067276887871854,0.7853232514177695,0.7971014492753623,0.6675849792320081,0.6896525136218772,0.7727534145952621,156.0,44.61871850001626,1.925788399996236,42.37126398086548,78.62,"FC4(Hist(Image), Hist(Image), RIF_R(Gau_R(Min_R(Min_R(Med_R(Sobel_R(Gau_R(Med_R(Lap_R(RegionS(LoG2(Med(Image)), 39, 29, 12))), 2))))), 3)), DIF(Image))",0.8140916808149405,0.9523336643495532,0.8047138047138047,0.952191235059761
+MVTEC,gp_modified,5,42,46,1380,345,,,,,,,,,0.7971014492753623,0.6668627915582876,0.6888397847003231,0.7731615234479581,0.7884057971014493,0.6782444689327796,0.6962918299668375,0.7724070554412273,128.0,28.745121599873528,1.7629005999770015,28.535844802856445,77.97,"FC2(Hist(Image), Hist(Image))",0.806234203875316,0.9503475670307844,0.8133802816901409,0.9203187250996016
+MVTEC,gp_modified,1,43,43,1380,345,,,,,,,,,0.8101449275362319,0.7018052115116786,0.7243156690812047,0.7947625409559803,0.7565217391304347,0.6331925243215566,0.6456172960281745,0.73698416884299,220.0,75.26107119978406,2.4835419000592083,71.21479678153992,74.49,"FC4(RIF(Image), DIF(Image), Hist_R(Max_R(Sobel_R(RegionR(Image, 10, 29, 19, 21)))), SIFT(Image))",0.8251748251748252,0.9383697813121272,0.7937062937062938,0.9007936507936508
+MVTEC,gp_modified,2,43,44,1380,345,,,,,,,,,0.8731884057971014,0.818115371939486,0.8320480196618567,0.8701164296728006,0.8115942028985508,0.7489119303635432,0.7548349714110791,0.8092007413298019,246.0,81.6457297001034,2.0395279000513256,78.73176550865173,79.42,"FC4(Hist_R(Gau_R(RegionS(Image, 23, 22, 23), 2)), uLBP(Image), uLBP_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(Gau_R(LoG2_R(SobelY_R(Lap_R(Mean_R(Med_R(Max_R(RegionR(Image, 11, 42, 42, 28))))))), 1))))))), 1)), Hist(Image))",0.8930936613055819,0.9383697813121272,0.861003861003861,0.8849206349206349
+MVTEC,gp_modified,3,43,45,1380,345,,,,,,,,,0.8123188405797102,0.695737340661911,0.7204858925221256,0.7938593731446205,0.7710144927536232,0.6431131592421915,0.6585485022738378,0.7488621006894232,156.0,50.6347023001872,1.985163300065324,48.32779693603516,79.13,"FC4(Hist(Image), Hist(Image), RIF_R(Gau_R(Min_R(Min_R(Med_R(Sobel_R(Gau_R(Med_R(Lap_R(RegionS(LoG2(Med(Image)), 39, 29, 12))), 2))))), 3)), DIF(Image))",0.8206008583690987,0.9502982107355864,0.7972508591065293,0.9206349206349206
+MVTEC,gp_modified,4,43,46,1380,345,,,,,,,,,0.8231884057971014,0.7117443312363056,0.7382877715287688,0.8067699625289252,0.7768115942028986,0.6636221073154192,0.6796502864033765,0.7599362091640343,100.0,36.23500310000964,1.293256000149995,34.91270184516907,80.07,"FC3(Hist(Image), DIF(GauD(Lap(Image), 3, 2, 2)), DIF(SobelX(Mean(Mean(Gau(Image, 3))))))",0.8291630716134599,0.9543197616683218,0.8063380281690141,0.9123505976095616
+MVTEC,gp_modified,5,43,47,1380,345,,,,,,,,,0.8297101449275363,0.7347801315722915,0.7580571158289435,0.8185471563728952,0.7681159420289855,0.6643002458252099,0.6773288439955107,0.7552172286471803,197.0,88.45127160008997,1.481552500044927,84.88389372825623,78.7,"FC4(uLBP(Image), Hist_R(LoG2_R(LoG2_R(GauD_R(LoG1_R(Max_R(Med_R(LoG2_R(LoG2_R(GauD_R(SobelY_R(SobelY_R(GauD_R(Sobel_R(GauD_R(LoG2_R(Sobel_R(RegionR(Image, 50, 8, 6, 37))), 3, 0, 2)), 1, 2, 1))), 3, 0, 1)))))), 2, 2, 1)))), RIF(Image), Hist(Image))",0.8434163701067615,0.9414101290963256,0.8086642599277978,0.8924302788844621
+MVTEC,gp_original,1,42,42,1380,345,,,,,,,,,0.8057971014492754,0.6862248966096469,0.7096935235218578,0.786189066658039,0.6869565217391305,0.5245135688684076,0.5161038961038961,0.6486188594014681,164.0,84.39427529997192,1.587032400071621,81.34846830368042,76.81,"FC4(Hist_R(Gau_R(RegionS(Image, 31, 22, 21), 3)), DIF_R(LoG2_R(Gau_R(SobelX_R(Lap_R(GauD_R(Lap_R(SobelY_R(Gau_R(LoG2_R(Min_R(Max_R(Lap_R(SobelX_R(Lap_R(SobelX_R(SobelY_R(Min_R(Sobel_R(Sobel_R(Gau_R(Lap_R(LoG2_R(RegionS(Med(Image), 13, 50, 29))), 2)))))))))))), 3))), 3, 2, 1))), 1))), Hist_R(SobelX_R(Gau_R(Max_R(RegionR(Image, 1, 15, 39, 29)), 3))), DIF(Image))",0.8159246575342466,0.9473161033797216,0.7416107382550335,0.876984126984127
+MVTEC,gp_original,2,42,43,1380,345,,,,,,,,,0.7971014492753623,0.6592636693209726,0.6812344082047491,0.7692487951718494,0.7681159420289855,0.6241679467485919,0.6376811594202898,0.7378701953371141,73.0,47.801390500040725,1.0515193999744952,47.05262017250061,78.99,"FC2(HOG_R(SobelY_R(Gau_R(LoG1_R(Lap_R(LoG2_R(Min_R(Gau_R(RegionS(Image, 8, 53, 19), 1))))), 3))), Hist(Image))",0.8009950248756219,0.9602385685884692,0.7866666666666666,0.9365079365079364
+MVTEC,gp_original,3,42,44,1380,345,,,,,,,,,0.8855072463768116,0.8274045566175141,0.8461468985235634,0.8817854942875359,0.736231884057971,0.6634024577572964,0.663955044153064,0.7357801538085653,338.0,79.77565210009925,2.677479899954051,74.60752606391907,77.03,"FC4(Hist_R(RegionR(Image, 60, 10, 51, 3)), SIFT_R(Gau_R(Lap_R(Mean_R(Min_R(LoG1_R(Gau_R(Med_R(Max_R(GauD_R(Min_R(RegionS(Image, 2, 25, 53)), 3, 1, 2))), 1))))), 1)), DIF(Max(Image)), SIFT(Image))",0.8955223880597015,0.9542743538767396,0.8181818181818182,0.8214285714285714
+MVTEC,gp_original,4,42,45,1380,345,,,,,,,,,0.8398550724637681,0.7476391798962224,0.7724707344604107,0.8293571130145101,0.8,0.6862125964228194,0.7075157576576687,0.782361252749143,196.0,63.64511339995079,1.8262616000138223,61.11493945121765,78.62,"FC4(Hist(Image), uLBP(Mean(Image)), HOG_R(Min_R(Med_R(Sobel_R(Gau_R(Med_R(Lap_R(RegionS(Mean(Image), 39, 29, 12))), 2))))), Hist_R(SobelX_R(SobelX_R(LoG2_R(SobelX_R(Max_R(LoG1_R(Med_R(Min_R(Med_R(Sobel_R(Gau_R(RegionS(Image, 11, 50, 57), 1)))))))))))))",0.849644128113879,0.9483614697120158,0.8159722222222222,0.9362549800796812
+MVTEC,gp_original,5,42,46,1380,345,,,,,,,,,0.8840579710144928,0.832784449869679,0.8465895352941339,0.8814208963596873,0.7768115942028986,0.726837331524964,0.7230533459826316,0.7785799576311969,256.0,66.42947370000184,2.1669143000617623,63.62005496025085,79.06,"FC3(SIFT(Image), Hist(Image), Hist_R(RegionR(Max(Image), 4, 28, 8, 34)))",0.9014218009478672,0.9443892750744788,0.8536585365853658,0.8366533864541833
+MVTEC,gp_original,1,43,43,1380,345,,,,,,,,,0.8,0.669650545922327,0.6924776188815254,0.7757547571987753,0.7710144927536232,0.6261520737327189,0.6402502606882169,0.7402094573151381,73.0,52.983713200083,0.9940124000422657,51.79676103591919,78.77,"FC2(HOG_R(SobelY_R(SobelX_R(Sobel_R(LoG2_R(SobelY_R(SobelY_R(Max_R(Gau_R(LoG1_R(Lap_R(LoG2_R(Min_R(Gau_R(RegionS(Image, 8, 53, 19), 1))))), 3))))))))), Hist(Image))",0.8067226890756303,0.9542743538767396,0.7873754152823921,0.9404761904761904
+MVTEC,gp_original,2,43,44,1380,345,,,,,,,,,0.8565217391304348,0.7865268283348039,0.8052647783251232,0.8510195794959663,0.736231884057971,0.6193036354326678,0.6281490956898697,0.7205424470367949,274.0,77.88251340016723,2.563993000192568,75.51127934455872,77.83,"FC4(Hist_R(RegionR(Image, 60, 10, 51, 3)), SIFT_R(Gau_R(Lap_R(Mean_R(Min_R(GauD_R(Min_R(RegionS(Image, 2, 25, 53)), 3, 1, 2)))), 1)), DIF(Max(Image)), Hist(SobelY(Image)))",0.8733826247689463,0.9393638170974156,0.7885304659498208,0.873015873015873
+MVTEC,gp_original,3,43,45,1380,345,,,,,,,,,0.8369565217391305,0.7470710496380009,0.7703998444190894,0.8270133303763787,0.7710144927536232,0.6668586789554531,0.67998919794761,0.7586469255245454,159.0,62.94864020007663,1.758680900093168,61.08764290809631,79.49,"FC4(uLBP(Image), DIF(Image), Hist(Image), DIF(Image))",0.8495971351835273,0.9433399602385686,0.8122743682310469,0.8928571428571429
+MVTEC,gp_original,4,43,46,1380,345,,,,,,,,,0.8014492753623188,0.6799694364648533,0.7024514000805802,0.7813014665738243,0.7681159420289855,0.641010426379588,0.6559289917223496,0.7453368658245925,82.0,56.46372290002182,1.2367926000151783,55.97687458992005,78.77,"FC2(DIF(Image), Hist(Image))",0.8135158254918734,0.9443892750744788,0.7938144329896907,0.9203187250996016
+MVTEC,gp_original,5,43,47,1380,345,,,,,,,,,0.8159420289855073,0.6941197142788683,0.7206486638124778,0.7956064721495755,0.7565217391304347,0.6230609476985673,0.6351228847703465,0.7308998703710192,88.0,65.3633431000635,1.108387399930507,64.29051041603088,79.28,"FC3(Hist(Image), DIF(Image), DIF_R(LoG2_R(Lap_R(Lap_R(Sobel_R(Med_R(RegionR(Image, 61, 0, 61, 46))))))))",0.8193384223918575,0.9592850049652432,0.7849829351535836,0.9163346613545816
+MVTEC,mlp,1,42,42,1380,345,50.0,64.0,0.001,24.559052100172263,cpu,0.6150884840799414,0.533968546770621,-0.0811199373093204,0.7405797101449275,0.6146171101731854,0.6241830065359477,0.7199677938808374,0.6898550724637681,0.5332821300563236,0.5280679101520052,0.6554152309815611,,,,,,,0.7837127845884413,0.889662027833002,0.7457627118644068,0.873015873015873
+MVTEC,mlp,2,42,43,1380,345,50.0,64.0,0.001,21.7789934000466,cpu,0.596119941663051,0.5398981727551723,-0.0562217689078787,0.7528985507246376,0.5869515527157908,0.5892853558209012,0.7080035408716032,0.7623188405797101,0.6032386072708653,0.611401098901099,0.723010033444816,,,,,,,0.7670682730923695,0.9493041749502982,0.775974025974026,0.9484126984126984
+MVTEC,mlp,3,42,44,1380,345,50.0,64.0,0.001,21.737914599943903,cpu,0.6228979798330777,0.5244930721711422,-0.0984049076619355,0.7739130434782608,0.5896067445593817,0.587276268768884,0.7143823480968217,0.7507246376811594,0.5512032770097286,0.5279686903398243,0.6774125537460365,,,,,,,0.7665130568356375,0.9920477137176938,0.7515151515151515,0.984126984126984
+MVTEC,mlp,4,42,45,1380,345,50.0,64.0,0.001,22.291332999942824,cpu,0.6134813177412834,0.5332203289736872,-0.0802609887675962,0.7681159420289855,0.5913005742643319,0.5924560062903529,0.7153791842796389,0.7594202898550725,0.5917818089344749,0.5945486725663717,0.7122070539951263,,,,,,,0.7685691946833464,0.9761668321747764,0.767515923566879,0.9601593625498008
+MVTEC,mlp,5,42,46,1380,345,50.0,64.0,0.001,22.88155600009486,cpu,0.5959434466085572,0.5098038342551908,-0.0861396123533664,0.777536231884058,0.6205422631392584,0.6335675827621251,0.7390891128699927,0.7072463768115942,0.549271001101975,0.5450391048322867,0.6686630936708852,,,,,,,0.7827140549273021,0.9622641509433962,0.75,0.896414342629482
+MVTEC,mlp,1,43,43,1380,345,50.0,64.0,0.001,14.59627169999294,cpu,0.6125292670899544,0.5348657141561094,-0.0776635529338449,0.7623188405797101,0.5782949362647644,0.5721739130434782,0.7027952110901071,0.7536231884057971,0.5599718381976446,0.5437146991551136,0.6863448264664754,,,,,,,0.7619783616692427,0.9801192842942346,0.7553516819571865,0.98015873015873
+MVTEC,mlp,2,43,44,1380,345,50.0,64.0,0.001,13.17783010005951,cpu,0.6088390669960907,0.5427368012027464,-0.0661022657933443,0.7695652173913043,0.594183561731217,0.5963516755213469,0.7174478685100781,0.7710144927536232,0.5956221198156681,0.5988903442287599,0.7199865372174911,,,,,,,0.769170579029734,0.9771371769383698,0.7711598746081505,0.9761904761904762
+MVTEC,mlp,3,43,45,1380,345,50.0,64.0,0.001,13.870353799778968,cpu,0.6203213197597559,0.5313783286274343,-0.0889429911323216,0.7717391304347826,0.588955571384527,0.5869719925774677,0.7134864358340474,0.7478260869565218,0.5695724526369688,0.5640459556420573,0.6944970309947351,,,,,,,0.7663839629915189,0.9880715705765408,0.7602523659305994,0.9563492063492064
+MVTEC,mlp,4,43,46,1380,345,50.0,64.0,0.001,13.599555700086055,cpu,0.5912501977837604,0.5070006918216097,-0.0842495059621507,0.777536231884058,0.6104147642108458,0.619721761203649,0.7322688640285976,0.7391304347826086,0.5612020005086039,0.5519221888709305,0.6837235099836366,,,,,,,0.777337559429477,0.974180734856008,0.7539432176656151,0.952191235059761
+MVTEC,mlp,5,43,47,1380,345,50.0,64.0,0.001,13.610210200073196,cpu,0.5991663252097973,0.535628622856693,-0.0635377023531043,0.7485507246376811,0.5365404634049589,0.4958683863387765,0.6598403438428764,0.736231884057971,0.5159574468085106,0.4541993358947167,0.6327441345303253,,,,,,,0.7444444444444445,0.9980139026812314,0.7339181286549707,1.0
+MVTEC,mlp,1,44,44,1380,345,50.0,64.0,0.001,14.37607129989192,cpu,0.6105354732361392,0.5177040217579275,-0.0928314514782117,0.7731884057971015,0.5924692486790487,0.5924475321251624,0.7167437586329595,0.7623188405797101,0.5761008704557091,0.5691703216374269,0.702116704805492,,,,,,,0.7679814385150812,0.9870775347912524,0.7623456790123457,0.98015873015873
+MVTEC,mlp,2,44,45,1380,345,50.0,64.0,0.001,14.237094699870797,cpu,0.6186003498409105,0.5270037865293199,-0.0915965633115906,0.768840579710145,0.5819282167954838,0.575748405755759,0.7068270888268351,0.7565217391304347,0.5653481822836661,0.5523356401384083,0.6916729351587182,,,,,,,0.7632183908045977,0.9900596421471172,0.7576687116564417,0.98015873015873
+MVTEC,mlp,3,44,46,1380,345,50.0,64.0,0.001,13.274452999932691,cpu,0.588708433897599,0.5191108354623767,-0.0695975984352222,0.7804347826086957,0.6049983521331901,0.6108439532089506,0.7284964276114082,0.7478260869565218,0.5492191500256016,0.5260465189723507,0.6754658041820253,,,,,,,0.7735408560311284,0.9880715705765408,0.7507598784194529,0.98015873015873
+MVTEC,mlp,4,44,47,1380,345,50.0,64.0,0.001,13.41824489994906,cpu,0.6043230512867803,0.545331605102705,-0.0589914461840753,0.7681159420289855,0.5946764072404696,0.5978127424872222,0.7180490771302934,0.7536231884057971,0.5944519793167755,0.599543896543719,0.7125833770219726,,,,,,,0.7702596380802518,0.9721946375372392,0.7694805194805194,0.9442231075697212
+MVTEC,mlp,5,44,48,1380,345,50.0,64.0,0.001,14.378673400031404,cpu,0.6179757525955422,0.5039431444976641,-0.114032608097878,0.7789855072463768,0.5928407315014735,0.5914286407649185,0.718606237929886,0.7391304347826086,0.5412392981266424,0.5133228840125392,0.664181545590841,,,,,,,0.768348623853211,0.9980139026812314,0.7446808510638298,0.9760956175298804
+STL10,cnn,1,42,42,10400,2600,50.0,64.0,0.001,1233.1166537001263,cpu,1.9450177229367769,0.1044758853201682,-1.8405418376166085,0.9634615384615384,0.9634615384615384,0.963234319500075,0.9632343195000748,0.6203846153846154,0.6203846153846154,0.618145645651458,0.618145645651458,,,,,,,,,,
+STL10,cnn,2,42,43,10400,2600,50.0,64.0,0.001,1057.0861863999162,cpu,1.863103638428908,0.0770631609914394,-1.7860404774374687,0.9807692307692308,0.9807692307692306,0.9807927272702336,0.9807927272702336,0.6434615384615384,0.6434615384615385,0.6427734887374703,0.6427734887374704,,,,,,,,,,
+STL10,cnn,3,42,44,10400,2600,50.0,64.0,0.001,1109.819965099916,cpu,1.9324637435032768,0.083669667496131,-1.8487940760071464,0.9780769230769232,0.9780769230769228,0.9780935528945008,0.978093552894501,0.6338461538461538,0.6338461538461538,0.6336110187090191,0.6336110187090191,,,,,,,,,,
+STL10,cnn,4,42,45,10400,2600,50.0,64.0,0.001,807.6754771999549,cpu,1.945016289124122,0.0737923551752017,-1.8712239339489205,0.9767307692307692,0.9767307692307692,0.9766335467557904,0.9766335467557902,0.6276923076923077,0.6276923076923078,0.6281176999459361,0.6281176999459361,,,,,,,,,,
+STL10,cnn,5,42,46,10400,2600,50.0,64.0,0.001,584.9479627001565,cpu,1.8481959937169,0.0819470923107403,-1.7662489014061598,0.9915384615384616,0.9915384615384616,0.9915402186140976,0.9915402186140976,0.6280769230769231,0.6280769230769231,0.6291051702605368,0.6291051702605368,,,,,,,,,,
+STL10,cnn,1,43,43,10400,2600,50.0,64.0,0.001,527.7955314000137,cpu,1.9056078665073104,0.0692334829958585,-1.836374383511452,0.990576923076923,0.990576923076923,0.9905831340276172,0.9905831340276172,0.6215384615384615,0.6215384615384616,0.6187236242839502,0.6187236242839502,,,,,,,,,,
+STL10,cnn,2,43,44,10400,2600,50.0,64.0,0.001,524.8315950999968,cpu,1.8722394180297848,0.071358954786108,-1.8008804632436772,0.9946153846153846,0.9946153846153848,0.994621364691179,0.994621364691179,0.6326923076923077,0.6326923076923077,0.6352956805594575,0.6352956805594574,,,,,,,,,,
+STL10,cnn,3,43,45,10400,2600,50.0,64.0,0.001,525.0456241001375,cpu,1.916516424325796,0.0467104901573978,-1.8698059341683984,0.9758653846153846,0.9758653846153846,0.9758634169104266,0.9758634169104268,0.6142307692307692,0.6142307692307692,0.6143741239564962,0.6143741239564963,,,,,,,,,,
+STL10,cnn,4,43,46,10400,2600,50.0,64.0,0.001,547.9835077000316,cpu,1.8647963127723104,0.036325748809255,-1.828470563963056,0.9976923076923075,0.9976923076923075,0.99769140957299,0.99769140957299,0.645,0.6449999999999999,0.6473382490862505,0.6473382490862506,,,,,,,,,,
+STL10,cnn,5,43,47,10400,2600,50.0,64.0,0.001,538.8147708000615,cpu,1.889272044621981,0.176860322780334,-1.712411721841647,0.9746153846153848,0.9746153846153846,0.9745694230983016,0.974569423098302,0.6192307692307693,0.6192307692307691,0.6190322782280837,0.6190322782280837,,,,,,,,,,
+STL10,cnn,1,44,44,10400,2600,50.0,64.0,0.001,520.3388668000698,cpu,1.9626682574932397,0.1240336370353515,-1.838634620457888,0.9748076923076924,0.9748076923076924,0.974896196614876,0.974896196614876,0.655,0.655,0.6511876613105501,0.6511876613105501,,,,,,,,,,
+STL10,cnn,2,44,45,10400,2600,50.0,64.0,0.001,523.7733473000117,cpu,1.897871194619399,0.0887651646309174,-1.8091060299884816,0.9802884615384616,0.9802884615384616,0.9802799406989527,0.980279940698953,0.6234615384615385,0.6234615384615385,0.6245439870148457,0.6245439870148457,,,,,,,,,,
+STL10,cnn,3,44,46,10400,2600,50.0,64.0,0.001,522.1760939999949,cpu,1.8733144730788007,0.1653944868880968,-1.7079199861907042,0.9498076923076924,0.9498076923076924,0.9493477224121876,0.9493477224121876,0.6207692307692307,0.6207692307692307,0.613089542591658,0.613089542591658,,,,,,,,,,
+STL10,cnn,4,44,47,10400,2600,50.0,64.0,0.001,568.5175471999682,cpu,1.8889771113028893,0.0873492311285092,-1.80162788017438,0.9685576923076924,0.9685576923076924,0.968650331795928,0.968650331795928,0.6076923076923076,0.6076923076923076,0.6042103414064106,0.6042103414064107,,,,,,,,,,
+STL10,cnn,5,44,48,10400,2600,50.0,64.0,0.001,576.5500350000802,cpu,1.9395594061337984,0.1299899508632146,-1.809569455270584,0.9695192307692309,0.9695192307692309,0.9696093634677924,0.9696093634677924,0.6092307692307692,0.6092307692307692,0.6108719293600262,0.6108719293600263,,,,,,,,,,
+STL10,eoh,1,42,42,10400,2600,,,,,,,,,0.3575961538461538,0.3575961538461538,0.3238877592597929,0.323887759259793,0.3653846153846153,0.3653846153846153,0.3327429017812066,0.3327429017812067,8.0,775.2209541000002,2.715029800000593,770.5471071000002,0.6351,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,2,42,43,10400,2600,,,,,,,,,0.3641346153846154,0.3641346153846153,0.3425797763336609,0.342579776333661,0.3615384615384615,0.3615384615384615,0.3393212153901774,0.3393212153901773,8.0,446.1098735000005,5.686725000000479,441.3885741999993,0.63365,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # 1. Red-blue mean ratio (log)
+    f1 = np.log(np.mean(red) / (np.mean(blue) + 1e-6))
+
+    # 2. Green intensity ratio to total
+    f2 = np.mean(green) / (np.mean(red) + np.mean(green) + np.mean(blue) + 1e-6)
+
+    # 3. Central vs peripheral intensity difference (60% center)
+    ch, cw = int(0.3*h), int(0.3*w)
+    ch_start, cw_start = (h - ch)//2, (w - cw)//2
+    centre = intensity[ch_start:ch_start+ch, cw_start:cw_start+cw]
+    f3 = np.mean(centre) - np.mean(intensity)
+
+    # 4. Horizontal gradient relative to intensity
+    grad_x = np.abs(np.diff(intensity, axis=1))
+    f4 = np.mean(grad_x) / (np.mean(intensity) + 1e-6)
+
+    # 5. Vertical gradient relative to intensity
+    grad_y = np.abs(np.diff(intensity, axis=0))
+    f5 = np.mean(grad_y) / (np.mean(intensity) + 1e-6)
+
+    # 6. Color range standard deviation
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+    f6 = np.std(colour_range)
+
+    # 7. Red-green channel correlation
+    f7 = np.corrcoef(red.ravel(), green.ravel())[0, 1]
+
+    # 8. Top-bottom asymmetry in blue channel
+    top = blue[:h//2, :]
+    bottom = blue[h//2:, :]
+    f8 = np.mean(top) - np.mean(bottom)
+
+    return np.array([f1, f2, f3, f4, f5, f6, f7, f8], dtype=float)",,,,
+STL10,eoh,3,42,44,10400,2600,,,,,,,,,0.3605769230769231,0.360576923076923,0.3264719381472198,0.3264719381472198,0.3584615384615384,0.3584615384615384,0.3287904870258022,0.3287904870258022,8.0,472.2944808000011,2.3197536999996373,467.4340101000007,0.63413,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,4,42,45,10400,2600,,,,,,,,,0.3636538461538461,0.3636538461538462,0.3317662028374693,0.3317662028374693,0.3507692307692308,0.3507692307692308,0.316497634705901,0.316497634705901,8.0,625.6362148999997,2.5892488999998022,620.7915926000005,0.62837,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,5,42,46,10400,2600,,,,,,,,,0.3659615384615384,0.3659615384615384,0.3352114735651992,0.3352114735651992,0.3703846153846153,0.3703846153846153,0.3355940147116132,0.3355940147116132,8.0,589.0678678000004,2.02503969999998,582.9519561999987,0.63029,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # Central region (different crop than before)
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    # Horizontal and vertical gradients
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+
+    # Colour saturation (max-min per pixel)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    # Central vs peripheral luminance contrast (peripheral = outside centre)
+    mask = np.zeros_like(intensity, dtype=bool)
+    mask[int(0.20 * h):int(0.85 * h), int(0.20 * w):int(0.80 * w)] = True
+    peripheral = intensity[~mask]
+    centre_peripheral_contrast = np.mean(centre) - np.mean(peripheral)
+
+    # Gradient energy ratio (horizontal / (horizontal + vertical + eps))
+    h_energy = np.mean(dx ** 2)
+    v_energy = np.mean(dy ** 2)
+    gradient_ratio = h_energy / (h_energy + v_energy + 1e-12)
+
+    # Saturation spread (std of colour range)
+    saturation_spread = np.std(colour_range)
+
+    return np.array(
+        [
+            np.median(red),
+            np.median(green),
+            np.median(blue),
+            np.std(intensity),
+            centre_peripheral_contrast,
+            gradient_ratio,
+            np.mean(np.abs(dx)) - np.mean(np.abs(dy)),
+            saturation_spread,
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,1,43,43,10400,2600,,,,,,,,,0.3853846153846154,0.3853846153846153,0.3545393323926716,0.3545393323926717,0.3819230769230769,0.3819230769230769,0.3415908293394079,0.3415908293394079,8.0,922.4745006999984,6.058912099997542,918.2514469000016,0.6101,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # Smaller central crop focusing on core object
+    centre = intensity[
+        int(0.30 * h):int(0.70 * h),
+        int(0.30 * w):int(0.70 * w)
+    ]
+
+    # Edge magnitudes from intensity
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    edge_mag = np.sqrt(dx[:-1, :] ** 2 + dy[:, :-1] ** 2)
+
+    # Color saturation and red-green contrast
+    sat = np.max(image, axis=2) - np.min(image, axis=2)
+    rg_contrast = np.mean(red) - np.mean(green)
+
+    # Normalized vertical gradient energy (relative to horizontal)
+    grad_energy_ratio = np.mean(dy ** 2) / (np.mean(dx ** 2) + 1e-8)
+
+    return np.array(
+        [
+            np.mean(centre),                      # central intensity
+            np.std(intensity) / (np.mean(intensity) + 1e-8),  # normalized spread
+            np.mean(np.abs(dx)),                  # horizontal gradient
+            np.mean(np.abs(dy)),                  # vertical gradient
+            np.std(edge_mag),                     # texture variance
+            np.mean(sat) - np.std(sat),           # colorfulness measure
+            rg_contrast,                          # red-green balance
+            grad_energy_ratio,                    # directional gradient ratio
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,2,43,44,10400,2600,,,,,,,,,0.36625,0.36625,0.3383987816073506,0.3383987816073506,0.3696153846153846,0.3696153846153845,0.3418924903184095,0.3418924903184094,8.0,642.9677837999989,3.5497238999996625,638.7362012000012,0.62548,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # Different regional sampling: central and border bands
+    central = intensity[
+        int(0.35 * h):int(0.65 * h),
+        int(0.35 * w):int(0.65 * w)
+    ]
+    border = np.concatenate([
+        intensity[:int(0.15*h), :].ravel(),
+        intensity[-int(0.15*h):, :].ravel(),
+        intensity[int(0.15*h):-int(0.15*h), :int(0.15*w)].ravel(),
+        intensity[int(0.15*h):-int(0.15*h), -int(0.15*w):].ravel()
+    ])
+
+    # Channel contrasts (red vs green, blue vs green)
+    rg_diff = red - green
+    bg_diff = blue - green
+
+    # Saturation: max-min per pixel normalized by intensity (avoid div by zero)
+    maxc = np.max(image, axis=2)
+    minc = np.min(image, axis=2)
+    denominator = np.maximum(intensity, 1e-10)
+    saturation = (maxc - minc) / denominator
+
+    # Local edge diversity: standard deviation of gradient magnitudes
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    grad_mag = np.sqrt((dx[:-1, :]**2 + dy[:, :-1]**2) / 2.0)
+    edge_diversity = np.std(grad_mag)
+
+    # Features:
+    # 1. Red-green contrast mean
+    # 2. Blue-green contrast mean
+    # 3. Mean saturation
+    # 4. Central vs border intensity ratio (offset)
+    # 5. Horizontal gradient mean
+    # 6. Vertical gradient mean
+    # 7. Edge magnitude standard deviation (diversity)
+    # 8. Overall intensity standard deviation
+
+    return np.array([
+        np.mean(rg_diff),
+        np.mean(bg_diff),
+        np.mean(saturation),
+        np.mean(central) - np.mean(border),
+        np.mean(np.abs(dx)),
+        np.mean(np.abs(dy)),
+        edge_diversity,
+        np.std(intensity)
+    ], dtype=float)",,,,
+STL10,eoh,3,43,45,10400,2600,,,,,,,,,0.3617307692307692,0.3617307692307693,0.327522411632997,0.327522411632997,0.3484615384615385,0.3484615384615385,0.317886783244244,0.3178867832442441,8.0,456.95850359999895,2.318473600000289,451.7788827000004,0.64567,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,4,43,46,10400,2600,,,,,,,,,0.358076923076923,0.358076923076923,0.3221042688015972,0.3221042688015971,0.3573076923076923,0.3573076923076923,0.3219451035319413,0.3219451035319412,8.0,619.6419709000002,2.2770201999992423,615.0745321000031,0.64663,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    # Define central region (20% to 80% of width, 25% to 75% of height for asymmetry)
+    top = int(0.25 * h)
+    bottom = int(0.75 * h)
+    left = int(0.20 * w)
+    right = int(0.80 * w)
+    centre = intensity[top:bottom, left:right]
+
+    # Horizontal and vertical gradient magnitudes
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+
+    # Colour spread (max-min across RGB)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    # Colour contrast: red vs blue ratio
+    red_blue_contrast = np.mean(red) - np.mean(blue)
+
+    # Centre vs outer intensity difference (outer = total minus centre)
+    centre_mean = np.mean(centre)
+    total_mean = np.mean(intensity)
+    # Avoid double counting centre in outer region
+    centre_area = centre.size
+    total_area = h * w
+    outer_mean = (total_mean * total_area - centre_mean * centre_area) / (total_area - centre_area)
+    centre_outer_diff = centre_mean - outer_mean
+
+    # Vertical symmetry: mean absolute difference between top and bottom halves
+    half_h = h // 2
+    top_half = intensity[:half_h, :]
+    bottom_half = intensity[h - half_h:, :]  # take same height for comparison
+    if top_half.shape[0] != bottom_half.shape[0]:
+        bottom_half = bottom_half[:top_half.shape[0], :]
+    symmetry_diff = np.mean(np.abs(top_half - bottom_half))
+
+    # Colour saturation (mean of colour_range normalized by intensity, avoid division by zero)
+    eps = 1e-10
+    saturation = np.mean(colour_range / (intensity + eps))
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            centre_outer_diff,
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            saturation,
+        ],
+        dtype=float,
+    )",,,,
+STL10,eoh,5,43,47,10400,2600,,,,,,,,,0.3604807692307692,0.3604807692307692,0.3281925841598334,0.3281925841598334,0.3623076923076923,0.3623076923076923,0.3302760063213202,0.3302760063213202,8.0,720.5635480000019,2.4483197999979893,716.2427318000009,0.64279,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError(""Expected RGB image with shape (height, width, 3)."")
+
+    h, w, _ = image.shape
+
+    red = image[..., 0]
+    green = image[..., 1]
+    blue = image[..., 2]
+    intensity = np.mean(image, axis=2)
+
+    centre = intensity[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(intensity, axis=1)
+    dy = np.diff(intensity, axis=0)
+    colour_range = np.max(image, axis=2) - np.min(image, axis=2)
+
+    return np.array(
+        [
+            np.mean(red),
+            np.mean(green),
+            np.mean(blue),
+            np.std(intensity),
+            np.mean(centre) - np.mean(intensity),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(colour_range),
+        ],
+        dtype=float,
+    )",,,,
+STL10,gp_modified,1,42,42,10400,2600,,,,,,,,,0.790673076923077,0.790673076923077,0.7886507008142492,0.788650700814249,0.5715384615384616,0.5715384615384616,0.566878613217854,0.5668786132178539,792.0,5163.940471000038,375.463612700114,5068.590683460236,58.08,"FC4(DIF(Image), uLBP_R(Lap_R(SobelY_R(GauD_R(RegionR(Image, 12, 34, 8, 11), 2, 0, 2)))), uLBP(Image), SIFT(Image))",,,,
+STL10,gp_modified,2,42,43,10400,2600,,,,,,,,,0.7303846153846154,0.7303846153846154,0.7269873373930976,0.7269873373930976,0.5803846153846154,0.5803846153846154,0.5741749708591282,0.5741749708591283,660.0,5010.868484799983,338.1461306998972,4925.166304349899,59.47,"FC4(RIF(Image), DIF(Image), Hist_R(Max_R(Sobel_R(Sobel_R(RegionR(Image, 10, 29, 19, 21))))), SIFT(Image))",,,,
+STL10,gp_modified,3,42,44,10400,2600,,,,,,,,,0.7643269230769231,0.764326923076923,0.761940622206715,0.761940622206715,0.5607692307692308,0.5607692307692308,0.5572212599599584,0.5572212599599584,783.0,5688.939862600062,405.5904266000725,5574.673874139786,56.68,"FC4(Hist_R(RegionR(Image, 60, 10, 51, 3)), RIF(Med(Gau(Image, 1))), uLBP(Mean(Image)), SIFT(Gau(Image, 1)))",,,,
+STL10,gp_modified,4,42,45,10400,2600,,,,,,,,,0.6752884615384616,0.6752884615384614,0.6714990275449834,0.6714990275449835,0.5096153846153846,0.5096153846153846,0.5048741085738851,0.5048741085738851,591.0,3076.611480999971,419.1069897999987,3007.0696415901184,52.42,"FC3(SIFT_R(Mean_R(LoG2_R(Med_R(RegionS(LoG2(Image), 35, 21, 58))))), RIF(Image), uLBP(Image))",,,,
+STL10,gp_modified,5,42,46,10400,2600,,,,,,,,,0.7198076923076923,0.7198076923076923,0.7175032069175794,0.7175032069175796,0.5053846153846154,0.5053846153846153,0.502776940247532,0.502776940247532,834.0,3879.9504495,499.6808186999988,3811.832238435745,50.03,"FC4(HOG_R(GauD_R(Gau_R(Lap_R(Med_R(Med_R(SobelY_R(SobelY_R(Lap_R(RegionR(LoG2(Image), 45, 59, 56, 45))))))), 3), 2, 1, 0)), SIFT_R(RegionR(Min(Image), 11, 19, 38, 23)), uLBP(Image), Hist(Image))",,,,
+STL10,gp_modified,1,43,43,10400,2600,,,,,,,,,0.7099038461538462,0.709903846153846,0.705476698250515,0.705476698250515,0.605,0.605,0.595302816890359,0.595302816890359,852.0,5108.310744799906,523.7997119999491,4968.040376424789,59.13,"FC4(RIF(Image), DIF(Image), SIFT(Image), SIFT(Image))",,,,
+STL10,gp_modified,2,43,44,10400,2600,,,,,,,,,0.7679807692307692,0.7679807692307692,0.765298983236225,0.7652989832362251,0.5546153846153846,0.5546153846153847,0.551832584797764,0.551832584797764,783.0,4646.513694900088,482.3449364998378,4505.934636354446,58.03,"FC4(Hist_R(RegionR(Image, 10, 10, 51, 3)), RIF(Mean(Image)), uLBP(Mean(Image)), SIFT(Gau(Image, 1)))",,,,
+STL10,gp_modified,3,43,45,10400,2600,,,,,,,,,0.6220192307692308,0.6220192307692307,0.6161044343204418,0.6161044343204418,0.558076923076923,0.5580769230769231,0.5492036437874553,0.5492036437874553,261.0,2693.153205899988,222.54339760006405,2651.0084505081177,54.74,"FC3(DIF(Image), RIF(Image), uLBP(Image))",,,,
+STL10,gp_modified,4,43,46,10400,2600,,,,,,,,,0.7685576923076923,0.7685576923076923,0.7670490645448758,0.7670490645448758,0.4957692307692308,0.4957692307692308,0.4935452312191279,0.4935452312191279,915.0,3804.600755200023,467.6787320000585,3726.962732553482,53.3,"FC4(HOG_R(GauD_R(Gau_R(Lap_R(Med_R(Med_R(SobelY_R(SobelY_R(Lap_R(RegionR(LoG2(Image), 32, 59, 56, 19))))))), 3), 2, 1, 0)), SIFT_R(RegionR(Min(Image), 11, 19, 38, 45)), uLBP(Image), Hist(Image))",,,,
+STL10,gp_modified,5,43,47,10400,2600,,,,,,,,,0.7400961538461538,0.7400961538461539,0.7369043522562945,0.7369043522562945,0.6023076923076923,0.6023076923076924,0.5975294406672805,0.5975294406672806,738.0,4471.924496100051,420.8468200999778,4374.541417837143,60.36,"FC3(uLBP(Image), SIFT(Image), uLBP(Image))",,,,
+STL10,gp_original,1,42,42,10400,2600,,,,,,,,,0.6793269230769231,0.679326923076923,0.674221047114447,0.6742210471144469,0.5865384615384616,0.5865384615384615,0.5797768979607185,0.5797768979607185,438.0,4832.160686200019,305.68744430015795,4768.777345180512,56.6,"FC2(DIF(Image), SIFT(Image))",,,,
+STL10,gp_original,2,42,43,10400,2600,,,,,,,,,0.8220192307692308,0.8220192307692308,0.8206450462226555,0.8206450462226554,0.4757692307692308,0.4757692307692308,0.4701079609286197,0.4701079609286196,1536.0,8108.409068299923,714.3324953999836,7952.8434846401215,51.82,"FC4(SIFT_R(Med_R(Sobel_R(Med_R(Min_R(Med_R(RegionS(Image, 17, 33, 54))))))), SIFT(Image), SIFT_R(Min_R(LoG2_R(RegionS(LoG1(Image), 38, 36, 24)))), SIFT_R(Med_R(Sobel_R(Med_R(Min_R(Med_R(RegionS(Image, 17, 33, 54))))))))",,,,
+STL10,gp_original,3,42,44,10400,2600,,,,,,,,,0.7408653846153846,0.7408653846153845,0.7371196371950675,0.7371196371950673,0.6,0.6,0.5936640119124669,0.5936640119124669,561.0,4293.716673999792,327.28055000002496,4216.078110218048,60.49,"FC2(uLBP(Image), SIFT(Image))",,,,
+STL10,gp_original,4,42,45,10400,2600,,,,,,,,,0.7084615384615385,0.7084615384615385,0.7045747939529772,0.7045747939529772,0.5623076923076923,0.5623076923076923,0.5558150184797699,0.5558150184797698,492.0,3844.530047399923,319.01828900002874,3771.0353820323935,58.84,"FC3(DIF(Image), DIF_R(Max_R(Lap_R(Lap_R(RegionS(Image, 37, 35, 49))))), SIFT(Image))",,,,
+STL10,gp_original,5,42,46,10400,2600,,,,,,,,,0.7532692307692308,0.7532692307692307,0.7498957799804049,0.7498957799804049,0.5923076923076923,0.5923076923076923,0.5886261903404375,0.5886261903404375,615.0,3835.607437700033,334.37827440002,3748.932546854019,60.79,"FC3(SIFT(Image), DIF_R(RegionR(Mean(Image), 23, 46, 23, 6)), uLBP(Image))",,,,
+STL10,gp_original,1,43,43,10400,2600,,,,,,,,,0.8089423076923077,0.8089423076923078,0.8071706339771458,0.8071706339771458,0.4788461538461538,0.4788461538461538,0.4730158150644141,0.4730158150644142,1536.0,7949.453896800056,718.4536838999484,7774.17228603363,51.49,"FC4(SIFT(Image), SIFT(Image), SIFT_R(Min_R(LoG2_R(RegionS(LoG1(Image), 38, 36, 24)))), SIFT_R(Med_R(Sobel_R(Med_R(Min_R(Med_R(RegionS(Image, 17, 33, 54))))))))",,,,
+STL10,gp_original,2,43,44,10400,2600,,,,,,,,,0.7375961538461538,0.7375961538461537,0.7337948381945941,0.7337948381945941,0.5926923076923077,0.5926923076923077,0.5869130121857625,0.5869130121857625,561.0,4416.021240700036,321.1422765001189,4336.006725311279,60.85,"FC2(uLBP(Image), SIFT(Image))",,,,
+STL10,gp_original,3,43,45,10400,2600,,,,,,,,,0.7074038461538461,0.7074038461538461,0.7042346912390999,0.7042346912390998,0.5834615384615385,0.5834615384615385,0.5777957277519115,0.5777957277519115,492.0,3992.635226699989,336.5082447999157,3916.34370136261,58.38,"FC3(DIF(Image), DIF_R(Max_R(Lap_R(Lap_R(RegionS(Image, 35, 35, 35))))), SIFT(Image))",,,,
+STL10,gp_original,4,43,46,10400,2600,,,,,,,,,0.8096153846153846,0.8096153846153846,0.8083462332684288,0.8083462332684287,0.5315384615384615,0.5315384615384616,0.5298928962550317,0.5298928962550318,960.0,4317.113690700149,441.64889509999193,4195.992322683334,58.13,"FC3(SIFT(Image), Hist(Image), SIFT(Med(GauD(Image, 3, 0, 0))))",,,,
+STL10,gp_original,5,43,47,10400,2600,,,,,,,,,0.78875,0.78875,0.7869902534926914,0.7869902534926914,0.5819230769230769,0.581923076923077,0.5777454607009911,0.5777454607009912,1137.0,6475.584899200127,595.7290519000962,6376.177657842636,60.43,"FC4(Hist(Image), SIFT(Image), uLBP(Image), SIFT_R(Min_R(SobelY_R(LoG1_R(GauD_R(SobelX_R(SobelX_R(Mean_R(Mean_R(RegionS(GauD(Image, 3, 2, 1), 44, 59, 12))))), 3, 2, 2))))))",,,,
+STL10,mlp,1,42,42,10400,2600,50.0,64.0,0.001,451.31246960000135,cpu,1.9951110047560472,0.5345142069229712,-1.4605967978330758,0.8099038461538461,0.8099038461538463,0.8083587315980175,0.8083587315980176,0.4280769230769231,0.4280769230769231,0.4270719086943712,0.4270719086943712,,,,,,,,,,
+STL10,mlp,2,42,43,10400,2600,50.0,64.0,0.001,3013.2168200998567,cpu,1.990657341296856,0.4849917588325647,-1.5056655824642915,0.8452884615384615,0.8452884615384615,0.8441523263845024,0.8441523263845023,0.4284615384615384,0.4284615384615383,0.4248844241606616,0.4248844241606617,,,,,,,,,,
+STL10,mlp,3,42,44,10400,2600,50.0,64.0,0.001,653.1260526999831,cpu,2.013689269285936,0.6115323257446289,-1.4021569435413066,0.7808653846153846,0.7808653846153846,0.7775399437362349,0.7775399437362349,0.4346153846153846,0.4346153846153847,0.4237125288821418,0.4237125288821419,,,,,,,,,,
+STL10,mlp,4,42,45,10400,2600,50.0,64.0,0.001,661.5393097000197,cpu,2.0087694417513333,0.5145821445721847,-1.4941872971791486,0.8175961538461538,0.8175961538461538,0.8165262193740956,0.8165262193740955,0.4273076923076923,0.4273076923076923,0.4252878147432097,0.4252878147432097,,,,,,,,,,
+STL10,mlp,5,42,46,10400,2600,50.0,64.0,0.001,423.325931499945,cpu,1.9305304292532115,0.4587035774267637,-1.4718268518264477,0.8453846153846154,0.8453846153846154,0.846576513540645,0.8465765135406451,0.4415384615384615,0.4415384615384615,0.4416391477817637,0.4416391477817638,,,,,,,,,,
+STL10,mlp,1,43,43,10400,2600,50.0,64.0,0.001,432.6515647000633,cpu,1.9600229373345008,0.5184534314962533,-1.4415695058382476,0.8350961538461539,0.8350961538461539,0.8365095523173475,0.8365095523173477,0.4426923076923077,0.4426923076923077,0.4440678272361128,0.4440678272361129,,,,,,,,,,
+STL10,mlp,2,43,44,10400,2600,50.0,64.0,0.001,414.12341869995,cpu,1.9834206933241625,0.4867304939490098,-1.496690199375153,0.8414423076923077,0.8414423076923077,0.8401981631303702,0.8401981631303701,0.4288461538461538,0.4288461538461538,0.4175885477084523,0.4175885477084523,,,,,,,,,,
+STL10,mlp,3,43,45,10400,2600,50.0,64.0,0.001,404.8123361999169,cpu,1.983546074353732,0.5707557584689213,-1.4127903158848103,0.8370192307692308,0.8370192307692307,0.8358473270919055,0.8358473270919058,0.4307692307692308,0.4307692307692307,0.4260765493426204,0.4260765493426204,,,,,,,,,,
+STL10,mlp,4,43,46,10400,2600,50.0,64.0,0.001,397.1061372999102,cpu,1.959511080521804,0.5043983032153203,-1.4551127773064834,0.8352884615384616,0.8352884615384616,0.8358560899126795,0.8358560899126797,0.4061538461538461,0.4061538461538461,0.4078200723177719,0.4078200723177719,,,,,,,,,,
+STL10,mlp,5,43,47,10400,2600,50.0,64.0,0.001,416.197757099988,cpu,1.9940026378631592,0.5530419019552377,-1.4409607359079215,0.8284615384615385,0.8284615384615386,0.8282312735789297,0.8282312735789296,0.4476923076923076,0.4476923076923077,0.4466475064761386,0.4466475064761386,,,,,,,,,,
+STL10,mlp,1,44,44,10400,2600,50.0,64.0,0.001,439.1591581001412,cpu,1.9882379781282864,0.6165670963434072,-1.3716708817848793,0.8150961538461539,0.8150961538461539,0.8157127537578155,0.8157127537578154,0.4407692307692307,0.4407692307692308,0.4365960304949082,0.4365960304949082,,,,,,,,,,
+STL10,mlp,2,44,45,10400,2600,50.0,64.0,0.001,442.44655400002375,cpu,1.9837424615713264,0.5638569458631368,-1.4198855157081898,0.8135576923076923,0.8135576923076924,0.8091087326872868,0.8091087326872868,0.4423076923076923,0.4423076923076923,0.4380244671141697,0.4380244671141697,,,,,,,,,,
+STL10,mlp,3,44,46,10400,2600,50.0,64.0,0.001,396.66396329994313,cpu,1.9888402267602772,0.4947602419669811,-1.4940799847932962,0.8396153846153847,0.8396153846153845,0.8428768114840194,0.8428768114840194,0.4384615384615384,0.4384615384615385,0.4378921900765449,0.4378921900765449,,,,,,,,,,
+STL10,mlp,4,44,47,10400,2600,50.0,64.0,0.001,415.5636579000857,cpu,1.9748072000650256,0.5164696388978225,-1.4583375611672034,0.8375,0.8375,0.8365847766075009,0.8365847766075007,0.4461538461538462,0.4461538461538462,0.4427340742523961,0.442734074252396,,,,,,,,,,
+STL10,mlp,5,44,48,10400,2600,50.0,64.0,0.001,417.1372491999064,cpu,1.9506720443872303,0.5366626325020424,-1.4140094118851882,0.8471153846153846,0.8471153846153845,0.8454882062692837,0.8454882062692837,0.4388461538461538,0.4388461538461539,0.4358711535323848,0.4358711535323849,,,,,,,,,,

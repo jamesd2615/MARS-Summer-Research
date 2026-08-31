@@ -1,0 +1,9 @@
+metric,mean,std,n_folds
+train_accuracy,1.0,0.0,5
+train_balanced_accuracy,1.0,0.0,5
+train_macro_f1,1.0,0.0,5
+train_weighted_f1,1.0,0.0,5
+validation_accuracy,0.9642857142857144,0.043740888263985304,5
+validation_balanced_accuracy,0.9633333333333333,0.047726070210921234,5
+validation_macro_f1,0.9629523809523809,0.04769565266821199,5
+validation_weighted_f1,0.962687074829932,0.046173954846422595,5

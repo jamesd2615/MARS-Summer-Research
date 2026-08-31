@@ -1,0 +1,231 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,train_precision,train_recall,validation_precision,validation_recall,extractor_train_time,extractor_train_fitness,program
+MVTEC,eoh,1,43,1380,345,8,501.00228810000044,0.04440989999966405,0.736231884057971,0.5284868330126195,0.4888888888888889,0.6517230273752013,0.7188405797101449,0.4988479262672811,0.4374590260384273,0.6208183171605711,0.7406296851574213,0.9821073558648111,0.7299703264094956,0.9761904761904762,499.20049290000134,0.26449,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Ensure even dimensions for pyramid
+    h_pad = h - (h % 2)
+    w_pad = w - (w % 2)
+    img = image[:h_pad, :w_pad]
+
+    # 1. Pyramid decomposition: downsample by averaging 2x2 blocks
+    block_shape = (h_pad // 2, w_pad // 2)
+    downsampled = img.reshape(block_shape[0], 2, block_shape[1], 2).mean(axis=(1, 3))
+
+    # 2. Quadrant energy ratios (top/bottom, left/right on downsampled)
+    qh, qw = block_shape
+    top = downsampled[:qh//2, :]
+    bottom = downsampled[qh//2:, :]
+    left_q = downsampled[:, :qw//2]
+    right_q = downsampled[:, qw//2:]
+
+    top_energy = np.sum(top**2)
+    bottom_energy = np.sum(bottom**2) + 1e-9
+    left_energy = np.sum(left_q**2)
+    right_energy = np.sum(right_q**2) + 1e-9
+
+    # 3. Gradient orientation statistics (0, 45, 90, 135 degrees)
+    gy, gx = np.gradient(img)
+    magnitude = np.sqrt(gx**2 + gy**2) + 1e-9
+    angle = np.arctan2(gy, gx)
+    
+    # Binned orientation energy at 4 directions
+    bins = np.zeros(4)
+    for i in range(4):
+        mask = (angle >= -np.pi/4 + i*np.pi/2) & (angle < np.pi/4 + i*np.pi/2)
+        bins[i] = np.sum(magnitude[mask])
+    orientation_entropy = -np.sum((bins / (np.sum(bins)+1e-9)) * np.log(bins / (np.sum(bins)+1e-9) + 1e-9))
+
+    # 4. Intensity range compression ratio (percentile-based)
+    p10, p90 = np.percentile(img, [10, 90])
+    range_compression = (p90 - p10) / (np.max(img) - np.min(img) + 1e-9)
+
+    # 5. Spatial autocorrelation at lag 1 (row-wise) and lag 1 (col-wise)
+    row_auto = np.mean((img[:, :-1] - np.mean(img)) * (img[:, 1:] - np.mean(img))) / (np.var(img) + 1e-9)
+    col_auto = np.mean((img[:-1, :] - np.mean(img)) * (img[1:, :] - np.mean(img))) / (np.var(img) + 1e-9)
+
+    # 6. Edge density (high gradient proportion)
+    edge_thresh = np.mean(magnitude) + np.std(magnitude)
+    edge_density = np.mean(magnitude > edge_thresh)
+
+    # 7. Global skewness (standardized)
+    skew = np.mean((img - np.mean(img))**3) / (np.std(img)**3 + 1e-9)
+
+    # 8. Downsampled coefficient of variation (local texture)
+    coeff_var = np.std(downsampled) / (np.mean(downsampled) + 1e-9)
+
+    return np.array([
+        top_energy / (bottom_energy + top_energy),
+        left_energy / (right_energy + left_energy),
+        orientation_entropy,
+        range_compression,
+        row_auto,
+        col_auto,
+        edge_density,
+        skew * coeff_var
+    ], dtype=float)"
+MVTEC,eoh,2,44,1380,345,8,379.3710138999995,0.06387809999978344,0.7289855072463768,0.5016797610061555,0.4267855476923487,0.6173947038182427,0.7304347826086957,0.5,0.4221105527638191,0.6166484596897531,0.7296511627906976,0.9980119284294234,0.7304347826086957,1.0,378.92084559999967,0.26812,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+    
+    # Multiscale box mean energies (coarse to fine)
+    def pooled_energy(img, block_h, block_w):
+        ph, pw = h // block_h, w // block_w
+        pooled = img[:ph*block_h, :pw*block_w].reshape(ph, block_h, pw, block_w).mean(axis=(1,3))
+        return np.mean(pooled**2)
+    
+    energy_coarse = pooled_energy(image, 16, 16)
+    energy_fine = pooled_energy(image, 4, 4)
+    energy_ratio = energy_fine / (energy_coarse + 1e-8)
+    
+    # Vertical gradient skewness (directional asymmetry)
+    dy = np.diff(image, axis=0)
+    dy_flat = dy.flatten()
+    dy_mean = np.mean(dy_flat)
+    dy_std = np.std(dy_flat)
+    skew = np.mean(((dy_flat - dy_mean) / (dy_std + 1e-8))**3)
+    
+    # Radial intensity dispersion (distance-weighted)
+    yy, xx = np.mgrid[0:h, 0:w]
+    cy, cx = h/2.0, w/2.0
+    dist = np.sqrt((yy - cy)**2 + (xx - cx)**2)
+    dist_norm = dist / dist.max()
+    weighted_std = np.sqrt(np.mean(dist_norm * (image - np.mean(image))**2))
+    
+    # Quadrant contrast (differences between four quadrants)
+    qh, qw = h // 2, w // 2
+    q1 = image[:qh, :qw]
+    q2 = image[:qh, qw:]
+    q3 = image[qh:, :qw]
+    q4 = image[qh:, qw:]
+    quad_contrast = np.std([np.mean(q1), np.mean(q2), np.mean(q3), np.mean(q4)])
+    
+    # Horizontal profile deviation (mean absolute difference from row-wise means)
+    row_means = np.mean(image, axis=1, keepdims=True)
+    row_dev = np.mean(np.abs(image - row_means))
+    
+    # Top-bottom intensity asymmetry
+    top = image[:qh, :]
+    bottom = image[qh:, :]
+    tb_asym = np.mean(np.abs(top - np.flipud(bottom)))
+    
+    # Central dark proportion (relative to overall mean)
+    central = image[int(0.3*h):int(0.7*h), int(0.3*w):int(0.7*w)]
+    dark_prop = np.mean(central < np.mean(image))
+    
+    return np.array([energy_coarse, energy_fine, energy_ratio, skew, 
+                     weighted_std, quad_contrast, row_dev, tb_asym, dark_prop], dtype=float)[:8]"
+MVTEC,eoh,3,45,1380,345,8,302.20272119999936,0.046368000001166365,0.731159420289855,0.5107297392117881,0.4496205781144683,0.629896716163956,0.7391304347826086,0.5161290322580645,0.45549242424242425,0.6366106719367589,0.7332843497428362,0.9920477137176938,0.7368421052631579,1.0,302.01827440000125,0.27174,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )"
+MVTEC,eoh,4,46,1380,345,8,320.22009269999944,0.025026299999808543,0.7369565217391304,0.5269081576418156,0.4852518817273358,0.6506205260459658,0.7217391304347827,0.5193057557006019,0.4808777429467085,0.6417936486302304,0.7406576980568012,0.9841112214498511,0.7355623100303952,0.9641434262948207,319.9421037000011,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )"
+MVTEC,eoh,5,47,1380,345,8,364.3877974999996,0.018783399998937966,0.744927536231884,0.5517809648812202,0.5326984126984127,0.6773793420749943,0.7333333333333333,0.5405823514452828,0.5166301169590644,0.6639132553606238,0.7513430544896393,0.9721946375372393,0.7446153846153846,0.9641434262948207,364.08813890000056,0.25,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # radial intensity profile: mean intensity on a central disk vs outer ring
+    cy, cx = h / 2.0, w / 2.0
+    y_grid, x_grid = np.mgrid[0:h, 0:w]
+    dist = np.sqrt((y_grid - cy) ** 2 + (x_grid - cx) ** 2)
+    max_dist = np.sqrt((h / 2) ** 2 + (w / 2) ** 2)
+    inner_mask = dist < 0.4 * max_dist
+    outer_mask = dist > 0.6 * max_dist
+    inner_mean = np.mean(image[inner_mask]) if np.any(inner_mask) else 0.0
+    outer_mean = np.mean(image[outer_mask]) if np.any(outer_mask) else 0.0
+    radial_contrast = inner_mean - outer_mean
+
+    # edge orientation ratios: horizontal vs vertical edge magnitudes
+    gx = np.abs(np.diff(image, axis=1))
+    gy = np.abs(np.diff(image, axis=0))
+    gx_mean = np.mean(gx)
+    gy_mean = np.mean(gy)
+    edge_ratio = gx_mean / (gy_mean + 1e-12)
+
+    # vertical symmetry: compare top half vs bottom half (flipped vertically)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h - half_h:, :])
+    vert_sym = np.mean(np.abs(top - bottom))
+
+    # low-intensity proportion using a threshold based on median
+    med = np.median(image)
+    low_frac = np.mean(image < (med - np.std(image)))
+
+    return np.array([
+        inner_mean,
+        outer_mean,
+        radial_contrast,
+        edge_ratio,
+        gy_mean - gx_mean,
+        vert_sym,
+        low_frac,
+        np.mean(np.abs(np.diff(image, axis=0)[:, 1:] - np.diff(image, axis=0)[:, :-1])),  # vertical edge curvature proxy
+    ], dtype=float)"

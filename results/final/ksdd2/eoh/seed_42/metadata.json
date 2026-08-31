@@ -1,0 +1,17 @@
+{
+  "batch_size": null,
+  "dataset": "ksdd2",
+  "epochs": null,
+  "folds": 5,
+  "generations": null,
+  "learning_rate": null,
+  "method": "eoh",
+  "n_classes": 2,
+  "n_samples": 3337,
+  "numpy_version": "2.2.2",
+  "population": null,
+  "python_version": "3.13.1",
+  "scikit_learn_version": "1.9.0",
+  "seed": 42,
+  "timestamp_utc": "2026-08-31T06:36:11.221507+00:00"
+}

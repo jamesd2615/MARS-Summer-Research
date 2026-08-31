@@ -1,0 +1,272 @@
+dataset,method,fold,seed,n_train,n_validation,n_features,feature_extraction_time,classifier_training_time,train_accuracy,train_balanced_accuracy,train_macro_f1,train_weighted_f1,validation_accuracy,validation_balanced_accuracy,validation_macro_f1,validation_weighted_f1,train_precision,train_recall,validation_precision,validation_recall,extractor_train_time,extractor_train_fitness,program
+MVTEC,eoh,1,42,1380,345,8,428.0281051000002,0.048584199999822886,0.7369565217391304,0.5256243288929524,0.4811272384894333,0.6479839020743751,0.7246376811594203,0.5096006144393241,0.45791501959941117,0.6331584212028882,0.7393894266567387,0.9870775347912525,0.7343283582089553,0.9761904761904762,427.7031444999993,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    centre = image[
+        int(0.20 * h):int(0.85 * h),
+        int(0.20 * w):int(0.80 * w)
+    ]
+
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+
+    half = w // 2
+    left = image[:, :half]
+    right = np.fliplr(image[:, w-half:])
+
+    threshold = np.mean(image) + np.std(image)
+
+    return np.array(
+        [
+            np.mean(image),
+            np.std(image),
+            np.mean(centre),
+            np.std(centre),
+            np.mean(np.abs(dx)),
+            np.mean(np.abs(dy)),
+            np.mean(np.abs(left - right)),
+            np.mean(image > threshold),
+        ],
+        dtype=float,
+    )"
+MVTEC,eoh,2,43,1380,345,8,398.32645779999984,0.03071910000016942,0.7528985507246376,0.570153942654235,0.5620389044364758,0.6944464746385816,0.7623188405797101,0.5828853046594982,0.5808640512030343,0.7079623397972697,0.7587548638132295,0.9691848906560636,0.765625,0.9722222222222222,397.99566400000003,0.23913,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Central region (as before but more focused)
+    centre = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+
+    # Gradients
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    grad_mag = np.sqrt(dx[:-1, :]**2 + dy[:, :-1]**2)
+
+    # Horizontal and vertical gradient magnitudes separately
+    grad_x = np.abs(dx)
+    grad_y = np.abs(dy)
+
+    # Edge density (rather than mean abs gradient)
+    edge_thresh = np.mean(grad_mag) + np.std(grad_mag)
+    edge_density = np.mean(grad_mag > edge_thresh)
+
+    # Vertical symmetry (left-right)
+    half_w = w // 2
+    left = image[:, :half_w]
+    right = np.fliplr(image[:, w-half_w:])
+    # Ensure same shape if w odd
+    if left.shape[1] != right.shape[1]:
+        right = right[:, :left.shape[1]]
+    vert_sym = np.mean(np.abs(left - right))
+
+    # Horizontal symmetry (top-bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    if top.shape[0] != bottom.shape[0]:
+        bottom = bottom[:top.shape[0], :]
+    hor_sym = np.mean(np.abs(top - bottom))
+
+    # Contrast between center and periphery
+    periphery_mean = (np.mean(image) * image.size - np.mean(centre) * centre.size) / (image.size - centre.size)
+    centre_periphery_diff = np.mean(centre) - periphery_mean
+
+    # Regional intensity variance ratio (centre vs overall)
+    var_ratio = np.std(centre) / (np.std(image) + 1e-9)
+
+    # Proportion of bright pixels in centre vs overall
+    overall_bright = np.mean(image > (np.mean(image) + np.std(image)))
+    centre_bright = np.mean(centre > (np.mean(centre) + np.std(centre)))
+    bright_ratio = centre_bright / (overall_bright + 1e-9)
+
+    return np.array([
+        np.mean(grad_x),          # horizontal gradient average
+        np.mean(grad_y),          # vertical gradient average
+        edge_density,             # edge density
+        vert_sym,                 # left-right symmetry
+        hor_sym,                  # top-bottom symmetry
+        centre_periphery_diff,    # centre vs periphery contrast
+        var_ratio,                # centre std / overall std
+        bright_ratio,             # centre bright proportion ratio
+    ], dtype=float)"
+MVTEC,eoh,3,44,1380,345,8,318.2750507999999,0.057772600000134844,0.7333333333333333,0.5231392394297317,0.47919401417694935,0.6458081736238732,0.744927536231884,0.5370583717357911,0.501837752690995,0.6622164895499218,0.7384155455904334,0.9821073558648111,0.7455089820359282,0.9880952380952381,317.77036279999993,0.25725,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Global intensity
+    mean_intensity = np.mean(image)
+    std_intensity = np.std(image)
+
+    # Vertical asymmetry (top vs bottom)
+    half_h = h // 2
+    top = image[:half_h, :]
+    bottom = np.flipud(image[h-half_h:, :])
+    vertical_asym = np.mean(np.abs(top - bottom))
+
+    # Gradient magnitude (combined dx and dy)
+    dx = np.diff(image, axis=1)
+    dy = np.diff(image, axis=0)
+    # Pad to align shapes
+    dx_pad = np.pad(dx, ((0,0), (0,1)), mode='edge')
+    dy_pad = np.pad(dy, ((0,1), (0,0)), mode='edge')
+    grad_mag = np.sqrt(dx_pad**2 + dy_pad**2)
+    grad_mean = np.mean(grad_mag)
+    grad_std = np.std(grad_mag)
+
+    # Sobel-like edge energy (sum of absolute directional gradients)
+    sobely = np.abs(dy).sum() / (h * w)
+    sobelx = np.abs(dx).sum() / (h * w)
+
+    # Spatial frequency (mean of absolute second difference)
+    d2x = np.diff(image, n=2, axis=1)
+    spatial_freq = np.mean(np.abs(d2x))
+
+    # Threshold proportion (using median + std as alternative)
+    threshold = np.median(image) + std_intensity
+    proportion = np.mean(image > threshold)
+
+    return np.array([
+        mean_intensity,
+        std_intensity,
+        vertical_asym,
+        grad_mean,
+        grad_std,
+        sobely,
+        spatial_freq,
+        proportion
+    ], dtype=float)"
+MVTEC,eoh,4,45,1380,345,8,351.8070103,0.053292399999918416,0.7355072463768116,0.5200074012741905,0.4697174668981367,0.6421951743592216,0.7275362318840579,0.5099813511909808,0.4503389830508474,0.6279715057725374,0.7377777777777778,0.9890764647467726,0.7315634218289085,0.9880478087649402,350.14805200000046,0.26087,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Radial intensity profile: mean intensity at different distances from center
+    y, x = np.mgrid[0:h, 0:w]
+    cy, cx = h / 2, w / 2
+    radii = np.sqrt((y - cy)**2 + (x - cx)**2)
+    max_radius = np.sqrt((h/2)**2 + (w/2)**2)
+    radial_bins = (radii / max_radius * 4).astype(int)  # 5 bins
+    radial_mean = np.zeros(5)
+    for i in range(5):
+        mask = (radial_bins == i)
+        if mask.any():
+            radial_mean[i] = np.mean(image[mask])
+    radial_spread = np.ptp(radial_mean)  # range of radial means
+
+    # Gradient orientation histogram (bin into 4 quadrants)
+    gx = np.gradient(image, axis=1)
+    gy = np.gradient(image, axis=0)
+    mag = np.sqrt(gx**2 + gy**2)
+    orient = np.arctan2(gy, gx)
+    # Divide into 4 orientation bins (0,45,90,135 degrees approx)
+    hist = np.zeros(4)
+    for i in range(4):
+        angle_start = -np.pi + i * (np.pi/2)
+        angle_end = angle_start + np.pi/2
+        mask = (orient >= angle_start) & (orient < angle_end)
+        hist[i] = np.sum(mag[mask])
+    orientation_norm_ratio = hist[0] / (np.sum(hist) + 1e-10)  # dominant orientation proportion
+
+    # Wavelet-like horizontal and vertical detail (Haar approx via differencing)
+    h_detail = np.mean(np.abs(image[:, 1:] - image[:, :-1]))
+    v_detail = np.mean(np.abs(image[1:, :] - image[:-1, :]))
+    detail_ratio = h_detail / (v_detail + 1e-10)
+
+    # Spatial autocorrelation at lag 1 and 2 horizontally
+    flat = image.flatten()
+    n = len(flat)
+    centered = flat - np.mean(flat)
+    autocorr1 = np.sum(centered[:-1] * centered[1:]) / (np.sum(centered**2) + 1e-10)
+    autocorr2 = np.sum(centered[:-2] * centered[2:]) / (np.sum(centered**2) + 1e-10)
+    autocorr_diff = autocorr1 - autocorr2
+
+    # Intensity histogram skewness (using percentiles)
+    p25, p50, p75 = np.percentile(image, [25, 50, 75])
+    skewness = (p75 - 2*p50 + p25) / (p75 - p25 + 1e-10)
+
+    # Low-frequency ratio (average of 4 corner quadrants vs center)
+    center_region = image[int(0.25*h):int(0.75*h), int(0.25*w):int(0.75*w)]
+    corner_top_left = image[:int(0.25*h), :int(0.25*w)]
+    corner_bottom_right = image[int(0.75*h):, int(0.75*w):]
+    low_freq_ratio = np.mean(center_region) / (np.mean(corner_top_left) + np.mean(corner_bottom_right) + 1e-10)
+
+    # Edge density using Laplacian zero-crossings approximation (via second derivative)
+    lap = np.zeros_like(image)
+    lap[1:-1, 1:-1] = (4*image[1:-1, 1:-1] - image[:-2, 1:-1] - image[2:, 1:-1] - image[1:-1, :-2] - image[1:-1, 2:])
+    zero_cross = ((lap[:-1, :-1] * lap[1:, 1:] < 0) | (lap[:-1, 1:] * lap[1:, :-1] < 0)).sum()
+    edge_density = zero_cross / ((h-1)*(w-1))
+
+    return np.array([
+        radial_spread,
+        orientation_norm_ratio,
+        detail_ratio,
+        autocorr_diff,
+        skewness,
+        low_freq_ratio,
+        edge_density,
+        np.median(image)
+    ], dtype=float)"
+MVTEC,eoh,5,46,1380,345,8,344.4222152000002,0.08686699999998382,0.7463768115942029,0.5510860970525358,0.5302945432479111,0.6766579600551216,0.7246376811594203,0.5346062558277529,0.5111200608582808,0.6581475450130129,0.7509549274255156,0.9761668321747765,0.7422360248447205,0.952191235059761,343.4730943000004,0.26087,"import numpy as np
+
+def extract_features(image: np.ndarray) -> np.ndarray:
+    image = np.asarray(image, dtype=float)
+    h, w = image.shape
+
+    # Feature 1: inner vs outer radial intensity difference
+    cy, cx = h // 2, w // 2
+    y, x = np.ogrid[:h, :w]
+    r = np.sqrt((y - cy) ** 2 + (x - cx) ** 2)
+    r_max = r.max()
+    inner = image[r < 0.4 * r_max]
+    outer = image[r >= 0.7 * r_max]
+    f1 = np.mean(inner) - np.mean(outer)
+
+    # Feature 2: standard deviation of radial intensities
+    bins = np.linspace(0, r_max, 5)
+    radial_means = [np.mean(image[(r >= bins[i]) & (r < bins[i+1])]) for i in range(4)]
+    f2 = np.std(radial_means)
+
+    # Feature 3-6: directional edge densities (Sobel-like via central differences)
+    gx = np.zeros_like(image)
+    gy = np.zeros_like(image)
+    gx[:, 1:-1] = image[:, 2:] - image[:, :-2]
+    gy[1:-1, :] = image[2:, :] - image[:-2, :]
+    gx[:, 0] = image[:, 1] - image[:, 0]
+    gx[:, -1] = image[:, -1] - image[:, -2]
+    gy[0, :] = image[1, :] - image[0, :]
+    gy[-1, :] = image[-1, :] - image[-2, :]
+
+    magnitude = np.sqrt(gx**2 + gy**2)
+    eps = 1e-10
+    angle = np.arctan2(gy, gx + eps)
+
+    # Four directional masks (0°, 45°, 90°, 135°)
+    f3 = np.mean(magnitude[(angle > -np.pi/8) & (angle <= np.pi/8)])
+    f4 = np.mean(magnitude[(angle > np.pi/8) & (angle <= 3*np.pi/8)])
+    f5 = np.mean(magnitude[(angle > 3*np.pi/8) | (angle <= -3*np.pi/8)])
+    f6 = np.mean(magnitude[(angle > -3*np.pi/8) & (angle <= -np.pi/8)])
+
+    # Feature 7: second-order gradient magnitude (Laplacian-like)
+    dxx = np.zeros_like(image)
+    dyy = np.zeros_like(image)
+    dxx[:, 1:-1] = image[:, 2:] - 2*image[:, 1:-1] + image[:, :-2]
+    dyy[1:-1, :] = image[2:, :] - 2*image[1:-1, :] + image[:-2, :]
+    f7 = np.mean(np.abs(dxx + dyy))
+
+    # Feature 8: vertical symmetry of gradient orientation distribution
+    top_half = image[:h//2, :]
+    bottom_half = np.flipud(image[h - h//2:, :])
+    gx_top = np.diff(top_half, axis=1)
+    gx_bottom = np.diff(bottom_half, axis=1)
+    # Compare signs of horizontal gradients
+    sign_diff = np.mean(np.sign(gx_top) != np.sign(gx_bottom))
+    f8 = sign_diff
+
+    return np.array([f1, f2, f3, f4, f5, f6, f7, f8], dtype=float)"
