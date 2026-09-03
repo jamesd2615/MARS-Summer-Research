@@ -1,0 +1,9 @@
+feature_number,expression,label,family,meaning
+1,np.mean(red),Mean red channel,Colour,Average red intensity
+2,np.mean(green),Mean green channel,Colour,Average green intensity
+3,np.mean(blue),Mean blue channel,Colour,Average blue intensity
+4,np.std(intensity),Intensity variation,Intensity,Global contrast
+5,np.mean(centre) - np.mean(intensity),Centre-global contrast,Spatial,Central brightness relative to image
+6,np.mean(np.abs(dx)),Horizontal edge strength,Gradient,Average horizontal intensity change
+7,np.mean(np.abs(dy)),Vertical edge strength,Gradient,Average vertical intensity change
+8,np.mean(colour_range),Colour range,Colour,Average within-pixel channel spread

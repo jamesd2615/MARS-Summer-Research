@@ -1,0 +1,16 @@
+asset,format,path,exists,size_bytes
+GP Original representative tree,SVG,figures\poster\poster_stl10_gp_original_representative_tree.svg,True,4833
+GP Original representative tree,PNG,figures\poster\poster_stl10_gp_original_representative_tree.png,True,10271
+GP Original representative tree,PDF,figures\poster\poster_stl10_gp_original_representative_tree.pdf,True,14848
+GP Modified representative tree,SVG,figures\poster\poster_stl10_gp_modified_representative_tree.svg,True,15954
+GP Modified representative tree,PNG,figures\poster\poster_stl10_gp_modified_representative_tree.png,True,39983
+GP Modified representative tree,PDF,figures\poster\poster_stl10_gp_modified_representative_tree.pdf,True,22087
+EOH eight-feature pipeline,SVG,figures\poster\poster_stl10_eoh_eight_feature_pipeline.svg,True,11933
+EOH eight-feature pipeline,PNG,figures\poster\poster_stl10_eoh_eight_feature_pipeline.png,True,39117
+EOH eight-feature pipeline,PDF,figures\poster\poster_stl10_eoh_eight_feature_pipeline.pdf,True,30445
+Training versus validation macro F1,SVG,figures\poster\poster_training_vs_validation_macro_f1.svg,True,110027
+Training versus validation macro F1,PNG,figures\poster\poster_training_vs_validation_macro_f1.png,True,238190
+Training versus validation macro F1,PDF,figures\poster\poster_training_vs_validation_macro_f1.pdf,True,30817
+KSDD2 MLP metric comparison,SVG,figures\poster\poster_ksdd2_mlp_metric_comparison.svg,True,54707
+KSDD2 MLP metric comparison,PNG,figures\poster\poster_ksdd2_mlp_metric_comparison.png,True,118259
+KSDD2 MLP metric comparison,PDF,figures\poster\poster_ksdd2_mlp_metric_comparison.pdf,True,26954
