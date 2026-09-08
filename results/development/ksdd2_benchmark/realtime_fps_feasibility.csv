@@ -1,7 +1,0 @@
-Method,Estimated FPS,>= 10 FPS,>= 15 FPS,>= 24 FPS,>= 30 FPS,>= 60 FPS
-Handcrafted-8,2751.24946197461,True,True,True,True,True
-Restricted Original GP-8,981.2775191085414,True,True,True,True,True
-Restricted Modified GP-8,226.31542886875536,True,True,True,True,True
-EOH-8,2494.319148081586,True,True,True,True,True
-Original GP — Unrestricted,328.94004669680805,True,True,True,True,True
-Modified GP — Unrestricted,343.87623000551173,True,True,True,True,True

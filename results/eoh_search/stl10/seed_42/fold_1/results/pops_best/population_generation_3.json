@@ -1,6 +1,0 @@
-{
-    "algorithm": "The algorithm computes eight interpretable features from RGB statistics, center-context intensity contrast, horizontal/vertical gradient magnitudes, and per-pixel color spread, returning them as a compact feature vector for SVM classification.",
-    "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n\n    if image.ndim != 3 or image.shape[2] != 3:\n        raise ValueError(\"Expected RGB image with shape (height, width, 3).\")\n\n    h, w, _ = image.shape\n\n    red = image[..., 0]\n    green = image[..., 1]\n    blue = image[..., 2]\n    intensity = np.mean(image, axis=2)\n\n    centre = intensity[\n        int(0.20 * h):int(0.85 * h),\n        int(0.20 * w):int(0.80 * w)\n    ]\n\n    dx = np.diff(intensity, axis=1)\n    dy = np.diff(intensity, axis=0)\n    colour_range = np.max(image, axis=2) - np.min(image, axis=2)\n\n    return np.array(\n        [\n            np.mean(red),\n            np.mean(green),\n            np.mean(blue),\n            np.std(intensity),\n            np.mean(centre) - np.mean(intensity),\n            np.mean(np.abs(dx)),\n            np.mean(np.abs(dy)),\n            np.mean(colour_range),\n        ],\n        dtype=float,\n    )",
-    "objective": 0.6351,
-    "other_inf": null
-}

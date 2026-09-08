@@ -115,13 +115,17 @@ def build_eoh_search(
     generations: int,
     num_samplers: int,
     num_evaluators: int,
+    seed: int,
 ) -> EoH:
     """
     Construct the genuine EOH evolutionary search.
     """
     output_dir = (
         Path("results")
-        / f"{dataset_name.lower()}_eoh_search"
+        / "generated"
+        / "eoh_standalone"
+        / dataset_name.lower()
+        / f"seed_{seed}"
     )
 
     return EoH(
@@ -138,13 +142,17 @@ def build_eoh_search(
 def save_best_eoh_program(
     *,
     dataset_name: str,
+    seed: int,
 ) -> Path:
     """
     Read the best EOH sample and save its generated code as a Python file.
     """
     search_dir = (
         Path("results")
-        / f"{dataset_name.lower()}_eoh_search"
+        / "generated"
+        / "eoh_standalone"
+        / dataset_name.lower()
+        / f"seed_{seed}"
     )
 
     best_sample_path = (
@@ -177,7 +185,9 @@ def save_best_eoh_program(
     program_path = (
         Path("programs")
         / "eoh"
+        / "standalone"
         / dataset_name.lower()
+        / f"seed_{seed}"
         / "selected_program.py"
     )
 
@@ -275,6 +285,7 @@ def run_eoh_search(args):
         generations=args.generations,
         num_samplers=args.num_samplers,
         num_evaluators=args.num_evaluators,
+        seed=args.seed,
     )
 
     print()
@@ -293,6 +304,7 @@ def run_eoh_search(args):
 
     program_path = save_best_eoh_program(
         dataset_name=args.dataset,
+        seed=args.seed,
     )
 
     print()

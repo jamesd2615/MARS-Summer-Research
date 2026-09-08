@@ -1,9 +1,0 @@
-metric,mean,std,n_folds
-train_accuracy,1.0,0.0,2
-train_balanced_accuracy,1.0,0.0,2
-train_macro_f1,1.0,0.0,2
-train_weighted_f1,1.0,0.0,2
-validation_accuracy,0.9642857142857143,0.01010152544552207,2
-validation_balanced_accuracy,0.9642857142857143,0.010101525445522229,2
-validation_macro_f1,0.963974358974359,0.00852154326045325,2
-validation_weighted_f1,0.963974358974359,0.008521543260453329,2

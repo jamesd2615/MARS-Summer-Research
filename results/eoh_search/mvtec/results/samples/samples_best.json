@@ -1,7 +1,0 @@
-{
-    "sample_order": 6,
-    "operator": "m2",
-    "algorithm": "The algorithm computes regional statistics on upper and lower halves, central contrast, diagonal gradients, vertical symmetry, and a low-intensity proportion using adjusted crop ratios and threshold.",
-    "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n\n    top = image[:int(0.5*h), :]\n    bottom = image[int(0.5*h):, :]\n\n    centre = image[\n        int(0.25*h):int(0.75*h),\n        int(0.25*w):int(0.75*w)\n    ]\n\n    dx = np.diff(image, axis=1)\n    dy = np.diff(image, axis=0)\n\n    # diagonal gradients\n    d1 = np.abs(np.diff(image, axis=0)[:, :-1])\n    d2 = np.abs(np.diff(image, axis=0)[:, 1:])\n\n    half_h = h // 2\n    top_half = image[:half_h, :]\n    bottom_half = np.flipud(image[h-half_h:, :])\n\n    threshold = np.mean(image) - np.std(image)\n\n    return np.array([\n        np.mean(top),\n        np.mean(bottom),\n        np.mean(np.abs(centre - np.mean(centre))),\n        np.mean(np.abs(dx)),\n        np.mean(np.abs(dy)),\n        np.mean(d1 - d2),\n        np.mean(np.abs(top_half - bottom_half)),\n        np.mean(image < threshold)\n    ], dtype=float)",
-    "objective": 0.26377
-}

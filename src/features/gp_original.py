@@ -9,8 +9,8 @@ from sklearn.svm import LinearSVC
 
 from src.features.base import BaseFeatureExtractor
 
-from src.legacy.gp_original.gp_fr import gp_restrict
-from src.legacy.gp_original.gp_fr.gp_fr_main import (
+from src.features.backends.gp_original.gp_fr import gp_restrict
+from src.features.backends.gp_original.gp_fr.gp_fr_main import (
     build_pset,
     eval_individual,
     ea_simple,
