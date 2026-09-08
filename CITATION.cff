@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "MARS Summer Research: Explainable Feature Extraction Search in Computer Vision"
+type: software
+authors:
+  - family-names: Davies
+    given-names: James
+repository-code: "https://github.com/jamesd2615/MARS-Summer-Research"
+date-released: 2026-09-08

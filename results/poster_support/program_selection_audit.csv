@@ -1,0 +1,4 @@
+visualisation,dataset,method,experiment_seed,fold,validation_macro_f1,group_median_macro_f1,selection_count,program_identifier,program_or_path,selection_reason
+Gp Original tree,STL10,gp_original,43,2,0.5869130121857625,0.5777705942264513,2,STL10_gp_original_s43_f2,"FC2(uLBP(Image), SIFT(Image))","Representative performance, readable complexity and relevant operator composition"
+Gp Modified tree,STL10,gp_modified,43,2,0.551832584797764,0.5545269223788611,1,STL10_gp_modified_s43_f2,"FC4(Hist_R(RegionR(Image, 10, 10, 51, 3)), RIF(Mean(Image)), uLBP(Mean(Image)), SIFT(Gau(Image, 1)))","Representative performance, readable complexity and relevant operator composition"
+EOH eight-feature pipeline,STL10,eoh,42,1,0.3327429017812066,0.3315094540512634,5,80a6bb91f285fbd5,programs/eoh/stl10/seed_42/fold_1/selected_program.py,Most recurrent STL-10 EOH program; eight explicit features; performance close to dataset median

@@ -1,7 +1,0 @@
-{
-    "sample_order": 6,
-    "operator": "m2",
-    "algorithm": "The new algorithm alters the central region bounds, gradient directions, symmetry comparison method, and threshold statistic to capture different intensity distributions and texture patterns.",
-    "code": "import numpy as np\n\ndef extract_features(image: np.ndarray) -> np.ndarray:\n    image = np.asarray(image, dtype=float)\n    h, w = image.shape\n\n    centre = image[\n        int(0.10 * h):int(0.90 * h),\n        int(0.30 * w):int(0.70 * w)\n    ]\n\n    dx = np.diff(image, axis=0)\n    dy = np.diff(image, axis=1)\n\n    quarter = w // 4\n    left = image[:, :quarter]\n    right = np.fliplr(image[:, w-quarter:])\n\n    threshold = np.median(image) + 0.5 * np.std(image)\n\n    return np.array(\n        [\n            np.mean(image),\n            np.var(image),\n            np.mean(centre),\n            np.var(centre),\n            np.mean(np.abs(dx)),\n            np.mean(np.abs(dy)),\n            np.mean(np.abs(left - right)),\n            np.mean(image > threshold),\n        ],\n        dtype=float,\n    )",
-    "objective": 0.03571
-}

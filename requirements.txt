@@ -1,0 +1,14 @@
+deap
+graphviz
+joblib
+jupyter
+matplotlib
+numpy
+pandas
+requests
+scikit-image
+scikit-learn
+scipy
+seaborn
+statsmodels
+torch

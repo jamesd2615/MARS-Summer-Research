@@ -27,9 +27,8 @@ FEI_DIR = RAW_DATA_DIR / "FEI"
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
 RESULTS_DIR = PROJECT_ROOT / "results"
 DOCS_DIR = PROJECT_ROOT / "docs"
-POSTER_DIR = PROJECT_ROOT / "poster"
+FIGURES_DIR = PROJECT_ROOT / "figures"
 PRESENTATIONS_DIR = PROJECT_ROOT / "presentations"
-LITERATURE_DIR = PROJECT_ROOT / "literature"
 
 
 # ============================================================
